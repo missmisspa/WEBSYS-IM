@@ -95,7 +95,7 @@
         button[type="next"] {
             width: 120px;
             height: 40px;
-            background-color:#748C70;
+            background-color: #748C70;
             color: white;
             border: none;
             border-radius: 8px;
@@ -106,7 +106,7 @@
 
         button[type="back"]:hover,
         button[type="next"]:hover {
-            background-color:  #5e785e;
+            background-color: #5e785e;
         }
 
         input[type="text"],
@@ -132,77 +132,137 @@
             background-position-y: 50%;
             cursor: pointer;
         }
-        .firstName{
+
+        .firstName {
             left: -500px;
             position: relative;
             font-family: sans-serif;
             margin-top: -20px;
         }
-        .middleName{
+
+        .middleName {
             left: -200px;
             position: relative;
             font-family: sans-serif;
             margin-top: -140px;
         }
-        .lastName{
+
+        .lastName {
             left: 100px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .suffixName{
+
+        .suffixName {
             left: 350px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .Purok{
+
+        .Purok {
             left: -500px;
             position: relative;
             font-family: sans-serif;
             margin-top: -45px;
         }
-        .brgy{
+
+        .brgy {
             left: -200px;
             position: relative;
             font-family: sans-serif;
             margin-top: -140px;
         }
-        .City{
+
+        .City {
             left: 100px;
             position: relative;
             font-family: sans-serif;
             margin-top: -142.5px;
         }
-        .Province{
+
+        .Province {
             left: 350px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .Age{
+
+        .Age {
             left: -500px;
             position: relative;
             font-family: sans-serif;
             margin-top: -20px;
         }
-        .bday{
+
+        .bday {
             left: -200px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .Status{
+
+        .Status {
             left: 100px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .citizenShip{
+
+        .citizenShip {
             left: 350px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
+        }
+        .Sex {
+            margin-top: -20px;
+            margin-left: -1000px;
+        }
+        .titleLabel{
+            font-size: 20px;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+
+        .radioLabel {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 30px;
+           
+            margin-left: 0;
+            
+            cursor: pointer;
+        }
+        .radioText {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 25px;
+            font-family: sans-serif;
+            cursor: pointer;
+            color: #999BA1;
+        }
+        .radioInput{
+            margin-top: -10px;
+        }
+        .voterSts{
+            left: -200px;
+            position: relative;
+            font-family: sans-serif;
+            margin-top: -140px;
+        }
+        .educ{
+            left: 100px;
+            position: relative;
+            font-family: sans-serif;
+            margin-top: -143px;
+        }
+        .contactNum{
+            left: -200px;
+            position: relative;
+            font-family: sans-serif;
+            margin-top: -30px;
         }
     </style>
 </head>
@@ -277,16 +337,43 @@
                 </div>
 
                 <div class="Sex">
-                    <label>sex</label>
-                    <div>
-                        <input type="radio" id="male" name="sex" value="male">
-                        <label for="male">Male</label>
+                    <label class="titleLabel">Sex</label>
+                    <div class="male radioLabel">
+                        <input type="radio" id="male" name="sex" value="male" class="radioInput">
+                        <label for="male" class="radioText">Male</label>
                     </div>
-                    <div>
-                        <input type="radio" id="female" name="sex" value="female">
-                        <label for="female">Female</label>
+                    <div class="female radioLabel">
+                        <input type="radio" id="female" name="sex" value="female" class="radioInput">
+                        <label for="female" class="radioText">Female</label>
                     </div>
                 </div>
+
+                <div class="voterSts">
+                    <label for="voter_status">Voter Status</label>
+                    <select id="voter_status" name="voter_status">
+                        <option value="">Select one</option>
+                        <option value="">Inactive</option>
+                        <option value="">SK Voter</option>
+                        <option value="">National Voter</option>
+                        <option value="">Both</option>
+                        <!-- options-->
+                    </select>
+                </div>
+
+                <div class="educ">
+                    <label for="educational_attainment">Educational Attainment</label>
+                    <select id="educational_attainment" name="educational_attainment">
+                        <option value="">Select one</option>
+                        <option value="">No Formal education</option>
+                        <option value="">Primary Level</option>
+                        <option value="">Primary Education</option>
+                        <option value="">Secondary Level</option>
+                        <option value="">Secondary Education</option>
+                        <option value="">College Level</option>
+                        <option value="">College Education</option>
+                    </select>
+                </div>
+
 
                 <div class="contactNum">
                     <label for="contact_number">Contact Number</label>
@@ -303,22 +390,7 @@
                     <input type="checkbox" id="barangay_council" name="barangay_council" value="barangay_council">
                 </div>
 
-                <div class="educ">
-                    <label for="educational_attainment">Educational Attainment</label>
-                    <select id="educational_attainment" name="educational_attainment">
-                        <option value="">Select one</option>
-                        <!-- options  -->
-                    </select>
-                </div>
-
-                <div class="voterSts">
-                    <label for="voter_status">Voter Status</label>
-                    <select id="voter_status" name="voter_status">
-                        <option value="">Select one</option>
-                        <!-- options-->
-                    </select>
-                </div>
-
+                
                 <button type="back">Back</button>
                 <button type="next">Next</button>
             </form>
