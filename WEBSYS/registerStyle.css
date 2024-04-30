@@ -50,9 +50,9 @@ form {
     font-size: 44px;
     font-family: sans-serif;
     font-weight: 700;
-    line-height: 40px;
+    margin-top: -50px;
     word-wrap: break-word;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     margin-left: 20px;
 
 }
@@ -68,7 +68,7 @@ label {
 input[type="text"],
 input[type="email"],
 select {
-    width: 538px;
+    width: 600px;
     height: 40px;
     padding: 8px 16px;
     border: 1px solid #999BA1;
@@ -105,7 +105,7 @@ input[type="email"],
 input[type="number"],
 input[type="date"],
 select {
-    width: 100%;
+    width: 250px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -124,85 +124,29 @@ select {
     cursor: pointer;
 }
 
-.firstName {
-    left: -500px;
+.firstName, .Purok, .Age{
+    left: -450px;
     position: relative;
     font-family: sans-serif;
-    margin-top: -20px;
+    margin-top: -50px;
 }
 
-.middleName {
-    left: -200px;
+.middleName, .brgy, .bday{
+    left: -150px;
     position: relative;
     font-family: sans-serif;
-    margin-top: -140px;
+    margin-top: -141.5px;
 }
 
-.lastName {
-    left: 100px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -143px;
-}
-
-.suffixName {
-    left: 350px;
+.lastName, .City, .Status {
+    right: -150px;
     position: relative;
     font-family: sans-serif;
     margin-top: -143px;
 }
 
-.Purok {
-    left: -500px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -45px;
-}
-
-.brgy {
-    left: -200px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -140px;
-}
-
-.City {
-    left: 100px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -142.5px;
-}
-
-.Province {
-    left: 350px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -143px;
-}
-
-.Age {
-    left: -500px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -20px;
-}
-
-.bday {
-    left: -200px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -143px;
-}
-
-.Status {
-    left: 100px;
-    position: relative;
-    font-family: sans-serif;
-    margin-top: -143px;
-}
-
-.citizenShip {
-    left: 350px;
+.suffixName, .Province, .citizenShip {
+    right: -450px;
     position: relative;
     font-family: sans-serif;
     margin-top: -143px;
@@ -210,7 +154,7 @@ select {
 
 .Sex {
     margin-top: -20px;
-    margin-left: -1000px;
+    margin-left: -700px;
 }
 
 .titleLabel {
@@ -243,28 +187,28 @@ select {
 }
 
 .voterSts {
-    left: -200px;
+    right: 30px;
     position: relative;
     font-family: sans-serif;
-    margin-top: -140px;
+    margin-top: -120px;
 }
 
 .educ {
-    left: 100px;
+    right: -300px;
     position: relative;
     font-family: sans-serif;
     margin-top: -143px;
 }
 
 .contactNum {
-    left: -200px;
+    left: -150px;
     position: relative;
     font-family: sans-serif;
     margin-top: -30px;
 }
 
 .emailAdd {
-    left: 100px;
+    right: -200px;
     position: relative;
     font-family: sans-serif;
     margin-top: -143px;
@@ -273,15 +217,26 @@ select {
 .userType {
     display: flex;
     justify-content: space-between;
-    margin-top: -50px;
+    margin-top: -30px;
+    margin-right: -50px;
 }
 button{
-    margin-top: -50px;
+    margin-top: -30px;
 }
 button[type="back"]{
-    margin-left: -500px;
+    margin-left: -200px;
+    background-color: #999BA1;
 }
 button[type="next"]{
-    margin-left: -50px;
-    margin-top: -90px;
+    margin-right: -250px;
+    margin-top: -91px;
+}
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color:  #999BA1;;
 }
