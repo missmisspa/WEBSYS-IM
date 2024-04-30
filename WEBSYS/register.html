@@ -216,11 +216,13 @@
             font-family: sans-serif;
             margin-top: -143px;
         }
+
         .Sex {
             margin-top: -20px;
             margin-left: -1000px;
         }
-        .titleLabel{
+
+        .titleLabel {
             font-size: 20px;
             font-weight: 700;
             font-family: sans-serif;
@@ -230,11 +232,12 @@
             display: inline-flex;
             align-items: center;
             margin-right: 30px;
-           
+
             margin-left: 0;
-            
+
             cursor: pointer;
         }
+
         .radioText {
             font-size: 18px;
             font-weight: 500;
@@ -243,26 +246,43 @@
             cursor: pointer;
             color: #999BA1;
         }
-        .radioInput{
+
+        .radioInput {
             margin-top: -10px;
         }
-        .voterSts{
+
+        .voterSts {
             left: -200px;
             position: relative;
             font-family: sans-serif;
             margin-top: -140px;
         }
-        .educ{
+
+        .educ {
             left: 100px;
             position: relative;
             font-family: sans-serif;
             margin-top: -143px;
         }
-        .contactNum{
+
+        .contactNum {
             left: -200px;
             position: relative;
             font-family: sans-serif;
             margin-top: -30px;
+        }
+
+        .emailAdd {
+            left: 100px;
+            position: relative;
+            font-family: sans-serif;
+            margin-top: -143px;
+        }
+
+        .userType {
+            display: flex;
+            justify-content: space-between;
+            margin-top: -50px;
         }
     </style>
 </head>
@@ -385,12 +405,18 @@
                     <input type="email" id="email" name="email" placeholder="Enter Email Address">
                 </div>
 
-                <div class="userStatus">
-                    <label for="barangay_council">Barangay Council</label>
-                    <input type="checkbox" id="barangay_council" name="barangay_council" value="barangay_council">
+                <div class="userType">
+                    <div class="radioLabel">
+                        <input type="radio" name="userType" id="barangayOfficial" class="radioInput">
+                        <label for="barangayOfficial" class="radioText">Barangay Official</label>
+                    </div>
+                    <div class="radioLabel">
+                        <input type="radio" name="userType" id="resident" class="radioInput">
+                        <label for="resident" class="radioText">Resident</label>
+                    </div>
                 </div>
 
-                
+
                 <button type="back">Back</button>
                 <button type="next">Next</button>
             </form>
