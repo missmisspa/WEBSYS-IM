@@ -95,7 +95,9 @@ button[type="next"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="back"]:hover,
+button[type="back"]:hover{
+    background-color: #88898c;
+}
 button[type="next"]:hover {
     background-color: #5e785e;
 }
@@ -167,9 +169,7 @@ select {
     display: inline-flex;
     align-items: center;
     margin-right: 30px;
-
     margin-left: 0;
-
     cursor: pointer;
 }
 
