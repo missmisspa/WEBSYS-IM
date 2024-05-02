@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Login">
+        <div class="background">
+            <img class="backgrnd" src="icons/bg half.png" alt="bg">
+        </div>
+        <div class="logo">
+            <img class="LegazpiLogo" src="icons/Legazpi-LOGO.png" />
+            <img class="BrgyLogo" src="icons/BRGY LOGO.png" />
+        </div>
+        <div class="text">
+            <div class="titleTxt"><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 48px;">Barangay</span><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 85px; ">
+                    <br /></span><span
+                    style="color: white; font-size: 80px; font-family:'Montserrat', sans-serif; font-weight: 700; line-height: 85px;">Monitoring
+                    <br />System</span>
+            </div>
+        </div>
+
+        <div class="mainLogin">
+            <form action="" method="post" class="forms">
+                <div class="loginTop">Login</div>
+                <div class="userName">
+                    <div class="userTxt">Username</div>
+                    <div class="usrNmInputField">
+                        <input type="text" class="ComponentName"
+                            onfocus="if(this.placeholder === 'Enter Username') this.placeholder = ''"
+                            onblur="if(this.placeholder === '') this.placeholder = 'Enter Username'"
+                            placeholder="Enter Username">
+                    </div>
+
+
+                </div>
+                <div class="password">
+                    <div class="passTxt">
+                        Password</div>
+                    <div class="passInputField">
+                        <input type="password" class="ComponentName"
+                            onfocus="if(this.placeholder === 'Enter Password') { this.placeholder = ''; this.type = 'text'; }"
+                            onblur="if(this.placeholder === '') { this.placeholder = 'Enter Password'; this.type = 'password'; }"
+                            placeholder="Enter Password">
+                    </div>
+
+                    <div class="forgetPass">
+                        Forget Password</div>
+                </div>
+                <input type="submit" class="Button" value="Login">
+
+                <div class="register">
+                    <span class="registerText">Don't Have an Account? </span>
+                    <span class="registerLink">Register Now</span>
+                </div>
+
+                <div class="userType">
+                    <div class="radioLabel">
+                        <input type="radio" name="userType" id="barangayOfficial" class="radioInput">
+                        <label for="barangayOfficial" class="radioText">Barangay Official</label>
+                    </div>
+                    <div class="radioLabel">
+                        <input type="radio" name="userType" id="resident" class="radioInput">
+                        <label for="resident" class="radioText">Resident</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
