@@ -79,17 +79,56 @@
                         and Privacy Policy of our website.
                     </label>
                 </div>
-
-
                 <div class="button-container">
                     <button type="back">Back</button>
                     <button type="register" id="Btn">Register</button>
                 </div>
             </form>
-
         </div>
-
     </div>
+
+    <div class="popup">
+        <div class="overlay"></div>
+        <div class="popup-content">Are you sure you want to proceed?</div>
+        <div class="buttonContainer">
+            <div class="button" style="background: #999BA1; left: 0;" onclick="hidePopup()">
+                <div class="Cancel">Cancel</div>
+            </div>
+            <div class="button" style="background: #748C70; left: 0px;" onclick="hidePopup()">
+                <div class="Continue">Continue</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function showPopup() {
+            document.querySelector('.popup').style.display = 'block';
+            document.querySelector('.Login').classList.add('transparent-background');
+        }
+
+
+        function hidePopup() {
+            document.querySelector('.popup').style.display = 'none';
+            document.querySelector('.Login').classList.remove('transparent-background');
+        }
+
+
+        function showPopup() {
+            document.querySelector('.popup').style.display = 'block';
+        }
+
+
+        function hidePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+
+        // Add event listener to the Register button
+        document.getElementById('Btn').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            showPopup(); // Show the pop-up message
+        });
+    </script>
 
 </body>
 
