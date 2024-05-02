@@ -108,7 +108,7 @@ input[type="checkbox"] {
     text-decoration: none;
     padding-top: 10px;
     width: 120px;
-    height: 30px;
+    height: 40px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -119,6 +119,8 @@ input[type="checkbox"] {
     margin-right: -250px;
     margin-top: -91px;
     background-color:#748C70;
+    padding-top: 10px;
+    padding-bottom: 10px; 
 }
 .btn-next:hover{
     background-color: #5e785e;
