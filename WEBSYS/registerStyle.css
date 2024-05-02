@@ -95,9 +95,10 @@ button[type="next"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="back"]:hover{
+button[type="back"]:hover {
     background-color: #88898c;
 }
+
 button[type="next"]:hover {
     background-color: #5e785e;
 }
@@ -126,28 +127,36 @@ select {
     cursor: pointer;
 }
 
-.firstName, .Purok, .Age{
+.firstName,
+.Purok,
+.Age {
     left: -450px;
     position: relative;
     font-family: sans-serif;
     margin-top: -50px;
 }
 
-.middleName, .brgy, .bday{
+.middleName,
+.brgy,
+.bday {
     left: -150px;
     position: relative;
     font-family: sans-serif;
     margin-top: -141.5px;
 }
 
-.lastName, .City, .Status {
+.lastName,
+.City,
+.Status {
     right: -150px;
     position: relative;
     font-family: sans-serif;
     margin-top: -143px;
 }
 
-.suffixName, .Province, .citizenShip {
+.suffixName,
+.Province,
+.citizenShip {
     right: -450px;
     position: relative;
     font-family: sans-serif;
@@ -220,17 +229,21 @@ select {
     margin-top: -30px;
     margin-right: -50px;
 }
-button{
+
+button {
     margin-top: -30px;
 }
-button[type="back"]{
+
+button[type="back"] {
     margin-left: -200px;
     background-color: #999BA1;
 }
-button[type="next"]{
+
+button[type="next"] {
     margin-right: -250px;
     margin-top: -91px;
 }
+
 .form-control {
     width: 100%;
     padding: 8px;
@@ -238,5 +251,12 @@ button[type="next"]{
     border-radius: 5px;
     font-size: 16px;
     font-family: sans-serif;
-    color:  #999BA1;;
+    color: #999BA1;
+    ;
+}
+
+.brgy input::placeholder,
+.City input::placeholder,
+.Province input::placeholder {
+    color: #19191B;
 }
