@@ -228,7 +228,7 @@ select {
 .passInputField input::placeholder,
 .confirmInputField input::placeholder,
 .fruitInputField input::placeholder,
-.fruitInputField input::placeholder{
+.animalInputField input::placeholder{
     color:  #ccc; 
     font-family: 'Montserrat', sans-serif; 
     font-size: 16px; 
