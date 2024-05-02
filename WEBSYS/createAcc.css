@@ -100,20 +100,22 @@ form {
 
 
 button[type="back"] {
-    margin-left: -200px;
+    margin-left: -230px;
     background-color: #999BA1;
+    width: 120px;
+    height: 40px;
 }
 button[type="register"] {
-    margin-left: -200px;
+    margin-left: -80px;
     background-color: #748C70;
     margin-right: -250px;
+    width: 300px;
+    height: 40px;
   
 }
 
 button[type="back"],
 button[type="register"] {
-    width: 120px;
-    height: 40px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -136,7 +138,7 @@ button[type="register"]:hover {
     justify-content: space-between;
     position: fixed;
     bottom: 20px;
-    left: 72%;
+    left: 72.5%;
     top: 730px;
     transform: translateX(-50%);
 }
