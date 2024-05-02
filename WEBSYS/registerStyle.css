@@ -48,7 +48,7 @@ form {
     text-align: center;
     color: #19191B;
     font-size: 44px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     margin-top: -50px;
     word-wrap: break-word;
@@ -91,6 +91,7 @@ button[type="next"] {
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -129,28 +130,28 @@ select {
 .firstName, .Purok, .Age{
     left: -450px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -50px;
 }
 
 .middleName, .brgy, .bday{
     left: -150px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -141.5px;
 }
 
 .lastName, .City, .Status {
     right: -150px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat';
     margin-top: -143px;
 }
 
 .suffixName, .Province, .citizenShip {
     right: -450px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -143px;
 }
 
@@ -162,7 +163,7 @@ select {
 .titleLabel {
     font-size: 20px;
     font-weight: 700;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .radioLabel {
@@ -177,7 +178,7 @@ select {
     font-size: 18px;
     font-weight: 500;
     line-height: 25px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     color: #999BA1;
 }
@@ -189,28 +190,28 @@ select {
 .voterSts {
     right: 30px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -120px;
 }
 
 .educ {
     right: -300px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -143px;
 }
 
 .contactNum {
     left: -150px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -30px;
 }
 
 .emailAdd {
     right: -200px;
     position: relative;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-top: -143px;
 }
 
@@ -237,6 +238,11 @@ button[type="next"]{
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color:  #999BA1;;
 }
+.brgy input::placeholder,
+    .City input::placeholder,
+    .Province input::placeholder {
+        color: #19191B; 
+    }
