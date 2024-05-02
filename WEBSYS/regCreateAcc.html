@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.logo {
+    width: 263px;
+    height: 116px;
+    left: 230px;
+    top: 170px;
+    position: absolute;
+}
+
+.LegazpiLogo {
+    width: 116px;
+    height: 114px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+.BrgyLogo {
+    width: 116px;
+    height: 114px;
+    left: 150px;
+    top: 0px;
+    position: absolute;
+}
+
+.text {
+    font-family: 'Montserrat';
+    width: 600px;
+    height: 252px;
+    left: 50px;
+    top: 305px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.titleTxt {
+    font-family: 'Montserrat', sans-serif;
+    width: 600px;
+    height: 244px;
+    text-align: center;
+}
+
+
+.mainLogin {
+    width: 800px;
+    height: 100%;
+    left: calc(100% - 800px);
+    top: 0;
+    background: white;
+    position: absolute;
+}
+
+
+form {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 51px;
+    display: flex;
+    margin-top: 100px;
+    margin-left: 10px;
+}
+
+.loginTop {
+    width: 538px;
+    height: 35px;
+    text-align: center;
+    color: #19191B;
+    font-size: 44px;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    line-height: 95px;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+
+button[type="back"] {
+    margin-left: -200px;
+    background-color: #999BA1;
+}
+button[type="register"] {
+    margin-left: -200px;
+    background-color: #748C70;
+}
+
+button[type="register"] {
+    margin-right: -250px;
+    margin-top: -91px;
+}
+button[type="back"],
+button[type="register"] {
+    width: 120px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat';
+}
+
+button[type="back"]:hover {
+    background-color: #88898c;
+}
+
+button[type="register"]:hover {
+    background-color:#5e785e;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="Login">
+        <div class="background">
+            <img class="backgrnd" src="icons/bg half.png" alt="bg">
+        </div>
+        <div class="logo">
+            <img class="LegazpiLogo" src="icons/Legazpi-LOGO.png" />
+            <img class="BrgyLogo" src="icons/BRGY LOGO.png" />
+        </div>
+        <div class="text">
+            <div class="titleTxt"><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat'; font-weight: 700; line-height: 48px;">Barangay</span><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat'; font-weight: 700; line-height: 85px; ">
+                    <br /></span><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat'; font-weight: 700; line-height: 85px;">Monitoring
+                    <br />System</span>
+            </div>
+        </div>
+
+        <div class="mainLogin">
+            <form action="" method="post" class="forms">
+                <div class="loginTop">Register</div>
+                
+                
+                
+                <button type="back">Back</button>
+                <button type="register">Register</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
