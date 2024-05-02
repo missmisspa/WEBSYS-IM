@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barangay Monitoring System - Dashboard</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="userComplaintsForm.css">
+</head>
+<body>
+<div id="sidebar">
+    <div class="text-center mb-4">
+        <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
+        <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
+        <h4 class="text">Barangay Monitoring System</h4>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link logout" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content">
+    <h2>Complaints</h2>
+    <div id="container">
+        <!-- link php here -->
+        <form id="complaintsForm" method="post" action="#" class="form-container">
+            <div class="form-row">
+                <label class="form-label" for="complainant">Name of the Complainant:</label>
+                <input type="text" id="form-control" class="form-input" id="complainant" name="complainant" placeholder="Enter the name of the Complainant">
+            </div>
+            
+            <div class="form-row">
+                <label class="form-label" for="plaintiff">Name of the Plaintiff:</label>
+                <input type="text" id="form-control" class="form-input" id="plaintiff" name="plaintiff" placeholder="Enter the name of the Plaintiff" >
+            </div>
+            
+            <div class="form-row">
+                <label class="form-label" for="issued-date">Issued Date:</label>
+                <input type="date" id="form-control" class="form-input" id="date" name="date">
+            </div>
+        </form>
+        <div class="button-container">
+            <button class="btn-custom" id="next-btn">Back</button>
+            <button class="custom-btn" id="next-btn">Next</button>
+        </div>        
+    </div>
+</div>
+
+<!--form error checking -->   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    
