@@ -93,7 +93,7 @@ form {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     word-wrap: break-word;
-    margin-top: -50px;
+    margin-top: -80px;
     margin-bottom: 20px;
     margin-left: 30px;
 }
@@ -137,7 +137,7 @@ button[type="register"]:hover {
     position: fixed;
     bottom: 20px;
     left: 72%;
-    top: 700px;
+    top: 730px;
     transform: translateX(-50%);
 }
 
@@ -172,12 +172,12 @@ input[type="number"],
 input[type="date"],
 input[type="password"],
 select {
-    width: 600px;
+    width: 550px;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 15px;
 }
 .select-wrapper select {
@@ -193,7 +193,7 @@ select {
     right: 100px;
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    margin-top: -10px;
+    margin-top: -30px;
     margin-left: 150px;
     display: flex;
     flex-direction: column;
@@ -211,7 +211,7 @@ select {
     font-size: 16px;
     font-weight: 500;
 }
-.userName, .password{
+.userName, .password, .confirmPassword{
     right: 100px;
     position: relative;
     font-family: 'Montserrat', sans-serif;
@@ -225,10 +225,64 @@ select {
     line-height: 15px;
 }
 .usrNmInputField input::placeholder,
-.passInputField input::placeholder {
+.passInputField input::placeholder,
+.confirmInputField input::placeholder,
+.fruitInputField input::placeholder,
+.fruitInputField input::placeholder{
     color:  #ccc; 
     font-family: 'Montserrat', sans-serif; 
     font-size: 16px; 
     font-weight: 500; 
 }
-
+.message{
+    width: 541px; 
+    height: 21px; 
+    text-align: center; 
+    color: #323232; 
+    font-size: 15px; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 400; 
+    line-height: 22px; 
+    margin-top: -50px;
+    margin-left: -50px;
+    word-wrap: break-word;
+}
+.fruit{
+    right: 100px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -15px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    color: #3B3D41;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 15px;
+}
+.animal{
+    right: 100px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    color: #3B3D41;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 15px;
+    top: -50px;
+}
+.termsAndconditions{
+    width: 541px; 
+    height: 21px; 
+    text-align: center; 
+    color: #323232; 
+    font-size: 15px; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 400; 
+    line-height: 22px; 
+    margin-top: -100px;
+    margin-left: -50px;
+    word-wrap: break-word;
+}
