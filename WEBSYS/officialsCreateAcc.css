@@ -294,7 +294,7 @@ select {
     width: 600px;
     height: 234px;
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
@@ -312,7 +312,7 @@ select {
     width: 480px;
     height: 34px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -327,7 +327,7 @@ select {
 
 .buttonContainer {
     position: absolute;
-    top: calc(50% + 50px);
+    top: calc(50% + 20px);
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
