@@ -93,7 +93,7 @@ form {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     word-wrap: break-word;
-    margin-top: -30px;
+    margin-top: -80px;
     margin-bottom: 20px;
     margin-left: 30px;
 }
@@ -139,7 +139,7 @@ button[type="register"]:hover {
     position: fixed;
     bottom: 20px;
     left: 72.5%;
-    top: 700px;
+    top: 730px;
     transform: translateX(-50%);
 }
 
