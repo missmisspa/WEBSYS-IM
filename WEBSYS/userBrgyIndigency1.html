@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barangay Monitoring System - Dashboard</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="userBrgyIndigency.css">
+</head>
+<body>
+<div id="sidebar">
+    <div class="text-center mb-4">
+        <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
+        <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
+        <h4 class="text">Barangay Monitoring System</h4>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link logout" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content">
+    <h2>Barangay Indigency</h2>
+    <div id="container">
+        <!-- link php here -->
+        <form id="registrationForm" method="post" action="#">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                        <small class="error-message" id="name-error"></small> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="purok">Purok:</label>
+                        <input type="number" class="form-control" id="purok" name="purok" placeholder="Enter your purok">
+                        <small class="error-message" id="purok-error"></small> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age">
+                        <small class="error-message" id="age-error"></small> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                        <small class="error-message" id="date-error"></small> 
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="status">Civil Status:</label>
+                        <select class="form-control" id="status" name="status" placeholder="Select your civil status">
+                            <option value="" disabled selected>Select your civil status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Separated">Separated</option>
+                            <option value="Annulled">Annulled</option>
+                            <option value="LiveIn">Live-in</option>
+                            <option value="Unknown">Unknown</option>
+                        </select>
+                        <small class="error-message" id="status-error"></small> 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="purpose">Purpose:</label><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="purpose1" name="purpose[]" value="Education">
+                            <label class="form-check-label" for="purpose1">Education</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="purpose2" name="purpose[]" value="Healthcare">
+                            <label class="form-check-label" for="purpose2">Healthcare</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="purpose3" name="purpose[]" value="Employment">
+                            <label class="form-check-label" for="purpose3">Employment</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="purpose4" name="purpose[]" value="Other">
+                            <label class="form-check-label" for="purpose4">Other</label>
+                            <div class="form-check form-check-inline">
+                                <input type="text" class="form-control" id="otherPurpose" name="otherPurpose" placeholder="Enter other purpose">
+                            </div>
+                        </div>
+                        <small class="error-message" id="purpose-error"></small> 
+                    </div>                                                              
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="btn-custom">Back</button>
+                <button class="custom-btn" id="next-btn">Next</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="overview" style="display: none;">
+    <h3>Overview</h3>
+    <!-- Display user inputted information -->
+    <div id="user-info">
+        <p><strong>Name:</strong> <span id="overview-name"></span></p>
+        <p><strong>Purok:</strong> <span id="overview-purok"></span></p>
+        <p><strong>Age:</strong> <span id="overview-age"></span></p>
+        <p><strong>Date:</strong> <span id="overview-date"></span></p>
+        <p><strong>Civil Status:</strong> <span id="overview-status"></span></p>
+        <p><strong>Purpose:</strong> <span id="overview-purpose"></span></p>
+    </div>
+    <div id="user-info"></div>
+    <div class="button-container" id="button-container">
+        <button class="btn-custom" id="edit-btn">Edit</button>
+        <button class="btn-custom" id="cancel-btn">Cancel</button>
+        <button class="custom-btn" id="confirm-btn">Submit</button>
+    </div>
+</div>
+
+
+<!--form error checking -->
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var purok = document.getElementById('purok').value;
+        var age = document.getElementById('age').value;
+        var date = document.getElementById('date').value;
+        var status = document.getElementById('status').value;
+        var purpose = document.querySelectorAll('input[name="purpose[]"]:checked');
+    
+        if (name.trim() == '') {
+            document.getElementById('name-error').textContent = 'Please enter your name';
+            return false;
+        } else {
+            document.getElementById('name-error').textContent = '';
+        }
+    
+        if (purok.trim() == '') {
+            document.getElementById('purok-error').textContent = 'Please enter your purok';
+            return false;
+        } else {
+            document.getElementById('purok-error').textContent = '';
+        }
+    
+        if (age.trim() == '') {
+            document.getElementById('age-error').textContent = 'Please enter your age';
+            return false;
+        } else {
+            document.getElementById('age-error').textContent = '';
+        }
+    
+        if (date.trim() == '') {
+            document.getElementById('date-error').textContent = 'Please enter the date';
+            return false;
+        } else {
+            document.getElementById('date-error').textContent = '';
+        }
+    
+        if (status.trim() == '') {
+            document.getElementById('status-error').textContent = 'Please select your civil status';
+            return false;
+        } else {
+            document.getElementById('status-error').textContent = ''; 
+        }
+        if (purpose.length === 0) {
+                    document.getElementById('purpose-error').textContent = 'Please select at least one purpose';
+                    return false;
+                } else {
+                    document.getElementById('purpose-error').textContent = ''; 
+                }
+    
+                if ([...purpose].some(checkbox => checkbox.value === 'Other') && document.getElementById('otherPurpose').value.trim() === '') {
+                    document.getElementById('otherPurpose-error').textContent = 'Please enter other purpose';
+                    return false;
+                } else {
+                    document.getElementById('otherPurpose-error').textContent = ''; 
+                }
+                return true;
+            }
+    
+    function displayOverview() {
+    document.getElementById('overview-name').textContent = document.getElementById('name').value;
+    document.getElementById('overview-purok').textContent = document.getElementById('purok').value;
+    document.getElementById('overview-age').textContent = document.getElementById('age').value;
+    document.getElementById('overview-date').textContent = document.getElementById('date').value;
+    document.getElementById('overview-status').textContent = document.getElementById('status').value;
+    
+    var purposes = [];
+    document.querySelectorAll('input[name="purpose[]"]:checked').forEach(function(checkbox) {
+        purposes.push(checkbox.value);
+    });
+    document.getElementById('overview-purpose').textContent = purposes.join(', ');
+    
+    document.getElementById('user-info').innerHTML = userInfo;
+        
+        document.getElementById('content').style.display = 'none';
+        document.getElementById('overview').style.display = 'block';
+    }
+    
+    function editForm() {
+        document.getElementById('content').style.display = 'block';
+        document.getElementById('overview').style.display = 'none';
+    }
+
+    document.getElementById('next-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        
+
+        displayOverview();
+    });
+
+    document.getElementById('edit-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        editForm();
+    });
+
+    document.getElementById('cancel-btn').addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        document.getElementById('registrationForm').reset();
+        editForm();
+    });
+
+    document.getElementById('confirm-btn').addEventListener('click', function(event) {
+    });
+</script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    
