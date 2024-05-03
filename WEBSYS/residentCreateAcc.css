@@ -351,3 +351,23 @@ select {
     display: inline-flex;
     cursor: pointer;
 }
+
+.btn-back{
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: -200px;
+    background-color: #999BA1;
+}
+.btn-back:hover{
+    background-color: #88898c;
+}
