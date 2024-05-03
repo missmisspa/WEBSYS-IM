@@ -107,7 +107,7 @@
                 <div class="Cancel">Cancel</div>
             </div>
             <div class="button" style="background: #748C70; left: 0px;" onclick="hidePopup()">
-                <div class="Continue">Continue</div>
+                <a href="registrationOverview.html" class="button" style="text-decoration-line: none; background: #748C70; left: 0px; color: white;" >Continue</a>
             </div>
         </div>
     </div>
@@ -116,26 +116,16 @@
 
         function showPopup() {
             document.querySelector('.popup').style.display = 'block';
-            document.querySelector('.Login').classList.add('transparent-background');
         }
-
-
         function hidePopup() {
             document.querySelector('.popup').style.display = 'none';
-            document.querySelector('.Login').classList.remove('transparent-background');
         }
-
-
         function showPopup() {
             document.querySelector('.popup').style.display = 'block';
         }
-
-
         function hidePopup() {
             document.querySelector('.popup').style.display = 'none';
         }
-
-    
         document.getElementById('Btn').addEventListener('click', function (event) {
             event.preventDefault(); 
             showPopup(); 

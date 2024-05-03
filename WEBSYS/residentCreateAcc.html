@@ -106,27 +106,18 @@
     <script>
 
         function showPopup() {
-            document.querySelector('.popup').style.display = 'block';
-            document.querySelector('.Login').classList.add('transparent-background');
+            document.querySelector('.popup').style.display = 'block';   
         }
-
-
         function hidePopup() {
             document.querySelector('.popup').style.display = 'none';
-            document.querySelector('.Login').classList.remove('transparent-background');
+           
         }
-
-
         function showPopup() {
             document.querySelector('.popup').style.display = 'block';
         }
-
-
         function hidePopup() {
             document.querySelector('.popup').style.display = 'none';
         }
-
-       
         document.getElementById('Btn').addEventListener('click', function (event) {
             event.preventDefault(); 
             showPopup(); 
