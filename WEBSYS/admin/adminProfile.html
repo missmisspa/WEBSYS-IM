@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barangay Monitoring System - Profile</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="adminProfile.css">
+</head>
+<body>
+<div id="sidebar">
+    <div class="text-center mb-4">
+        <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
+        <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
+        <h4 class="text">Barangay Monitoring System</h4>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-database"></i> Barangay Database</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link logout" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+    </ul>
+    
+</div>
+
+    <div id="content">
+        <h2>Profile</h2>
+        <div id="container">
+            <!-- link php here -->
+            <div class="profile-image">
+                <img src="placeholder.jpg" alt="Profile Image">
+            </div>
+            <form id="profileForm" method="post" action="#">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="middle_name">Middle Name</label>
+                            <input type="text" class="form-control" id="middle_name" name="middle_name" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="purok">Purok</label>
+                            <input type="text" class="form-control" id="purok" name="purok" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="barangay">Barangay</label>
+                            <input type="text" class="form-control" id="barangay" name="barangay" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control" id="city" name="city" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="province">Province</label>
+                            <input type="text" class="form-control" id="province" name="province" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="birthday">Birthday</label>
+                            <input type="date" class="form-control" id="birthday" name="birthday" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="civil_status">Civil Status</label>
+                            <input type="text" class="form-control" id="civil_status" name="civil_status" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="citizenship">Citizenship</label>
+                            <input type="text" class="form-control" id="citizenship" name="citizenship" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="sex">Sex</label>
+                            <input type="text" class="form-control" id="sex" name="sex" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="education">Educational Attainment</label>
+                            <input type="text" class="form-control" id="education" name="education" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact_number">Contact Number</label>
+                            <input type="text" class="form-control" id="contact_number" name="contact_number" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" readonly>
+                </div>
+                <div class="button-container">
+                    <button class="custom-btn" id="editProfile-btn">Edit</button>
+                </div>
+            </form>
+            </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
