@@ -168,30 +168,16 @@
                 </div>
 
                 <a href="login.html" class="btn-back">Back</a>
-                <button type="button" class="btn-next" id="nextButton">Next</button>
+                <button type="button" class="btn-next" id="nextButton">
+                    <a href="/WEBSYS-IM/WEBSYS/registerPage2.html" style="text-decoration-line: none; color: white;">
+                        Next
+                    </a>
+                </button>
             </form>
         </div>
     </div>
 
     <script>
-        document.getElementById("nextButton").addEventListener("click", function () {
-            console.log("Next button clicked");
-            var userType = document.querySelector('input[name="userType"]:checked');
-            console.log("User type:", userType);
-            if (userType) {
-                if (userType.value === "resident") {
-                    console.log("Redirecting to residentCreateAcc.html");
-                    window.location.href = "residentCreateAcc.html";
-                } else if (userType.value === "official") {
-                    console.log("Redirecting to brgyOfficialsCreateAcc.html");
-                    window.location.href = "createAccBrgyOfficial.html";
-                }
-            } else {
-                console.log("User type not selected");
-                alert("Please select a user type.");
-            }
-        });
-
         function showDropdown() {
             var dropdown = document.getElementById("brgypositions");
             dropdown.style.display = "block";
@@ -201,7 +187,24 @@
             var dropdown = document.getElementById("brgypositions");
             dropdown.style.display = "none";
         }
-
+        
+        document.getElementById("nextButton").addEventListener("click", function () {
+                    console.log("Next button clicked");
+                    var userType = document.querySelector('input[name="userType"]:checked');
+                    console.log("User type:", userType);
+                    if (userType) {
+                        if (userType.value === "resident") {
+                            console.log("Redirecting to residentCreateAcc.html");
+                            window.location.href = "residentCreateAcc.html";
+                        } else if (userType.value === "official") {
+                            console.log("Redirecting to brgyOfficialsCreateAcc.html");
+                            window.location.href = "createAccBrgyOfficial.html";
+                        }
+                    } else {
+                        console.log("User type not selected");
+                        alert("Please select a user type.");
+                    }
+                });
     </script>
 
 </body>
