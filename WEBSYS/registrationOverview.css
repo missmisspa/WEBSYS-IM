@@ -21,10 +21,10 @@ body {
 }
 
 .mainLogin {
-    width: 1275px; 
-    height: 700px; 
+    width: 1300px; 
+    height: 750px; 
     left: calc(50% - 637.5px); 
-    top: 50px; 
+    top: 20px; 
     background: white;
     position: fixed;
     border-radius: 12px; 
@@ -95,7 +95,7 @@ body {
     text-align: center;
     text-decoration: none;
     position: absolute;
-    right: 20px;
+    right: 500px;
     bottom: 15px;
     padding-top: 5px;
     width: 300px;

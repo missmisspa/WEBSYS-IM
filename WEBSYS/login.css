@@ -122,7 +122,7 @@ form {
     padding-bottom: 8px;
     background: white;
     border-radius: 12px;
-    border: 2px #EAEBEC solid;
+    border: 3px #EAEBEC solid;
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
@@ -154,7 +154,7 @@ form {
     padding-bottom: 8px;
     background: white;
     border-radius: 12px;
-    border: 2px #EAEBEC solid;
+    border: 3px #EAEBEC solid;
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
@@ -206,11 +206,11 @@ form {
 
 .Button {
     width: 100%;
-    max-width: 420px;
-    height: 50px;
+    max-width: 400px;
+    height: 25px;
     padding: 14px;
     margin-left: 15px;
-    margin-top: 30px;
+    margin-top: 5px;
     background: #748C70;
     border-radius: 16px;
     justify-content: center;
@@ -240,6 +240,7 @@ form {
     font-weight: 500;
     line-height: 20px;
     word-wrap: break-word;
+    margin-left: -30px;
 }
 
 .registerLink {
