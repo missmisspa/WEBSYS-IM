@@ -82,6 +82,48 @@ input[type="checkbox"] {
     margin-right: 8px;
 }
 
+.btn-back{
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -30px;
+    margin-left: -200px;
+    background-color: #999BA1;
+}
+.btn-back:hover{
+    background-color: #88898c;
+}
+
+.btn-next{
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    width: 120px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: -250px;
+    margin-top: -91px;
+    background-color:#748C70;
+}
+.btn-next:hover{
+    background-color: #5e785e;
+}
+
 button[type="back"],
 button[type="next"] {
     width: 120px;
