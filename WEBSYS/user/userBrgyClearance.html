@@ -50,7 +50,6 @@
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
-                        <small class="error-message" id="name-error"></small> 
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -63,7 +62,6 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-                        <small class="error-message" id="purok-error"></small> 
                     </div>
                 </div>
             </div>
@@ -72,14 +70,12 @@
                     <div class="form-group">
                         <label for="age">Age:</label>
                         <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age">
-                        <small class="error-message" id="age-error"></small> 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="date">Date:</label>
                         <input type="date" class="form-control" id="date" name="date">
-                        <small class="error-message" id="date-error"></small> 
                     </div>
                 </div>
             </div>
@@ -98,128 +94,21 @@
                             <option value="LiveIn">Live-in</option>
                             <option value="Unknown">Unknown</option>
                         </select>
-                        <small class="error-message" id="status-error"></small> 
                     </div>
                 </div>
             </div>
             <div class="button-container">
-                <button class="btn-custom">Back</button>
+                <button class="btn-custom" id="back-btn">Back</button>
                 <button class="custom-btn" id="next-btn">Next</button>
             </div>
         </form>
     </div>
 </div>
-<div id="overview" style="display: none;">
-    <h3>Overview</h3>
-    <!-- Display user inputted information -->
-    <div id="user-info">
-        <p><strong>Name:</strong> <span id="overview-name"></span></p>
-        <p><strong>Purok:</strong> <span id="overview-purok"></span></p>
-        <p><strong>Age:</strong> <span id="overview-age"></span></p>
-        <p><strong>Date:</strong> <span id="overview-date"></span></p>
-        <p><strong>Civil Status:</strong> <span id="overview-status"></span></p>
-    </div>
-    <div id="user-info"></div>
-    <div class="button-container" id="button-container">
-        <button class="btn-custom" id="edit-btn">Edit</button>
-        <button class="btn-custom" id="cancel-btn">Cancel</button>
-        <button class="custom-btn" id="confirm-btn">Submit</button>
-    </div>
-</div>
-
 
 <!--form error checking -->
-<script>
-    function validateForm() {
-        var name = document.getElementById('name').value;
-        var purok = document.getElementById('purok').value;
-        var age = document.getElementById('age').value;
-        var date = document.getElementById('date').value;
-        var status = document.getElementById('status').value;
-    
-        if (name.trim() == '') {
-            document.getElementById('name-error').textContent = 'Please enter your name';
-            return false;
-        } else {
-            document.getElementById('name-error').textContent = '';
-        }
-    
-        if (purok.trim() == '') {
-            document.getElementById('purok-error').textContent = 'Please enter your purok';
-            return false;
-        } else {
-            document.getElementById('purok-error').textContent = '';
-        }
-    
-        if (age.trim() == '') {
-            document.getElementById('age-error').textContent = 'Please enter your age';
-            return false;
-        } else {
-            document.getElementById('age-error').textContent = '';
-        }
-    
-        if (date.trim() == '') {
-            document.getElementById('date-error').textContent = 'Please enter the date';
-            return false;
-        } else {
-            document.getElementById('date-error').textContent = '';
-        }
-    
-        if (status.trim() == '') {
-            document.getElementById('status-error').textContent = 'Please select your civil status';
-            return false;
-        } else {
-            document.getElementById('status-error').textContent = ''; 
-        }
-    }
-    
-    function displayOverview() {
-    document.getElementById('overview-name').textContent = document.getElementById('name').value;
-    document.getElementById('overview-purok').textContent = document.getElementById('purok').value;
-    document.getElementById('overview-age').textContent = document.getElementById('age').value;
-    document.getElementById('overview-date').textContent = document.getElementById('date').value;
-    document.getElementById('overview-status').textContent = document.getElementById('status').value;
-    
-    
-    document.getElementById('user-info').innerHTML = userInfo;
-        
-        document.getElementById('content').style.display = 'none';
-        document.getElementById('overview').style.display = 'block';
-    }
-    
-    function editForm() {
-        document.getElementById('content').style.display = 'block';
-        document.getElementById('overview').style.display = 'none';
-    }
-
-    document.getElementById('next-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        
-
-        displayOverview();
-    });
-
-    document.getElementById('edit-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        editForm();
-    });
-
-    document.getElementById('cancel-btn').addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        document.getElementById('registrationForm').reset();
-        editForm();
-    });
-
-    document.getElementById('confirm-btn').addEventListener('click', function(event) {
-    });
-</script>
-    
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
     
