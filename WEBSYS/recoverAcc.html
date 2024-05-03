@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="recoverAcc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Login">
+        <div class="background">
+            <img class="backgrnd" src="icons/bg half.png" alt="bg">
+        </div>
+        <div class="logo">
+            <img class="LegazpiLogo" src="icons/Legazpi-LOGO.png" />
+            <img class="BrgyLogo" src="icons/BRGY LOGO.png" />
+        </div>
+        <div class="text">
+            <div class="titleTxt"><span style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 48px;">Barangay</span><span style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 85px; "><br /></span><span style="color: white; font-size: 80px; font-family:'Montserrat', sans-serif; font-weight: 700; line-height: 85px;">Monitoring <br />System</span></div>
+        </div>
+
+        <div class="mainLogin">
+            <form action="" method="post" class="forms">
+                <div class="loginTop">New Password</div>
+
+                <div class="newPass">
+                    <div>Enter new Password</div>
+                    <div class="newPassInputField">
+                        <input type="password" class="ComponentName" placeholder="Enter new Password">
+                    </div>
+                </div>
+
+                <div class="confirmPass">
+                    <div>Confirm new Password</div>
+                    <div class="confirmInputField">
+                        <input type="password" class="ComponentName" placeholder="Confirm new Password">
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <a href="forgotPass.html" class="btn-back"> Back </a>
+                    <button class="btn-continue" id="Btn">Confirm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Password Change Successfully!</p>
+            <button onclick="hidePopup()">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+    
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            window.location.href = 'login.html'; 
+        }
+    
+        document.getElementById('Btn').addEventListener('click', function (event) {
+            event.preventDefault();
+            showPopup();
+        });
+    </script>
+    
+</body>
+
+</html>
