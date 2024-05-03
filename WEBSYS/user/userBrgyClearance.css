@@ -145,8 +145,16 @@ select.form-control {
     font-size: 16px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
 .custom-btn {
-    width: 35%;
+    width: 30%;
     padding: 10px 20px;
     background-color: #748C70;
     color: #FFFFFF;
@@ -155,12 +163,32 @@ select.form-control {
     cursor: pointer;
     font-size: 16px;
     display: block;
-    margin: 40px auto;
+    margin: 0 80px;
 }
 
 .custom-btn:hover,
 .custom-btn:focus {
     background-color: #5F775B;
+    color: #FFFFFF;
+    border: none; 
+}
+
+.btn-custom{
+    width: 25%;
+    padding: 10px 20px;
+    background-color: #999BA1;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 80px;
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #6E7074;
     color: #FFFFFF;
     border: none; 
 }
