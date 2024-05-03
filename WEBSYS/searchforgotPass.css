@@ -80,7 +80,7 @@ form {
     align-items: center;
     gap: 51px;
     display: flex;
-    margin-top: 150px;
+    margin-top: 200px;
     margin-left: 60px;
 }
 
@@ -168,48 +168,13 @@ input[type="text"] {
     display: inline-flex;
     margin-left: 1px;
 }
-
-button[type="back"] {
-    margin-left: -230px;
-    background-color: #999BA1;
-    width: 120px;
-    height: 45px;
-}
-button[type="continue"] {
-    margin-left: -80px;
-    background-color: #748C70;
-    margin-right: -250px;
-    width: 300px;
-    height: 45px;
-  
-}
-
-button[type="back"],
-button[type="continue"] {
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-   
-}
-
-button[type="back"]:hover {
-    background-color: #88898c;
-}
-
-button[type="continue"]:hover {
-    background-color:#5e785e;
-}
 .button-container {
     display: flex;
     justify-content: space-between;
     position: fixed;
     bottom: 20px;
     left: 72.5%;
-    top: 530px;
+    top: 500px;
     transform: translateX(-50%);
 }
 
