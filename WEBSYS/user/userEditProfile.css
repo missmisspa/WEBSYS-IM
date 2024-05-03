@@ -1,0 +1,200 @@
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25%; 
+    background-color: #F7F8FA;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 3px 0px 12px -6px rgba(0,0,0,0.64);
+    -webkit-box-shadow: 3px 0px 12px -6px rgba(0,0,0,0.64);
+    -moz-box-shadow: 3px 0px 12px -6px rgba(0,0,0,0.64);
+}
+
+#sidebar img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+
+#sidebar h4 {
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: #748C70;
+}
+
+#sidebar a {
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+    display: block;
+    color: #3B3D41;
+    border-left: 4px solid transparent;
+    margin-bottom: 10px;
+}
+
+#sidebar .logout {
+    margin-top: 50px; 
+}
+
+#sidebar a.active,
+#sidebar a:hover {
+    border-radius: 0px 10px 10px 0px;
+    background-color: #e5e9e7;
+    font-weight: 600;
+    color: #748C70;
+    border-left-color: #748C70;
+    padding-left: 16px;
+    padding-right: 24px;
+}
+
+#sidebar a i {
+    margin-right: 10px;
+}
+
+#content {
+    margin-top: 6%;
+    margin-left: 26%;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#content h2{
+    font-weight: 700;
+    text-align: center;
+}
+
+#container{
+    margin-top: 40px;
+}
+
+.profile-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+
+label[for="first_name"],
+label[for="middle_name"],
+label[for="last_name"],
+label[for="purok"],
+label[for="barangay"],
+label[for="city"],
+label[for="province"],
+label[for="age"],
+label[for="birthday"],
+label[for="civil_status"],
+label[for="citizenship"],
+label[for="sex"],
+label[for="education"],
+label[for="contact_number"],
+label[for="email"] {
+    font-size: 19px;
+    font-weight: 550;
+}
+
+.form-check-label{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form-control[type="text"] {
+    width: 100%; 
+}
+
+.form-control[type="text"],
+.form-control[type="email"] {
+    height: 40px; 
+    font-size: 16px; 
+}
+
+.form-control {
+    border-radius: 12px; 
+    border: 1px solid #ced4da; 
+    padding: 10px;
+}
+
+.form-control:hover {
+    border-color: #aaa; 
+}
+
+.form-control:focus {
+    border-color: #748C70;
+    box-shadow: 0 0 0 0.2rem rgb(144, 152, 143);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+        
+}
+
+.custom-btn-cancel{
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    width: 200px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -30px;
+    margin-left: -200px;
+    background-color: #999BA1;
+}
+.custom-btn-cancel:hover{
+    background-color: #88898c;
+}
+.custom-btn-save{
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    width: 300px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -30px;
+    margin-left: 50px;
+    background-color: #748C70;
+}
+.custom-btn-save:hover{
+    background-color: #5F775B;
+}
+
+select {
+    width: 340px;
+    height: 40px;
+    padding: 8px 16px;
+    border: 1px solid #999BA1;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
