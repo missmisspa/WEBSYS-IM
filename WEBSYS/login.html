@@ -7,6 +7,13 @@
     <title>Login</title>
     <link rel="stylesheet" href="login.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            font-size: 12px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,40 +36,83 @@
         </div>
 
         <div class="mainLogin">
-            <form action="" method="post" class="forms">
+            <form id="loginForm" action="user/userDashboard.html" method="post" class="forms">
                 <div class="loginTop">Login</div>
                 <div class="userName">
                     <div class="userTxt">Username</div>
                     <div class="usrNmInputField">
-                        <input type="text" class="ComponentName" placeholder="Enter Username">
+                        <input type="text" id="username" class="ComponentName" placeholder="Enter Username">
                     </div>
-
-
+                    <div id="usernameError" class="error"></div>
                 </div>
                 <div class="password">
-                    <div class="passTxt">
-                        Password</div>
+                    <div class="passTxt">Password</div>
                     <div class="passInputField">
-                        <input type="password" class="ComponentName" placeholder="Enter Password">
+                        <input type="password" id="password" class="ComponentName" placeholder="Enter Password">
                     </div>
-
+                    <div id="passwordError" class="error"></div>
                     <a href="searchforgotPass.html" class="forgetPass">Forget Password</a>
                 </div>
-                <a href="user/userDashboard.html" class="Button" style="text-decoration-line: none; color: white;">
+                <button type="submit" class="Button" id="loginButton" style="text-decoration-line: none; color: white;">
                     <span>Login</span>
-                </a>
-
+                </button>
                 <div class="register">
                     <span class="registerText">Don't Have an Account? </span>
                     <a href="register.html" class="registerLink">Register Now</a>
                 </div>
-
-
-                    </div>
-                </div>
             </form>
         </div>
     </div>
+
+    <script>
+        window.onload = function () {
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                var usernameRegex = /^[a-zA-Z0-9]{1,20}$/;
+                var passwordRegex = /^[a-zA-Z0-9]{1,20}$/;
+
+                var usernameValid = usernameRegex.test(username);
+                var passwordValid = passwordRegex.test(password);
+
+                var usernameEmpty = username.trim() === '';
+                var passwordEmpty = password.trim() === '';
+
+                var errors = [];
+
+                var usernameError = document.getElementById('usernameError');
+                var passwordError = document.getElementById('passwordError');
+
+                if (usernameEmpty) {
+                    errors.push('Username is required');
+                    usernameError.innerText = 'Username is required';
+                } else if (!usernameValid) {
+                    errors.push('Username is not valid. Please enter alphanumeric characters only');
+                    usernameError.innerText = 'Username is not valid. Please enter alphanumeric characters only';
+                } else {
+                    usernameError.innerText = '';
+                }
+
+                if (passwordEmpty) {
+                    errors.push('Password is required');
+                    passwordError.innerText = 'Password is required';
+                } else if (!passwordValid) {
+                    errors.push('Password is not valid. It must contain letters and numbers only');
+                    passwordError.innerText = 'Password is not valid. Please enter alphanumeric characters only';
+                } else if (!(/[a-zA-Z]/.test(password)) || !(/[0-9]/.test(password))) {
+                    errors.push('Password is weak. It must contain a combination of letters and numbers');
+                    passwordError.innerText = 'Password is weak. It must contain a combination of letters and numbers';
+                } else {
+                    passwordError.innerText = '';
+                }
+
+                if (errors.length > 0) {
+                    event.preventDefault(); // Prevent form submission if there are errors
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>
