@@ -168,23 +168,90 @@
 
                 <div class="userType">
                     <div class="radioLabel">
-                        <input type="radio" name="userType" id="barangayOfficial" class="radioInput" value="official">
+                        <input type="radio" name="userType" id="barangayOfficial" class="radioInput" value="official" onclick="showDropdown()">
                         <label for="barangayOfficial" class="radioText">Barangay Official</label>
+                        <select id="brgypositions" name="Position" style="display: none; margin-left: 5px;">
+                            <option value="">Select</option>
+                            <option value="pos1">Brgy Captain</option>
+                            <option value="pos2">Brgy Kagawad</option>
+                            <option value="pos3">Brgy Secretary</option>
+                            <option value="pos4">Brgy Treasurer</option>
+                            <option value="pos5">SK Chairman</option>
+                        </select>
                     </div>
                     <div class="radioLabel">
-                        <input type="radio" name="userType" id="resident" class="radioInput" value="resident">
+                        <input type="radio" name="userType" id="resident" class="radioInput" value="resident" onclick="hideDropdown()">
                         <label for="resident" class="radioText">Resident</label>
                     </div>
-                    <div class="error"></div> <!-- Error message for user type -->
                 </div>
 
+                <!-- <a href="login.html" class="btn-back">Back</a>
+                <button type="button" class="btn-next" id="nextButton">Next</button> -->
                 <a href="login.html" class="btn-back">Back</a>
-                <button type="button" class="btn-next" id="nextButton">Next</button>
+                <button type="button" class="btn-next" id="nextButton">
+                    <a href="registerPage2.html" style="text-decoration-line: none; color: white;">
+                        Next
+                    </a>
+                </button>
             </form>
         </div>
     </div>
 
     <script>
+
+        var submitForm = true; 
+    
+        function showDropdown() {
+            var dropdown = document.getElementById("brgypositions");
+            dropdown.style.display = "block";
+            dropdown.value = "";
+        }
+
+        function hideDropdown() {
+            var dropdown = document.getElementById("brgypositions");
+            dropdown.style.display = "none";
+        }
+
+        document.getElementById("nextButton").addEventListener("click", function (event) {
+            console.log("Next button clicked");
+            if (!submitForm) {
+                event.preventDefault(); 
+                return; 
+            }
+            var userType = document.querySelector('input[name="userType"]:checked');
+            console.log("User type:", userType);
+            if (userType) {
+                if (userType.value === "resident") {
+                    console.log("Redirecting to residentCreateAcc.html");
+                    window.location.href = "residentCreateAcc.html";
+                } else if (userType.value === "official") {
+                    var position = document.getElementById("brgypositions").value;
+                    if (position.trim() === "") {
+                        console.log("Position not selected for barangay official");
+                        alert("Please select a position.");
+                        event.preventDefault(); 
+                        return; 
+                    } else {
+                        console.log("Redirecting to brgyOfficialsCreateAcc.html");
+                        window.location.href = "createAccBrgyOfficial.html";
+                    }
+                }
+            } else {
+                console.log("User type not selected");
+                alert("Please select a user type.");
+                event.preventDefault(); 
+                return; 
+            }
+            
+        });
+
+
+
+
+
+
+
+
         document.getElementById("nextButton").addEventListener("click", function () {
             var inputs = document.querySelectorAll('input[type="text"], input[type="email"], select');
             var isValid = true;
