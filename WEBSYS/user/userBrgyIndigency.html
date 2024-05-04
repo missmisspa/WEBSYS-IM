@@ -55,7 +55,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="purok">Purok:</label>
-                            <input type="text" class="form-control" id="purok" name="purok" placeholder="Enter your purok">
+                            <select class="form-control" id="purok" name="purok">
+                                <option value="">Select your purok</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -93,23 +99,9 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="purpose">Purpose:</label><br>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="purpose1" name="purpose[]" value="Education">
-                                <label class="form-check-label" for="purpose1">Education</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="purpose2" name="purpose[]" value="Healthcare">
-                                <label class="form-check-label" for="purpose2">Healthcare</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="purpose3" name="purpose[]" value="Employment">
-                                <label class="form-check-label" for="purpose3">Employment</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="purpose4" name="purpose[]" value="Other">
-                                <label class="form-check-label" for="purpose4">Other</label>
+                           
                                 <div class="form-check form-check-inline">
-                                    <input type="text" class="form-control" id="otherPurpose" name="otherPurpose" placeholder="Enter other purpose">
+                                    <input type="text" class="form-control" id="otherPurpose" name="otherPurpose" placeholder="Enter purpose">
                                 </div>
                             </div>
                         </div>                                                              
