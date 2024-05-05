@@ -182,6 +182,10 @@ select.form-control {
     border: none; 
 }
 
+.error-message {
+    color: red;
+}
+
 .popup {
     display: none;
     position: fixed;
