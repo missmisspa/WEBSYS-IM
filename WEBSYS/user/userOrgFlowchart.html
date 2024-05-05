@@ -48,7 +48,6 @@
     </div>
 </div>
 
-      
 <div class="popup" id="popup">
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>
@@ -59,11 +58,11 @@
 
 <script>
     function showPopup() {
-        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup').classList.add('active');
     }
 
     function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup').classList.remove('active');
     }
 
     function confirmLogout() {

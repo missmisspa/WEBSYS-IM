@@ -38,6 +38,7 @@
     color: #3B3D41;
     border-left: 4px solid transparent;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease, border-left-color 0.3s ease;
 }
 
 #sidebar .logout {
