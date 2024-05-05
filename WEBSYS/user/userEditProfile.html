@@ -49,54 +49,54 @@
         </div>
         <form id="profileForm" method="post" action="#">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" >
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="middle_name">Middle Name</label>
-                        <input type="text" class="form-control" id="middle_name" name="middle_name" >
+                        <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter Middle Name">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" >
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
                     </div>
                 </div>
-                <!-- <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
-                        <label for="suffix_name">Suffix Name</label>
-                        <input type="text" class="form-control" id="suffix_name" name="suffix_name" >
+                        <label for="suffix">Suffix</label>
+                        <input type="text" class="form-control" id="suffix_name" name="suffix_name" placeholder="Enter Suffix">
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="purok">Purok</label>
-                        <select id="purok" name="purok">
-                            <option value="">Select</option>
-                            <option value="">Purok 1</option>
-                            <option value="">Purok 2</option>
-                            <option value="">Purok 3</option>
-                            <option value="">Purok 4</option>
-                        </select>
+                        <select class="form-control" id="purok" name="purok" placeholder="Select your purok">
+                        <option value="" disabled selected>Select your purok</option>
+                        <option value="Single">Purok 1</option>
+                        <option value="Married">Purok 2</option>
+                        <option value="Divorced">Purok 3</option>
+                        <option value="Widowed">Purok 4</option>
+                    </select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="barangay">Barangay</label>
-                        <input type="text" class="form-control" id="barangay" name="barangay" >
+                        <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" >
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter City">
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="province">Province</label>
-                        <input type="text" class="form-control" id="province" name="province" >
+                        <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="age">Age</label>
-                        <input type="number" class="form-control" id="age" name="age" >
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -124,29 +124,42 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="civil_status">Civil Status</label>
-                        <select id="status" name="status">
-                            <option value="">Select one</option>
-                            <option value="">Single</option>
-                            <option value="">Married</option>
-                            <option value="">Widowed</option>
-                            <option value="">Divorce</option>
-                            <option value="">Seperated</option>
-                            <option value="">Annulled</option>
-                            <option value="">Live in</option>
-                            <option value="">Unknown</option>
+                        <select class="form-control" id="status" name="status" placeholder="Select Civil Status">
+                            <option value="" disabled selected>Select your civil status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Separated">Separated</option>
+                            <option value="Annulled">Annulled</option>
+                            <option value="LiveIn">Live-in</option>
+                            <option value="Unknown">Unknown</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="citizenship">Citizenship</label>
-                        <input type="text" class="form-control" id="citizenship" name="citizenship" >
+                        <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="sex">Sex</label>
-                        <input type="text" class="form-control" id="sex" name="sex" >
+                        <div class="row">
+                            <div class="col">
+                                <div id="radioBtn" class="radioBtn">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sex" id="male" value="male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,44 +167,46 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="education">Educational Attainment</label>
-                        <select id="educational_attainment" name="educational_attainment">
-                            <option value="">Select one</option>
-                            <option value="">No Formal education</option>
-                            <option value="">Primary Level</option>
-                            <option value="">Primary Education</option>
-                            <option value="">Secondary Level</option>
-                            <option value="">Secondary Education</option>
-                            <option value="">Vocational Level</option>
-                            <option value="">College Level</option>
-                            <option value="">College Education</option>
-                            <option value="">Masters Level</option>
-                            <option value="">Masters Grad</option>
-                            <option value="">Doctorate Level</option>
-                            <option value="">Doctorate Grad</option>
+                        <select class="form-control" id="status" name="status" placeholder="Select your educational attainment">
+                            <option value="" disabled selected>Select your educational attainment</option>
+                            <option value="NoEducation">No Formal education</option>
+                            <option value="PrimaryLevel">Primary Level</option>
+                            <option value="PrimaryEducation">Primary Education</option>
+                            <option value="SecondaryEducation">Secondary Education</option>
+                            <option value="VocationalLevel">Vocational Level</option>
+                            <option value="VocationalEducation">Vocational Education</option>
+                            <option value="CollegeLevel">College Level</option>
+                            <option value="CollegeEducation">College Education</option>
+                            <option value="MasterLevel">Master Level</option>
+                            <option value="MasterEducation">Master Education</option>
+                            <option value="DoctorateLevel">Doctorate Level</option>
+                            <option value="DoctorateEducation">Doctorate Education</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="contact_number">Contact Number</label>
-                        <input type="text" class="form-control" id="contact_number" name="contact_number" >
+                        <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number">
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" >
+            <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+                </div>                                
+            </div>
             </div>
             <div class="button-container">
-                <a href="userProfile.html" class="custom-btn-cancel" id="editProfile-btn" style="text-decoration-line: none; color: white;">Cancel</a>
-          
-                <a href="userProfile.html" class="custom-btn-save" id="editProfile-btn"  style="text-decoration-line: none; color: white;">Save Changes</a>
+                <a href="userProfile.html" class="btn-custom" id="editProfile-btn">Cancel</a>
+                <a href="userProfile.html" class="custom-btn" id="editProfile-btn">Save Changes</a>
             </div>
         </form>
     </div>
 </div>
 
-     
 <div class="popup" id="popup">
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>

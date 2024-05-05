@@ -118,18 +118,6 @@ label[for="status"] {
     box-shadow: 0 0 0 0.2rem rgb(144, 152, 143);
 }
 
-
-/*design for checkbox*/
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    background-color: #fff;
-    position: relative;
-    margin-right: 6px;
-    margin-top: 10px;
-}
-
 /*design for dropdown*/
 select.form-control {
     appearance: none; 
