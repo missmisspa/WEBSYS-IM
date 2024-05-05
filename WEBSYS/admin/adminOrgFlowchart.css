@@ -23,7 +23,7 @@
 #sidebar h4 {
     margin-bottom: 50px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 600;
     color: #748C70;
 }
@@ -40,9 +40,6 @@
     margin-bottom: 10px;
 }
 
-#sidebar .logout {
-    margin-top: 50px; 
-}
 
 #sidebar a.active,
 #sidebar a:hover {
