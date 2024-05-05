@@ -21,13 +21,13 @@ body {
 }
 
 .mainLogin {
-    width: 1300px; 
-    height: 750px; 
-    left: calc(50% - 637.5px); 
-    top: 20px; 
+    width: 1300px;
+    height: 773px;
+    left: calc(50% - 637.5px);
+    top: 10px;
     background: white;
     position: fixed;
-    border-radius: 12px; 
+    border-radius: 12px;
 }
 
 .loginTop {
@@ -35,48 +35,54 @@ body {
     height: 35px;
     text-align: center;
     color: #19191B;
-    font-size: 44px;
+    font-size: 38px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    line-height: 120px;
+    line-height: 80px;
     word-wrap: break-word;
-    margin-bottom: 70px;
-    margin-left: calc(50% - 269px); 
+    margin-bottom: 50px;
+    margin-left: calc(50% - 269px);
 }
+
 .registration-overview {
     width: 1113px;
-    height: auto; 
-    margin: 0 auto; 
-    text-align: center; 
-    color: #19191B; 
-    font-family: Montserrat; 
-    font-weight: 500; 
-    word-wrap: break-word; 
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    color: #19191B;
+    font-family: Montserrat;
+    font-weight: 500;
+    word-wrap: break-word;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-left: -600px;
+    margin-top: 20px;
 }
 
 .label {
     color: #3B3D41;
-    font-size: 16px; 
-    font-weight: 700; 
-    line-height: 15px; 
-    word-wrap: break-word; 
-    margin-left: 50px; 
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 15px;
+    word-wrap: break-word;
+    margin-left: 50px;
+    text-align: right;
+    padding-right: 10px;
 }
 
 .value {
-    color: #3B3D41; 
-    font-size: 22px; 
-    font-weight: 400; 
-    line-height: 25px; 
-    word-wrap: break-word; 
+    color: #3B3D41;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25px;
+    word-wrap: break-word;
 }
+
 .login-icon {
     width: 35px;
     height: 35px;
@@ -84,14 +90,15 @@ body {
     top: 40px;
     right: 50px;
 }
+
 .login-icon:hover {
-    width: 40px; 
-    height: 40px; 
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     transition: 0.2s ease;
 }
 
-.btn-next{
+.btn-next {
     text-align: center;
     text-decoration: none;
     position: absolute;
@@ -107,8 +114,25 @@ body {
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    background-color:#748C70;
+    background-color: #748C70;
 }
-.btn-next:hover{
+
+.btn-next:hover {
     background-color: #5e785e;
+}
+.value {
+    width: 600px;
+    height: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: white;
+    border-radius: 12px;
+    border: 2px #EAEBEC solid;
+    justify-content: flex-start;
+    align-items: center;
+    display: inline-flex;
+    margin-left: 1px;
+    margin-top: -10px;
 }
