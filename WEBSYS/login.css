@@ -207,8 +207,8 @@ form {
 .Button {
     width: 100%;
     max-width: 400px;
-    height: 45px;
-    padding: 14px;
+    height: 35px;
+    padding: 10px;
     margin-left: 15px;
     margin-top: 5px;
     background: #748C70;
@@ -227,6 +227,7 @@ form {
     border: none;
     outline: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .Button:hover {
