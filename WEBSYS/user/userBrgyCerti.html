@@ -114,6 +114,8 @@
                 <button class="custom-btn" id="next-btn">Next</button>
             </div>
         </form>
+        <!-- form preview -->
+        <div id="form-preview" style="display:none;"></div>
     </div>
 </div>
 
@@ -126,6 +128,86 @@
 </div>
 
 <script>
+    document.getElementById("next-btn").addEventListener("click", function(event) {
+        event.preventDefault();
+        var isValid = validateForm();
+        if (isValid) {
+            showPreview();
+        }
+    });
+
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var purok = document.getElementById("purok").value;
+        var age = document.getElementById("age").value;
+        var date = document.getElementById("date").value;
+        var status = document.getElementById("status").value;
+        var purpose = document.getElementById("purpose").value;
+
+        var errors = false;
+
+        document.querySelectorAll(".error-message").forEach(function(element) {
+            element.textContent = "";
+        });
+
+        if (name.trim() === "") {
+            document.getElementById("name-error").textContent = "Please enter your name";
+            errors = true;
+        }
+
+        if (purok.trim() === "") {
+            document.getElementById("purok-error").textContent = "Please select your purok";
+            errors = true;
+        }
+
+        if (age.trim() === "") {
+            document.getElementById("age-error").textContent = "Please enter your age";
+            errors = true;
+        }
+
+        if (date.trim() === "") {
+            document.getElementById("date-error").textContent = "Please select a date";
+            errors = true;
+        }
+
+        if (status.trim() === "") {
+            document.getElementById("status-error").textContent = "Please select your civil status";
+            errors = true;
+        }
+
+        if (purpose.trim() === "") {
+            document.getElementById("purpose-error").textContent = "Please enter your purpose";
+            errors = true;
+        }
+
+        return !errors;
+    }
+
+    function showPreview() {
+        var formPreview = document.getElementById("form-preview");
+        var name = document.getElementById("name").value;
+        var purok = document.getElementById("purok").value;
+        var age = document.getElementById("age").value;
+        var date = document.getElementById("date").value;
+        var status = document.getElementById("status").value;
+        var purpose = document.getElementById("purpose").value;
+
+        var previewHtml = `
+            <h4><strong>Name:</strong> ${name}<h4/>
+            <h4><strong>Purok:</strong> ${purok}</h4>
+            <h4><strong>Age:</strong> ${age}</h4>
+            <h4><strong>Date:</strong> ${date}</h4>
+            <h4><strong>Civil Status:</strong> ${status}</p>
+            <h4><strong>Purpose:</strong> ${purpose}</h4>
+        `;
+
+        formPreview.innerHTML = previewHtml;
+        formPreview.style.display = "block";
+
+        document.getElementById("registrationForm").style.display = "none";
+
+        document.getElementById("back-btn").style.display = "block";
+    }
     function showPopup() {
         document.getElementById('popup').style.display = 'block';
     }
