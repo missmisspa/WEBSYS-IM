@@ -183,16 +183,13 @@
                         <input type="radio" name="userType" id="resident" class="radioInput" value="resident" onclick="hideDropdown()">
                         <label for="resident" class="radioText">Resident</label>
                     </div>
+                    <div class="error"></div> <!-- Error message for user type -->
                 </div>
 
                 <!-- <a href="login.html" class="btn-back">Back</a>
                 <button type="button" class="btn-next" id="nextButton">Next</button> -->
                 <a href="login.html" class="btn-back">Back</a>
-                <button type="button" class="btn-next" id="nextButton">
-                    <a href="registerPage2.html" style="text-decoration-line: none; color: white;">
-                        Next
-                    </a>
-                </button>
+                <button type="button" class="btn-next" id="nextButton">Next</button>
             </form>
         </div>
     </div>
@@ -214,12 +211,17 @@
 
         document.getElementById("nextButton").addEventListener("click", function (event) {
             console.log("Next button clicked");
-            if (!submitForm) {
-                event.preventDefault(); 
-                return; 
+
+            // Check if all required fields are filled in and valid
+            var isValid = validateForm();
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent the default action (redirecting to another page)
+                return;
             }
+
+            // If all fields are valid, proceed with redirection based on user type
             var userType = document.querySelector('input[name="userType"]:checked');
-            console.log("User type:", userType);
             if (userType) {
                 if (userType.value === "resident") {
                     console.log("Redirecting to residentCreateAcc.html");
@@ -229,8 +231,8 @@
                     if (position.trim() === "") {
                         console.log("Position not selected for barangay official");
                         alert("Please select a position.");
-                        event.preventDefault(); 
-                        return; 
+                        event.preventDefault();
+                        return;
                     } else {
                         console.log("Redirecting to brgyOfficialsCreateAcc.html");
                         window.location.href = "createAccBrgyOfficial.html";
@@ -239,57 +241,37 @@
             } else {
                 console.log("User type not selected");
                 alert("Please select a user type.");
-                event.preventDefault(); 
-                return; 
+                event.preventDefault();
+                return;
             }
-            
         });
 
-
-
-
-
-
-
-
-        document.getElementById("nextButton").addEventListener("click", function () {
+        // Function to validate the form
+        function validateForm() {
             var inputs = document.querySelectorAll('input[type="text"], input[type="email"], select');
             var isValid = true;
-            inputs.forEach(function(input) {
-                if (input.value.trim() === "" && !input.hasAttribute('readonly')) {
+            inputs.forEach(function (input) {
+                if (input.value.trim() === "" && !input.hasAttribute('readonly') && input.name !== 'Position' && input.name !== 'userType' && input.id !== 'middle_name' && input.id !== 'suffix') {
                     isValid = false;
                     showError(input, "This field is required.");
                 }
             });
 
+            // Validate length restrictions for name inputs
             var nameInputs = document.querySelectorAll('input[type="text"]');
-            nameInputs.forEach(function(input) {
+            nameInputs.forEach(function (input) {
                 if (input.id === "first_name" || input.id === "middle_name" || input.id === "last_name" || input.id === "suffix") {
-                    input.value = input.value.substring(0, 15); 
+                    if (input.value.length > 15 && input.id !== "suffix") {
+                        isValid = false;
+                        showError(input, "Maximum 15 characters allowed.");
+                    } else if (input.value.length > 10 && input.id === "suffix") {
+                        isValid = false;
+                        showError(input, "Maximum 10 characters allowed.");
+                    }
                 }
             });
 
-            var ageInput = document.getElementById("age");
-            var ageValue = ageInput.value.trim();
-            if (ageValue !== "" && isNaN(ageValue)) {
-                isValid = false;
-                showError(ageInput, "Please enter a valid age.");
-            }
-
-            var citizenshipInput = document.getElementById("citizenship");
-            var citizenshipValue = citizenshipInput.value.trim();
-            if (citizenshipValue !== "" && !/^[a-zA-Z\s]*$/.test(citizenshipValue)) {
-                isValid = false;
-                showError(citizenshipInput, "Citizenship must only contain letters.");
-            }
-
-            var contactNumberInput = document.getElementById("contact_number");
-            var contactNumberValue = contactNumberInput.value.trim();
-            if (contactNumberValue !== "" && !/^\d{11}$/.test(contactNumberValue)) {
-                isValid = false;
-                showError(contactNumberInput, "Contact number must contain exactly 11 numbers.");
-            }
-
+            // Validate email format
             var emailInput = document.getElementById("email");
             var emailValue = emailInput.value.trim();
             if (emailValue !== "" && !isValidEmail(emailValue)) {
@@ -297,22 +279,22 @@
                 showError(emailInput, "Please enter a valid email address.");
             }
 
-            if (isValid) {
-                var userType = document.querySelector('input[name="userType"]:checked');
-                if (userType) {
-                    if (userType.value === "resident") {
-                        console.log("Redirecting to residentCreateAcc.html");
-                        window.location.href = "residentCreateAcc.html";
-                    } else if (userType.value === "official") {
-                        console.log("Redirecting to brgyOfficialsCreateAcc.html");
-                        window.location.href = "createAccBrgyOfficial.html";
-                    }
-                } else {
-                    console.log("User type not selected");
-                    alert("Please select a user type.");
-                }
+            // Validate numeric input for age
+            var ageInput = document.getElementById("age");
+            var ageValue = ageInput.value.trim();
+            if (ageValue !== "" && isNaN(ageValue)) {
+                isValid = false;
+                showError(ageInput, "Please enter a valid age.");
             }
-        });
+
+            return isValid;
+        }
+
+        // Function to validate email format
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
 
         // Display error messages
         function showError(input, message) {
@@ -322,9 +304,9 @@
 
         // Input fields restrictions
         var nameInputs = document.querySelectorAll('input[type="text"]');
-        nameInputs.forEach(function(input) {
+        nameInputs.forEach(function (input) {
             if (input.id === "first_name" || input.id === "middle_name" || input.id === "last_name" || input.id === "suffix") {
-                input.addEventListener("input", function() {
+                input.addEventListener("input", function () {
                     if (this.value.length > 15 && this.id !== "suffix") {
                         this.value = this.value.substring(0, 15);
                     } else if (this.value.length > 10 && this.id === "suffix") {
@@ -340,7 +322,5 @@
             return emailRegex.test(email);
         }
     </script>
-
 </body>
-
 </html>
