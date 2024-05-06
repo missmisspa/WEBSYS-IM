@@ -42,8 +42,8 @@
 
     <div id="content">
         <!-- add php code here -->
-        <h2>Welcome Back, User</h2>
-        <p> Select from a range of essential documents, you can view and download it.</p>
+        <h2>Full Disclosure Board</h2>
+        <p> Welcome to our barangay's commitment to transparency and accountability. These documents embody our barangay's pledge to foster trust, engagement, and collaboration within our community. We invite you to explore these resources and join us on our journey towards a more transparent and accountable governance.</p>
         <div id="btns">        
             <div class="row mt-4">
                 <div class="col-4">
@@ -63,7 +63,6 @@
         </div>
     </div>
         
-         
 <div class="popup" id="popup">
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>
@@ -74,11 +73,11 @@
 
 <script>
     function showPopup() {
-        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup').classList.add('active');
     }
 
     function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup').classList.remove('active');
     }
 
     function confirmLogout() {
