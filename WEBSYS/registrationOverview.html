@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - Resident</title>
+    <title>Registration Overview</title>
     <link rel="stylesheet" href="registrationOverview.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -20,24 +19,57 @@
             <div class="loginTop">Account Overview</div>
             <div class="registration-overview">
 
-                <div class="detail">
-                    <span class="label">Complete Name:</span> <span class="value"></span>
-                    <span class="label">Complete Addres:</span> <span class="value"></span>
-                    <span class="label">Age:</span> <span class="value"></span>
-                    <span class="label">Birthday:</span> <span class="value"></span>
-                    <span class="label">Civil Status:</span> <span class="value"></span>
-                    <span class="label">Citizenship:</span> <span class="value"></span>
-                    <span class="label">Sex:</span> <span class="value"></span>
-                    <span class="label">Voter:</span> <span class="value"></span>
-                    <span class="label">Educational Attainment:</span> <span class="value"></span>
-                    <span class="label">Contact Number:</span> <span class="value"></span>
-                    <span class="label">Email Address:</span> <span class="value"></span>
-                    <span class="label">Username:</span> <span class="value"></span>
-                    <span class="label">Password:</span> <span class="value"></span>
-                    <span class="label">User Type:</span> <span class="value"></span>
-                    <span class="label">What is your favorite fruit:</span> <span class="value"></span>
-                    <span class="label">what is your favorite animal:</span> <span class="value"></span>
-                </div>
+                <form>
+                    <div class="detail">
+                        <label class="label" for="complete-name">Complete Name:</label>
+                        <input class="value required" type="text" id="complete-name" name="complete-name" value="" readonly>
+
+                        <label class="label" for="complete-address">Complete Address:</label>
+                        <input class="value required" type="text" id="complete-address" name="complete-address" value="" readonly>
+
+                        <label class="label" for="age">Age:</label>
+                        <input class="value required" type="number" id="age" name="age" value="" readonly>
+
+                        <label class="label" for="birthday">Birthday:</label>
+                        <input class="value required" type="text" id="birthday" name="birthday" value="" readonly>
+
+                        <label class="label" for="civil-status">Civil Status:</label>
+                        <input class="value required" type="text" id="civil-status" name="civil-status" value="" readonly>
+
+                        <label class="label" for="citizenship">Citizenship:</label>
+                        <input class="value required" type="text" id="citizenship" name="citizenship" value="" readonly>
+
+                        <label class="label" for="sex">Sex:</label>
+                        <input class="value required" type="text" id="sex" name="sex" value="" readonly>
+
+                        <label class="label" for="voter">Voter:</label>
+                        <input class="value required" type="text" id="voter" name="voter" value="" readonly>
+
+                        <label class="label" for="educational-attainment">Educational Attainment:</label>
+                        <input class="value required" type="text" id="educational-attainment" name="educational-attainment" value="" readonly>
+
+                        <label class="label" for="contact-number">Contact Number:</label>
+                        <input class="value required" type="text" id="contact-number" name="contact-number" value="" readonly>
+
+                        <label class="label" for="email">Email Address:</label>
+                        <input class="value required" type="email" id="email" name="email" value="" readonly>
+
+                        <label class="label" for="username">Username:</label>
+                        <input class="value required" type="text" id="username" name="username" value="" readonly>
+
+                        <label class="label" for="password">Password:</label>
+                        <input class="value required" type="password" id="password" name="password" value="" readonly>
+
+                        <label class="label" for="user-type">User Type:</label>
+                        <input class="value required" type="text" id="user-type" name="user-type" value="" readonly>
+
+                        <label class="label" for="favorite-fruit">What is your favorite fruit:</label>
+                        <input class="value required" type="text" id="favorite-fruit" name="favorite-fruit" value="" readonly>
+
+                        <label class="label" for="favorite-animal">What is your favorite animal:</label>
+                        <input class="value required" type="text" id="favorite-animal" name="favorite-animal" value="" readonly>
+                    </div>
+                </form>
 
             </div>
 
@@ -46,15 +78,13 @@
             </a>
 
             <button class="btn-next">
-                <a href="user/userDashboard.html" style="text-decoration-line: none; color:white;" >
+                <a href="user/userDashboard.html" style="text-decoration-line: none; color:white;">
                     Proceed to Dashboard
                 </a>
             </button>
 
-
-
         </div>
-
+    </div>
 </body>
 
 </html>
