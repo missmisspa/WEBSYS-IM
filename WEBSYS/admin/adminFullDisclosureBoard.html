@@ -47,8 +47,8 @@
 <div id="content">
     <!-- add php code here -->
     <h2>Full Disclosure Board</h2>
-    <p> Select from a range of essential documents, you can view and download it.</p>
-        <div id="btns">        
+    <p> Welcome to our barangay's commitment to transparency and accountability. These documents embody our barangay's pledge to foster trust, engagement, and collaboration within our community. We invite you to explore these resources and join us on our journey towards a more transparent and accountable governance.</p>
+    <div id="btns">       
             <div class="row mt-4">
                 <div class="col-4">
                     <a href="/WEBSYS/user/brgy files/annual budget 2024.pdf" class="btn btn-custom btn-block btn-large" target="_blank"><span class="btn-text">Barangay Annual Budget</span> 
@@ -77,13 +77,13 @@
     </div>
     
     <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-        }
-    
-        function hidePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+    function showPopup() {
+        document.getElementById('popup').classList.add('active');
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').classList.remove('active');
+    }
     
         function confirmLogout() {
             showPopup();

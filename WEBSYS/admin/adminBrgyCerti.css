@@ -38,6 +38,7 @@
     color: #3B3D41;
     border-left: 4px solid transparent;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease, border-left-color 0.3s ease;
 }
 
 #sidebar a.active,
@@ -130,6 +131,10 @@ select.form-control {
     font-size: 16px;
 }
 
+.error-message{
+    color: red;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
@@ -149,6 +154,7 @@ select.form-control {
     font-size: 16px;
     display: block;
     margin: 0 80px;
+    text-decoration: none;
 }
 
 .custom-btn:hover,
@@ -156,6 +162,7 @@ select.form-control {
     background-color: #5F775B;
     color: #FFFFFF;
     border: none; 
+    text-decoration: none;
 }
 
 .btn-custom{
@@ -169,6 +176,7 @@ select.form-control {
     font-size: 16px;
     display: block;
     margin: 0 80px;
+    text-decoration: none;
 }
 
 .btn-custom:hover,
@@ -176,6 +184,7 @@ select.form-control {
     background-color: #6E7074;
     color: #FFFFFF;
     border: none; 
+    text-decoration: none;
 }
 
 .popup {
@@ -187,6 +196,14 @@ select.form-control {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1); 
 }
 
 .popup-content {
@@ -204,6 +221,18 @@ select.form-control {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 18px;
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: showPopup 0.3s ease forwards; 
+}
+
+
+@keyframes showPopup {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .popup-content p {
@@ -224,9 +253,8 @@ select.form-control {
     background-color:#999BA1;
     color: white;
 }
+
 .popup-content button#logoutBtn{
     background-color: #5e785e;
-
     color: white;
 }
-

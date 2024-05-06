@@ -51,17 +51,17 @@
         <div id="btns">        
             <div class="row mt-4">
                 <div class="col-4">
-                    <button type="button" class="btn btn-custom btn-block btn-large"><span class="btn-text">Barangay Indigency</span>
+                    <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyIndigency.html'"><span class="btn-text">Barangay Indigency</span>
                     <p class="text-center mt-2">Click here</p>
                     </button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-custom btn-block btn-large"><span class="btn-text">Barangay Clearance</span>
+                    <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyClearance.html'"><span class="btn-text">Barangay Clearance</span>
                     <p class="text-center mt-2">Click here</p>
                     </button>
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-custom btn-block btn-large"><span class="btn-text">Barangay Certificate</span>
+                    <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyCerti.html'"><span class="btn-text">Barangay Certificate</span>
                     <p class="text-center mt-2">Click here</p>
                 </button>
                 </div>
@@ -69,7 +69,6 @@
         </div>
     </div>
 
-     
     <div class="popup" id="popup">
         <div class="popup-content">
             <p>Are you sure you want to logout?</p>
@@ -79,13 +78,13 @@
     </div>
     
     <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-        }
-    
-        function hidePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+    function showPopup() {
+        document.getElementById('popup').classList.add('active');
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').classList.remove('active');
+    }
     
         function confirmLogout() {
             showPopup();

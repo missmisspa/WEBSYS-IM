@@ -17,7 +17,7 @@
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link " href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="/WEBSYS/admin/adminProfile.html"><i class="fas fa-user"></i> Profile</a>
@@ -151,7 +151,7 @@
                     <input type="email" class="form-control" id="email" name="email" readonly>
                 </div>
                 <div class="button-container">
-                    <button class="custom-btn" id="editProfile-btn">Edit</button>
+                    <a href="./adminEditProfile.html" class="custom-btn" id="editProfile-btn">Edit</a>
                 </div>
             </form>
             </div>
@@ -168,11 +168,11 @@
 
 <script>
     function showPopup() {
-        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup').classList.add('active');
     }
 
     function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup').classList.remove('active');
     }
 
     function confirmLogout() {

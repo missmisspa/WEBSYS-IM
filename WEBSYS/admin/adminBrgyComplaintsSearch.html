@@ -17,7 +17,7 @@
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/WEBSYS/admin/adminProfile.html"><i class="fas fa-user"></i> Profile</a>
@@ -46,7 +46,7 @@
 <div id="content">
     <div id="content-top" class="row">
         <div class="col-md-2">
-            <button class="custom-btn" id="back-btn">Back</button>
+            <a href="./adminBrgyComplaintsOverview.html" class="custom-btn" id="back-btn">Back</a>
         </div>
         <div class="col-md-10">
             <h2>Barangay Complaints</h2>
@@ -105,11 +105,11 @@
 
 <script>
     function showPopup() {
-        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup').classList.add('active');
     }
 
     function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup').classList.remove('active');
     }
 
     function confirmLogout() {

@@ -8,8 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="adminEditProfile.css">
 </head>
-<body>
-<div id="sidebar">
+<body><div id="sidebar">
     <div class="text-center mb-4">
         <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
         <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
@@ -17,27 +16,31 @@
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="userDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="userProfile.html"><i class="fas fa-user"></i> Profile</a>
+            <a class="nav-link active" href="/WEBSYS/admin/adminProfile.html"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminBrgyDBOverview.html"><i class="fas fa-database"></i> Barangay Database</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
+            <a class="nav-link" href="/WEBSYS/admin/adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/WEBSYS/admin/adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
         <li class="nav-item">
             <a class="nav-link logout" href="#" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>
     </ul>
+    
 </div>
 
 <div id="content">
@@ -200,8 +203,8 @@
             </div>
             </div>
             <div class="button-container">
-                <a href="userProfile.html" class="btn-custom" id="editProfile-btn">Cancel</a>
-                <a href="userProfile.html" class="custom-btn" id="editProfile-btn">Save Changes</a>
+                <a href="./adminProfile.html" class="btn-custom" id="editProfile-btn">Cancel</a>
+                <a href="./adminProfile.html" class="custom-btn" id="editProfile-btn">Save Changes</a>
             </div>
         </form>
     </div>

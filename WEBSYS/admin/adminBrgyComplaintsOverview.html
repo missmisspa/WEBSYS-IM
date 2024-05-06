@@ -48,10 +48,10 @@
     <div class="button-container">
         <div class="row justify-content-center mt-4">
             <div class="col-md-5">
-                <button class="custom-btn btn-block" id="submit-btn">Submit A Complaint</button>
+                <a href="./adminBrgyComplaintsForm.html" class="custom-btn btn-block" id="submit-btn">Submit A Complaint</a>
             </div>
             <div class="col-md-5">
-                <button class="custom-btn btn-block" id="search-btn">Search Barangay Complaints</button>
+                <a href="./adminBrgyComplaintsSearch.html" class="custom-btn btn-block" id="search-btn">Search Barangay Complaints</a>
             </div>
         </div>
     </div>
@@ -84,11 +84,11 @@
 
 <script>
     function showPopup() {
-        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup').classList.add('active');
     }
 
     function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('popup').classList.remove('active');
     }
 
     function confirmLogout() {
