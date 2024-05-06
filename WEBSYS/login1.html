@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginEXtra</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .error {
+            font-size: 12px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Login">
+        <div class="background">
+            <img class="backgrnd" src="icons/bg half.png" alt="bg">
+        </div>
+        <div class="logo">
+            <img class="LegazpiLogo" src="icons/Legazpi-LOGO.png" />
+            <img class="BrgyLogo" src="icons/BRGY LOGO.png" />
+        </div>
+        <div class="text">
+            <div class="titleTxt"><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 48px;">Barangay</span><span
+                    style="color: white; font-size: 80px; font-family: 'Montserrat', sans-serif; font-weight: 700; line-height: 85px; ">
+                    <br /></span><span
+                    style="color: white; font-size: 80px; font-family:'Montserrat', sans-serif; font-weight: 700; line-height: 85px;">Monitoring
+                    <br />System</span>
+            </div>
+        </div>
+
+        <div class="mainLogin">
+            <form id="loginForm" method="post" class="forms" onsubmit="return validateForm()">
+                <div class="loginTop">Login</div>
+                <div class="userName">
+                    <div class="userTxt">Username</div>
+                    <div class="usrNmInputField">
+                        <input type="text" id="username" class="ComponentName" placeholder="Enter Username">
+                    </div>
+                    <div id="usernameError" class="error"></div>
+                </div>
+                <div class="password">
+                    <div class="passTxt">Password</div>
+                    <div class="passInputField">
+                        <input type="password" id="password" class="ComponentName" placeholder="Enter Password">
+                    </div>
+                    <div id="passwordError" class="error"></div>
+                    <a href="/WEBSYS/user/userDashboard.html" onclick="submitForm()" class="Button" id="loginButton">
+                        <span>Login</span>
+                    </a>
+                    <a href="searchforgotPass.html" class="forgetPass">Forget Password</a>
+                </div>
+                
+                <div class="register">
+                    <span class="registerText">Don't Have an Account? </span>
+                    <a href="register.html" class="registerLink">Register Now</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            var usernameRegex = /^[a-zA-Z0-9]{1,20}$/;
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+            var usernameValid = usernameRegex.test(username);
+            var passwordValid = passwordRegex.test(password);
+
+            var usernameEmpty = username.trim() === '';
+            var passwordEmpty = password.trim() === '';
+
+            var errors = [];
+
+            var usernameError = document.getElementById('usernameError');
+            var passwordError = document.getElementById('passwordError');
+
+            if (usernameEmpty) {
+                errors.push('Username is required');
+                usernameError.innerText = 'Username is required';
+            } else if (!usernameValid) {
+                errors.push('Username is not valid. Please enter alphanumeric characters only');
+                usernameError.innerText = 'Username is not valid. Please enter alphanumeric characters only';
+            } else {
+                usernameError.innerText = '';
+            }
+
+            if (passwordEmpty) {
+                errors.push('Password is required');
+                passwordError.innerText = 'Password is required';
+            } else if (!passwordValid) {
+                errors.push('Password is not valid. It must be at least 8 characters long and contain at least one letter and one number');
+                passwordError.innerText = 'Password is not valid. It must be at least 8 characters long and contain at least one letter and one number';
+            } else {
+                passwordError.innerText = '';
+            }
+
+            if (errors.length > 0) {
+                return false; // Prevent form submission if there are errors
+            } 
+
+            return true; // Allow form submission if there are no errors
+        }
+
+        function submitForm() {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent default link behavior if validation fails
+            }
+        }
+    </script>
+</body>
+
+</html>
