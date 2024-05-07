@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="residentCreateAcc.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
+    <style>
+        .error {
+            font-size: 12px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -35,22 +42,24 @@
                 <div class="userName">
                     <div class="userTxt">Username</div>
                     <div class="usrNmInputField">
-                        <input type="text" class="ComponentName" placeholder="Enter Username">
+                        <input type="text" id="username" class="ComponentName" placeholder="Enter Username">
+                        <div id="usernameError" class="error"></div>
                     </div>
                 </div>
 
                 <div class="password">
-                    <div class="passTxt">
-                        Password</div>
+                    <div class="passTxt">Password</div>
                     <div class="passInputField">
-                        <input type="password" class="ComponentName" placeholder="Enter Password">
+                        <input type="password" id="password" class="ComponentName" placeholder="Enter Password">
+                        <div id="passwordError" class="error"></div>
                     </div>
                 </div>
 
                 <div class="confirmPassword">
                     <div class="confirmpassTxt">Confirm Password</div>
                     <div class="confirmInputField">
-                        <input type="password" class="ComponentName" placeholder="Confirm Password">
+                        <input type="password" id="confirmPassword" class="ComponentName" placeholder="Confirm Password">
+                        <div id="confirmPasswordError" class="error"></div>
                     </div>
                 </div>
 
@@ -61,14 +70,16 @@
                 <div class="fruit">
                     <div>What is your favorite fruit?</div>
                     <div class="fruitInputField">
-                        <input type="text" class="ComponentName" placeholder="Enter your answer">
+                        <input type="text" id="favoriteFruit" class="ComponentName" placeholder="Enter your answer">
+                        <div id="favoriteFruitError" class="error"></div>
                     </div>
                 </div>
 
                 <div class="animal">
                     <div>What is your favorite animal?</div>
                     <div class="animalInputField">
-                        <input type="text" class="ComponentName" placeholder="Enter your answer">
+                        <input type="text" id="favoriteAnimal" class="ComponentName" placeholder="Enter your answer">
+                        <div id="favoriteAnimalError" class="error"></div>
                     </div>
                 </div>
 
@@ -78,6 +89,7 @@
                         Conditions
                         and Privacy Policy of our website.
                     </label>
+                    <div id="termsError" class="error"></div>
                 </div>
 
                 <div class="button-container">
@@ -96,9 +108,8 @@
                 <div class="Cancel">Cancel</div>
             </div>
             <div class="button" style="background: #748C70; left: 0px;" onclick="hidePopup()">
-                <!-- <div class="Continue">Continue</div> --> 
-               <a href="registrationOverview.html" class="button" style="text-decoration-line: none; background: #748C70; left: 0px; color: white;" >Continue</a>
-
+                <a href="registrationOverview.html" class="button"
+                    style="text-decoration-line: none; background: #748C70; left: 0px; color: white;">Continue</a>
             </div>
         </div>
     </div>
@@ -109,18 +120,84 @@
             document.querySelector('.popup').style.display = 'block';   
         }
         function hidePopup() {
-            document.querySelector('.popup').style.display = 'none';
-           
+            document.querySelector('.popup').style.display = 'none';   
         }
-        function showPopup() {
-            document.querySelector('.popup').style.display = 'block';
-        }
-        function hidePopup() {
-            document.querySelector('.popup').style.display = 'none';
-        }
+
         document.getElementById('Btn').addEventListener('click', function (event) {
+            // Prevent form submission
             event.preventDefault(); 
-            showPopup(); 
+
+            // Username validation
+            var username = document.getElementById('username').value;
+            var usernameRegex = /^[a-zA-Z0-9]{1,20}$/;
+            var usernameValid = usernameRegex.test(username);
+            var usernameEmpty = username.trim() === '';
+            var usernameError = document.getElementById('usernameError');
+            if (usernameEmpty) {
+                usernameError.innerText = 'This field isrequi red';
+            } else if (!usernameValid) {
+                usernameError.innerText = 'Username is not valid. Please enter alphanumeric characters only';
+            } else {
+                usernameError.innerText = '';
+            }
+
+            // Password validation
+            var password = document.getElementById('password').value;
+            var passwordRegex = /^[a-zA-Z0-9]{1,20}$/;
+            var passwordValid = passwordRegex.test(password);
+            var passwordEmpty = password.trim() === '';
+            var passwordError = document.getElementById('passwordError');
+            if (passwordEmpty) {
+                passwordError.innerText = 'This field is required';
+            } else if (!passwordValid) {
+                passwordError.innerText = 'Password is not valid. Please enter alphanumeric characters only';
+            } else {
+                passwordError.innerText = '';
+            }
+
+            // Confirm Password validation
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var confirmPasswordError = document.getElementById('confirmPasswordError');
+            if (confirmPassword !== password) {
+                confirmPasswordError.innerText = 'Passwords do not match';
+            } else {
+                confirmPasswordError.innerText = '';
+            }
+
+            // Favorite Fruit validation
+            var favoriteFruit = document.getElementById('favoriteFruit').value;
+            var favoriteFruitRegex = /^[a-zA-Z\s]+$/;
+            var favoriteFruitValid = favoriteFruitRegex.test(favoriteFruit);
+            var favoriteFruitEmpty = favoriteFruit.trim() === '';
+            var favoriteFruitError = document.getElementById('favoriteFruitError');
+            if (favoriteFruitEmpty) {
+                favoriteFruitError.innerText = 'This field is required';
+            } else if (!favoriteFruitValid) {
+                favoriteFruitError.innerText = 'Favorite fruit should only contain letters';
+            } else {
+                favoriteFruitError.innerText = '';
+            }
+
+            // Favorite Animal validation
+            var favoriteAnimal = document.getElementById('favoriteAnimal').value;
+            var favoriteAnimalRegex = /^[a-zA-Z\s]+$/;
+            var favoriteAnimalValid = favoriteAnimalRegex.test(favoriteAnimal);
+            var favoriteAnimalEmpty = favoriteAnimal.trim() === '';
+            var favoriteAnimalError = document.getElementById('favoriteAnimalError');
+            if (favoriteAnimalEmpty) {
+                favoriteAnimalError.innerText = 'This field is required';
+            } else if (!favoriteAnimalValid) {
+                favoriteAnimalError.innerText = 'Favorite animal should only contain letters';
+            } else {
+                favoriteAnimalError.innerText = '';
+            }
+
+
+            // If all validations pass, show the popup
+            if (!usernameEmpty && usernameValid && !passwordEmpty && passwordValid && confirmPassword === password && 
+                !favoriteFruitEmpty && favoriteFruitValid && !favoriteAnimalEmpty && favoriteAnimalValid && agreeCheckbox) {
+                showPopup();
+            }
         });
     </script>
 
