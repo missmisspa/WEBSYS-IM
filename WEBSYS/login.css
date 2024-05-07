@@ -172,6 +172,8 @@ form {
     word-wrap: break-word;
     margin-left: 385px;
     cursor: pointer;
+    position: relative;
+    top: -40px;
 }
 
 .register {
@@ -229,6 +231,11 @@ form {
     cursor: pointer;
     text-decoration: none;
 }
+.btn-login{
+    position: relative;
+    left: 50px;
+    bottom: -80px;
+}
 
 .Button:hover {
     background: #5e785e;
@@ -242,6 +249,8 @@ form {
     line-height: 20px;
     word-wrap: break-word;
     margin-left: -30px;
+    position: relative;
+    top: 50px;
 }
 
 .registerLink {
@@ -253,6 +262,8 @@ form {
     line-height: 20px;
     word-wrap: break-word;
     cursor: pointer;
+    position: relative;
+    top: 50px;
 }
 
 .userType {
