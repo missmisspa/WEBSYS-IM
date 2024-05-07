@@ -70,7 +70,7 @@
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
 
-            var usernameRegex = /^[a-zA-Z0-9]{1,20}$/;
+            var usernameRegex = /^[a-zA-Z0-9]{8,}$/;
             var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
             var usernameValid = usernameRegex.test(username);
@@ -88,8 +88,8 @@
                 errors.push('Username is required');
                 usernameError.innerText = 'Username is required';
             } else if (!usernameValid) {
-                errors.push('Username is not valid. Please enter alphanumeric characters only');
-                usernameError.innerText = 'Username is not valid. Please enter alphanumeric characters only';
+                errors.push('Username is not valid.');
+                usernameError.innerText = 'Username is not valid.';
             } else {
                 usernameError.innerText = '';
             }
@@ -98,8 +98,8 @@
                 errors.push('Password is required');
                 passwordError.innerText = 'Password is required';
             } else if (!passwordValid) {
-                errors.push('Password is not valid. It must be at least 8 characters long and contain at least one letter and one number');
-                passwordError.innerText = 'Password is not valid. It must be at least 8 characters long and contain at least one letter and one number';
+                errors.push('Password is not valid.');
+                passwordError.innerText = 'Password is not valid.';
             } else {
                 passwordError.innerText = '';
             }
