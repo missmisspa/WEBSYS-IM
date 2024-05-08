@@ -212,15 +212,13 @@
         document.getElementById("nextButton").addEventListener("click", function (event) {
             console.log("Next button clicked");
 
-            // Check if all required fields are filled in and valid
             var isValid = validateForm();
 
             if (!isValid) {
-                event.preventDefault(); // Prevent the default action (redirecting to another page)
+                event.preventDefault(); 
                 return;
             }
 
-            // If all fields are valid, proceed with redirection based on user type
             var userType = document.querySelector('input[name="userType"]:checked');
             if (userType) {
                 if (userType.value === "resident") {
@@ -282,13 +280,40 @@
             // Validate numeric input for age
             var ageInput = document.getElementById("age");
             var ageValue = ageInput.value.trim();
-            if (ageValue !== "" && isNaN(ageValue)) {
+            if (ageValue !== "") {
+                // Check if the input is a number
+                if (isNaN(ageValue)) {
+                    isValid = false;
+                    showError(ageInput, "Please enter a valid age.");
+                } else {
+                    var age = parseInt(ageValue);
+                    if (age < 0 || !Number.isInteger(age)) {
+                        isValid = false;
+                        showError(ageInput, "Please enter a valid age.");
+                    }
+                }
+            }
+
+            // Validate contact number
+            var contactNumberInput = document.getElementById("contact_number");
+            var contactNumberValue = contactNumberInput.value.trim();
+            if (contactNumberValue.length !== 11 || isNaN(contactNumberValue)) {
                 isValid = false;
-                showError(ageInput, "Please enter a valid age.");
+                showError(contactNumberInput, "Please enter a valid 11-digit contact number.");
             }
 
             return isValid;
         }
+
+        var ageInput = document.getElementById("age");
+        ageInput.addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
+        
+        var contactNumberInput = document.getElementById("contact_number");
+        contactNumberInput.addEventListener("input", function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
 
         // Function to validate email format
         function isValidEmail(email) {
