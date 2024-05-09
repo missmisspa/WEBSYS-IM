@@ -5,347 +5,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="register.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .error {
-            color: red;
-            font-size: 12px; /* Adjust the font size as needed */
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
-    <div class="reg">
-        <div class="background">
-            <img class="backgrnd" src="icons/bg full.png" alt="bg">
+    <section class="regForm">
+        <div id="content">
+            <h2>Register</h2>
+            <div id="container">
+                <form id="profileForm" method="post" action="#">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="middle_name">Middle Name</label>
+                                <input type="text" class="form-control" id="middle_name" name="middle_name" placeholder="Enter Middle Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="suffix">Suffix</label>
+                                <input type="text" class="form-control" id="suffix_name" name="suffix_name" placeholder="Enter Suffix">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="purok">Purok</label>
+                                <select class="form-control" id="purok" name="purok" placeholder="Select your purok">
+                                <option value="" disabled selected>Select your purok</option>
+                                <option value="Single">Purok 1</option>
+                                <option value="Married">Purok 2</option>
+                                <option value="Divorced">Purok 3</option>
+                                <option value="Widowed">Purok 4</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="barangay">Barangay</label>
+                                <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Enter City">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="province">Province</label>
+                                <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="birthday">Birthday</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="civil_status">Civil Status</label>
+                                <select class="form-control" id="status" name="status" placeholder="Select Civil Status">
+                                    <option value="" disabled selected>Select your civil status</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widowed">Widowed</option>
+                                    <option value="Separated">Separated</option>
+                                    <option value="Annulled">Annulled</option>
+                                    <option value="LiveIn">Live-in</option>
+                                    <option value="Unknown">Unknown</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="citizenship">Citizenship</label>
+                                <input type="text" class="form-control" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="sex">Sex</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <div id="radioBtn" class="radioBtn">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="sex" id="male" value="male">
+                                                <label class="form-check-label" for="male">Male</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                                                <label class="form-check-label" for="female">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="education">Educational Attainment</label>
+                                <select class="form-control" id="status" name="status" placeholder="Select your educational attainment">
+                                    <option value="" disabled selected>Select your educational attainment</option>
+                                    <option value="NoEducation">No Formal education</option>
+                                    <option value="PrimaryLevel">Primary Level</option>
+                                    <option value="PrimaryEducation">Primary Education</option>
+                                    <option value="SecondaryEducation">Secondary Education</option>
+                                    <option value="VocationalLevel">Vocational Level</option>
+                                    <option value="VocationalEducation">Vocational Education</option>
+                                    <option value="CollegeLevel">College Level</option>
+                                    <option value="CollegeEducation">College Education</option>
+                                    <option value="MasterLevel">Master Level</option>
+                                    <option value="MasterEducation">Master Education</option>
+                                    <option value="DoctorateLevel">Doctorate Level</option>
+                                    <option value="DoctorateEducation">Doctorate Education</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="contact_number">Contact Number</label>
+                                <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email Address">
+                        </div>                                
+                    </div>
+                    <div class="container-userType">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="col">
+                                        <div id="userTypeRadioBtn" class="userTypeRadioBtn">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="userType" id="barangayCouncil" value="barangay-council">
+                                                <label class="form-check-label" for="barangay-council">Barangay Council</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="userType" id="resident" value="resident">
+                                                <label class="form-check-label" for="resident">Resident</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    
+                </div>
+                    <div class="button-container">
+                        <a href="./login1.html" class="btn-custom" id="back-btn">Cancel</a>
+                        <a href="#" class="custom-btn" id="next-btn">Next</a>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="mainLogin">
-            <form action="" method="post" class="forms">
-                <div class="registerTop">Register</div>
-
-                <div class="firstName">
-                    <label for="first_name">First Name</label>
-                    <input type="text" id="first_name" name="first_name" placeholder="Enter First Name">
-                    <div class="error"></div> <!-- Error message for first name -->
-                </div>
-
-                <div class="middleName">
-                    <label for="middle_name">Middle Name</label>
-                    <input type="text" id="middle_name" name="middle_name" placeholder="Enter Middle Name">
-                    <div class="error"></div> <!-- Error message for middle name -->
-                </div>
-
-                <div class="lastName">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name">
-                    <div class="error"></div> <!-- Error message for last name -->
-                </div>
-
-                <div class="suffixName">
-                    <label for="suffix">Suffix</label>
-                    <input type="text" id="suffix" name="suffix" placeholder="Enter Suffix">
-                    <div class="error"></div> <!-- Error message for suffix -->
-                </div>
-
-                <div class="Purok">
-                    <label for="purok">Purok</label>
-                    <select id="purok" name="purok">
-                        <option value="">Select</option>
-                        <option value="Purok 1">Purok 1</option>
-                        <option value="Purok 2">Purok 2</option>
-                        <option value="Purok 3">Purok 3</option>
-                        <option value="Purok 4">Purok 4</option>
-                    </select>
-                    <div class="error"></div> <!-- Error message for purok -->
-                </div>
-
-                <div class="brgy">
-                    <label for="barangay">Barangay</label>
-                    <input type="text" id="barangay" name="barangay" value="Tamaoyan" readonly>
-                </div>
-
-                <div class="City">
-                    <label for="city">City</label>
-                    <input type="text" id="city" name="city" value="Legazpi City" readonly>
-                </div>
-
-                <div class="Province">
-                    <label for="province">Province</label>
-                    <input type="text" id="province" name="province" value="Albay" readonly>
-                </div>
-
-                <div class="Age">
-                    <label for="age">Age</label>
-                    <input type="text" id="age" name="age" placeholder="Enter Age">
-                    <div class="error"></div> <!-- Error message for age -->
-                </div>
-
-                <div class="bday">
-                    <label for="birthday">Birthday</label>
-                    <input type="date" class="form-control" id="date" name="date">
-                    <div class="error"></div> <!-- Error message for birthday -->
-                </div>
-
-                <div class="Status">
-                    <label for="st">Status</label>
-                    <select id="status" name="status">
-                        <option value="">Select one</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Widowed">Widowed</option>
-                        <option value="Divorce">Divorce</option>
-                        <option value="Seperated">Separated</option>
-                        <option value="Annulled">Annulled</option>
-                        <option value="Live in">Live in</option>
-                        <option value="Unknown">Unknown</option>
-                    </select>
-                    <div class="error"></div> <!-- Error message for status -->
-                </div>
-
-                <div class="citizenShip">
-                    <label for="citizen_ship">Citizenship</label>
-                    <input type="text" id="citizenship" name="citizenship" placeholder="Enter Citizenship">
-                    <div class="error"></div> <!-- Error message for citizenship -->
-                </div>
-
-                <div class="Sex">
-                    <label class="titleLabel">Sex</label>
-                    <div class="male radioLabel">
-                        <input type="radio" id="male" name="sex" value="male" class="radioInput">
-                        <label for="male" class="radioText">Male</label>
-                    </div>
-                    <div class="female radioLabel">
-                        <input type="radio" id="female" name="sex" value="female" class="radioInput">
-                        <label for="female" class="radioText">Female</label>
-                    </div>
-                    <div class="error"></div> <!-- Error message for sex -->
-                </div>
-
-                <div class="voterSts">
-                    <label for="voter_status">Voter Status</label>
-                    <select id="voter_status" name="voter_status">
-                        <option value="">Select one</option>
-                        <option value="Inactive">Inactive</option>
-                        <option value="SK Voter">SK Voter</option>
-                        <option value="National Voter">National Voter</option>
-                        <option value="Both">Both</option>
-                    </select>
-                    <div class="error"></div> <!-- Error message for voter status -->
-                </div>
-
-                <div class="educ">
-                    <label for="educational_attainment">Educational Attainment</label>
-                    <select id="educational_attainment" name="educational_attainment">
-                        <option value="">Select one</option>
-                        <option value="No Formal education">No Formal education</option>
-                        <option value="Primary Level">Primary Level</option>
-                        <option value="Primary Education">Primary Education</option>
-                        <option value="Secondary Level">Secondary Level</option>
-                        <option value="Secondary Education">Secondary Education</option>
-                        <option value="Vocational Level">Vocational Level</option>
-                        <option value="College Level">College Level</option>
-                        <option value="College Education">College Education</option>
-                        <option value="Masters Level">Masters Level</option>
-                        <option value="Masters Grad">Masters Grad</option>
-                        <option value="Doctorate Level">Doctorate Level</option>
-                        <option value="Doctorate Grad">Doctorate Grad</option>
-                    </select>
-                    <div class="error"></div> <!-- Error message for educational attainment -->
-                </div>
-
-                <div class="contactNum">
-                    <label for="contact_number">Contact Number</label>
-                    <input type="text" id="contact_number" name="contact_number" placeholder="Enter Contact Number">
-                    <div class="error"></div> <!-- Error message for contact number -->
-                </div>
-
-                <div class="emailAdd">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter Email Address">
-                    <div class="error"></div> <!-- Error message for email -->
-                </div>
-
-                <div class="userType">
-                    <div class="radioLabel">
-                        <input type="radio" name="userType" id="barangayOfficial" class="radioInput" value="official" onclick="showDropdown()">
-                        <label for="barangayOfficial" class="radioText">Barangay Official</label>
-                        <select id="brgypositions" name="Position" style="display: none; margin-left: 5px;">
-                            <option value="">Select</option>
-                            <option value="pos1">Brgy Captain</option>
-                            <option value="pos2">Brgy Kagawad</option>
-                            <option value="pos3">Brgy Secretary</option>
-                            <option value="pos4">Brgy Treasurer</option>
-                            <option value="pos5">SK Chairman</option>
-                        </select>
-                    </div>
-                    <div class="radioLabel">
-                        <input type="radio" name="userType" id="resident" class="radioInput" value="resident" onclick="hideDropdown()">
-                        <label for="resident" class="radioText">Resident</label>
-                    </div>
-                    <div class="error"></div> <!-- Error message for user type -->
-                </div>
-
-                <!-- <a href="login.html" class="btn-back">Back</a>
-                <button type="button" class="btn-next" id="nextButton">Next</button> -->
-                <a href="/WEBSYS/login1.html" class="btn-back">Back</a>
-                <button type="button" class="btn-next" id="nextButton">Next</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-
-        var submitForm = true; 
-    
-        function showDropdown() {
-            var dropdown = document.getElementById("brgypositions");
-            dropdown.style.display = "block";
-            dropdown.value = "";
-        }
-
-        function hideDropdown() {
-            var dropdown = document.getElementById("brgypositions");
-            dropdown.style.display = "none";
-        }
-
-        document.getElementById("nextButton").addEventListener("click", function (event) {
-            console.log("Next button clicked");
-
-            var isValid = validateForm();
-
-            if (!isValid) {
-                event.preventDefault(); 
-                return;
-            }
-
-            var userType = document.querySelector('input[name="userType"]:checked');
-            if (userType) {
-                if (userType.value === "resident") {
-                    console.log("Redirecting to registerPage2.html");
-                    window.location.href = "registerPage2.html";
-                } else if (userType.value === "official") {
-                    var position = document.getElementById("brgypositions").value;
-                    if (position.trim() === "") {
-                        console.log("Position not selected for barangay official");
-                        alert("Please select a position.");
-                        event.preventDefault();
-                        return;
-                    } else {
-                        console.log("Redirecting to registerPage2.html");
-                        window.location.href = "registerPage2.html";
-                    }
-                }
-            } else {
-                console.log("User type not selected");
-                alert("Please select a user type.");
-                event.preventDefault();
-                return;
-            }
-        });
-
-        // Function to validate the form
-        function validateForm() {
-            var inputs = document.querySelectorAll('input[type="text"], input[type="email"], select');
-            var isValid = true;
-            inputs.forEach(function (input) {
-                if (input.value.trim() === "" && !input.hasAttribute('readonly') && input.name !== 'Position' && input.name !== 'userType' && input.id !== 'middle_name' && input.id !== 'suffix') {
-                    isValid = false;
-                    showError(input, "This field is required.");
-                }
-            });
-
-            // Validate length restrictions for name inputs
-            var nameInputs = document.querySelectorAll('input[type="text"]');
-            nameInputs.forEach(function (input) {
-                if (input.id === "first_name" || input.id === "middle_name" || input.id === "last_name" || input.id === "suffix") {
-                    if (input.value.length > 15 && input.id !== "suffix") {
-                        isValid = false;
-                        showError(input, "Maximum 15 characters allowed.");
-                    } else if (input.value.length > 10 && input.id === "suffix") {
-                        isValid = false;
-                        showError(input, "Maximum 10 characters allowed.");
-                    }
-                }
-            });
-
-            // Validate email format
-            var emailInput = document.getElementById("email");
-            var emailValue = emailInput.value.trim();
-            if (emailValue !== "" && !isValidEmail(emailValue)) {
-                isValid = false;
-                showError(emailInput, "Please enter a valid email address.");
-            }
-
-            // Validate numeric input for age
-            var ageInput = document.getElementById("age");
-            var ageValue = ageInput.value.trim();
-            if (ageValue !== "") {
-                // Check if the input is a number
-                if (isNaN(ageValue)) {
-                    isValid = false;
-                    showError(ageInput, "Please enter a valid age.");
-                } else {
-                    var age = parseInt(ageValue);
-                    if (age < 0 || !Number.isInteger(age)) {
-                        isValid = false;
-                        showError(ageInput, "Please enter a valid age.");
-                    }
-                }
-            }
-
-            // Validate contact number
-            var contactNumberInput = document.getElementById("contact_number");
-            var contactNumberValue = contactNumberInput.value.trim();
-            if (contactNumberValue.length !== 11 || isNaN(contactNumberValue)) {
-                isValid = false;
-                showError(contactNumberInput, "Please enter a valid 11-digit contact number.");
-            }
-
-            return isValid;
-        }
-
-        var ageInput = document.getElementById("age");
-        ageInput.addEventListener("input", function () {
-            this.value = this.value.replace(/\D/g, '');
-        });
-        
-        var contactNumberInput = document.getElementById("contact_number");
-        contactNumberInput.addEventListener("input", function () {
-            this.value = this.value.replace(/\D/g, '');
-        });
-
-        // Function to validate email format
-        function isValidEmail(email) {
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        // Display error messages
-        function showError(input, message) {
-            var errorDiv = input.nextElementSibling;
-            errorDiv.innerText = message;
-        }
-
-        // Input fields restrictions
-        var nameInputs = document.querySelectorAll('input[type="text"]');
-        nameInputs.forEach(function (input) {
-            if (input.id === "first_name" || input.id === "middle_name" || input.id === "last_name" || input.id === "suffix") {
-                input.addEventListener("input", function () {
-                    if (this.value.length > 15 && this.id !== "suffix") {
-                        this.value = this.value.substring(0, 15);
-                    } else if (this.value.length > 10 && this.id === "suffix") {
-                        this.value = this.value.substring(0, 10);
-                    }
-                });
-            }
-        });
-
-        // Validate email address format
-        function isValidEmail(email) {
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    </script>
+    </section>
 </body>
 </html>

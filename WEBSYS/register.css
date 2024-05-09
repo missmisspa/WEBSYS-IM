@@ -1,291 +1,193 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('icons/bg\ full.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-.background {
-    width: 100%;
-    height: 100vh;
-    position: relative;
+.regForm{
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
-.background img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: px;
-    z-index: -1;
-}
-
-.mainLogin {
-    width: 1325px;
-    height: 100%;
-    left: calc(100% - 1400px);
-    top: 0;
-    background: white;
-    position: absolute;
-}
-
-
-form {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 51px;
-    display: flex;
-    margin-top: 90px;
-    margin-left: 10px;
-}
-
-.registerTop {
-    width: 538px;
-    height: 40px;
-    text-align: center;
-    color: #19191B;
-    font-size: 44px;
+#content {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin-top: -50px;
-    word-wrap: break-word;
-    margin-bottom: 40px;
-    margin-left: 20px;
-
+    background-color: #FFFFFF;
 }
 
-label {
-    font-size: 20px;
-    color: #19191B;
+#content h2{
     font-weight: 700;
-    margin-bottom: 8px;
-    display: block;
+    text-align: center;
 }
 
-input[type="text"],
-input[type="email"],
+#container{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 25px;
+}
+
+label[for="first_name"],
+label[for="middle_name"],
+label[for="last_name"],
+label[for="suffix"],
+label[for="purok"],
+label[for="barangay"],
+label[for="city"],
+label[for="province"],
+label[for="age"],
+label[for="birthday"],
+label[for="civil_status"],
+label[for="citizenship"],
+label[for="sex"],
+label[for="education"],
+label[for="contact_number"],
+label[for="email"] {
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.form-check-label{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.form-control[type="text"] {
+    width: 100%; 
+}
+
+.form-control[type="text"],
+.form-control[type="email"] {
+    height: 40px; 
+    font-size: 14px; 
+}
+
+.form-control {
+    border-radius: 12px; 
+    border: 1px solid #ced4da; 
+    padding: 9px;
+    font-size: 14px; 
+}
+
+.form-control:hover {
+    border-color: #aaa; 
+}
+
+.form-control:focus {
+    border-color: #748C70;
+    box-shadow: 0 0 0 0.2rem rgb(144, 152, 143);
+}
+
+.radioBtn {
+    margin-top: 10px;
+}
+
+.radioBtn .form-check {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.radioBtn .form-check-label {
+    margin-left: 1px;
+}
+
+.container-userType{
+    margin-left: 39%;
+    text-align: center;
+}
+
+.userTypeRadioBtn {
+    margin-top: 6px;
+}
+
+.userTypeRadioBtn .form-check {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.userTypeRadioBtn .form-check-label {
+    margin-left: 1px;
+}
+
+
+select.form-control {
+    appearance: none; 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333" width="18px" height="18px"><path d="M7 10l5 5 5-5H7z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add custom arrow */
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: center;
+    padding-right: 30px; 
+    border: 1px solid #ced4da; 
+    padding-top: 7px;  
+    width: 100%; 
+    height: 40px; 
+    font-size: 14px;
+}
+
 select {
-    width: 600px;
+    width: 340px;
     height: 40px;
     padding: 8px 16px;
     border: 1px solid #999BA1;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 16px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 8px;
-}
-
-.btn-back{
-    text-align: center;
-    text-decoration: none;
-    padding-top: 10px;
-    width: 120px;
-    height: 30px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: -30px;
-    margin-left: -200px;
-    background-color: #999BA1;
-}
-.btn-back:hover{
-    background-color: #88898c;
-}
-
-.btn-next{
-    text-align: center;
-    text-decoration: none;
-    padding-top: 10px;
-    width: 120px;
-    height: 40px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-right: -250px;
-    margin-top: -91px;
-    background-color:#748C70;
-    padding-top: 10px;
-    padding-bottom: 10px; 
-}
-.btn-next:hover{
-    background-color: #5e785e;
-}
-
-button[type="back"],
-button[type="next"] {
-    width: 120px;
-    height: 40px;
-    background-color: #748C70;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="back"]:hover{
-    background-color: #88898c;
-}
-button[type="next"]:hover {
-    background-color: #5e785e;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="date"],
-select {
-    width: 250px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-.select-wrapper select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position-x: calc(100% - 10px);
-    background-position-y: 50%;
-    cursor: pointer;
-}
-
-.firstName, .Purok, .Age{
-    left: -450px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -50px;
-}
-
-.middleName, .brgy, .bday{
-    left: -150px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -141.5px;
-}
-
-.lastName, .City, .Status {
-    right: -150px;
-    position: relative;
-    font-family: 'Montserrat';
-    margin-top: -143px;
-}
-
-.suffixName, .Province, .citizenShip {
-    right: -450px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -143px;
-}
-
-.Sex {
-    margin-top: -20px;
-    margin-left: -700px;
-}
-
-.titleLabel {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.radioLabel {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 30px;
-    margin-left: 0;
-    cursor: pointer;
-}
-
-.radioText {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 25px;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    color: #999BA1;
-}
-
-.radioInput {
-    margin-top: -10px;
-}
-
-.voterSts {
-    right: 30px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -120px;
-}
-
-.educ {
-    right: -300px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -143px;
-}
-
-.contactNum {
-    left: -150px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -30px;
-}
-
-.emailAdd {
-    right: -200px;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: -143px;
-}
-
-.userType {
+.button-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: -30px;
-    margin-right: -50px;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
 }
-button{
-    margin-top: -30px;
+
+.custom-btn {
+    width: 20%;
+    padding: 10px 20px;
+    background-color: #748C70;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin: 0 80px;
+    text-decoration: none;
 }
-button[type="back"]{
-    margin-left: -200px;
+
+.custom-btn:hover,
+.custom-btn:focus {
+    background-color: #5F775B;
+    color: #FFFFFF;
+    border: none;
+    text-decoration: none;
+}
+
+.btn-custom{
+    width: 20%;
+    padding: 10px 20px;
     background-color: #999BA1;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: block;
+    margin: 0 80px;
+    text-decoration: none;
 }
-button[type="next"]{
-    margin-right: -250px;
-    margin-top: -91px;
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #6E7074;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
 }
-.form-control {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    color:  #999BA1;;
-}
-.brgy input::placeholder,
-    .City input::placeholder,
-    .Province input::placeholder {
-        color: #19191B; 
-    }
