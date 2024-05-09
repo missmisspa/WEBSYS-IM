@@ -16,7 +16,7 @@
         <div id="content">
             <h2>Register</h2>
             <div id="container">
-                <form id="profileForm" method="post" action="#">
+                <form id="regiForm" method="post" action="#">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
@@ -187,15 +187,147 @@
                             </div>
                         </div>                        
                     </div>
-                    
                 </div>
                     <div class="button-container">
                         <a href="./login1.html" class="btn-custom" id="back-btn">Cancel</a>
-                        <a href="#" class="custom-btn" id="next-btn">Next</a>
+                        <button class="custom-btn" id="next-btn" onclick="scrollToSection()">Next</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+
+    <section class="registerAcc" id="registerAcc">
+        <div class="contentRegAcc">
+            <div class="containerTitle-Logo">
+                <div class="logo-container">
+                    <img src="icons/Legazpi-LOGO.png" alt="legazpi logo" class="img-fluid mb-2">
+                    <img src="icons/BRGY LOGO.png" alt="tamaoyan logo" class="img-fluid mb-2">
+                </div>
+                <div class="titleText">
+                    <p>Barangay<br>Monitoring<br>System</p>
+                </div>
+            </div>
+            <div class="registerAccContent">
+                <h2>Register</h2>
+                <div class="registerAccContainer">
+                    <form id="regAccForm" method="post" action="#">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" id="password" name="password" placeholder="Enter Password">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="text" class="form-control" id="confirm-password" name="confirm-password" placeholder="Reenter Password">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="securityPrompt">
+                                    <p>In case you forgot your password, here are your security questions to regain access to your account.</p>
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="fruit">What is your favorite fruit?</label>
+                                    <input type="text" class="form-control" id="fruit" name="fruit" placeholder="Enter your favorite fruit">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="fruit">What is your favorite animal?</label>
+                                    <input type="text" class="form-control" id="animal" name="animal" placeholder="Enter your favorite animal">
+                                </div>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col d-flex align-items-center justify-content-center">
+                                <div class="terms-conditions">
+                                    <input type="checkbox" class="form-control" id="termsAndconditions" name="termsAndconditions">
+                                    <label for="termsAndconditions">By creating an account, you agree to the Terms and Conditions and Privacy Policy of our website.</label>
+                                </div>
+                            </div>
+                            </div>
+                        <div class="button-container">
+                            <a href="#" class="btn-custom" id="back-btn">Back</a>
+                            <a href="#" class="custom-btn" id="register-btn">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="popup">
+            <div class="overlay"></div>
+            <div class="popup-content">
+                <p>Are you sure you want to proceed?</p>
+            </div>
+            <div class="buttonContainer">
+                <div class="button">
+                    <button class="button" id="back-btn" onclick="hidePopup()">Back</button>
+                    <button class="btn-back" id="continue-btn" onclick="hidePopup()">Register</button>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+function scrollToSection() {
+    var section2 = document.getElementById('registerAcc');
+    section2.scrollIntoView({ behavior: 'smooth' });
+}
+// function showNext() {
+//             // Get the section element
+//             console.log("djshds"); 
+//             var sec = document.getElementById('registerAcc');
+            
+//             // Toggle the display style between 'block' and 'none'
+//             sec.style.display = (sec.style.display === 'none') ? 'block' : 'none';
+//         }
+
+    // document.getElementById('next-btn').addEventListener("click", function() {
+    //         var section = document.getElementById("registerAcc");
+    //         if (section.style.display === "none") {
+    //             section.style.display = "block";
+    //         } else {
+    //             section.style.display = "none";
+    //         }
+    //     });
+
+        // document.getElementById('next-btn').addEventListener('click', function (event) {
+        //     showSection2();
+        // });
+
+    function showPopup() {
+        document.querySelector('.popup').style.display = 'block';   
+    }
+
+    function hidePopup() {
+        document.querySelector('.popup').style.display = 'none';   
+    }
+
+    document.getElementById('register-btn').addEventListener('click', function (event) {
+        showPopup();
+    });
+        
+</script>
 </body>
 </html>
