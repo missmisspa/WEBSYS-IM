@@ -17,30 +17,31 @@
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="/WEBSYS/admin/adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link active" href="adminDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminProfile.html"><i class="fas fa-user"></i> Profile</a>
+            <a class="nav-link" href="adminProfile.html"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminBrgyDBOverview.html"><i class="fas fa-database"></i> Barangay Database</a>
+            <a class="nav-link" href="adminBrgyDBOverview.html"><i class="fas fa-database"></i> Barangay Database</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+            <a class="nav-link" href="adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+            <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+            <a class="nav-link" href="adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/WEBSYS/admin/adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
+            <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
         <li class="nav-item">
             <a class="nav-link logout" href="#" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>
     </ul>
+    
     
 </div>
 
@@ -75,7 +76,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="age">Age:</label>
-                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age">
                         <small class="error-message" id="age-error"></small>
                     </div>
                 </div>
@@ -288,8 +289,17 @@
     
     function logout() {
         hidePopup();
-        window.location.href = '../login.html'; 
+        window.location.href = '../login1.html'; 
     }
+
+    //some characters are still accepted
+    document.getElementById("age").addEventListener("keypress", function(event) {
+        var key = event.key;
+        if (key === 'e' || key == '.') {
+            event.preventDefault();
+        }
+    });
+    
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
