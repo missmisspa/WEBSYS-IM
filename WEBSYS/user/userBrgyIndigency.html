@@ -225,6 +225,14 @@
         hidePopup();
         window.location.href = '../login.html'; 
     }
+
+    document.getElementById("age").addEventListener("keypress", function(event) {
+        var key = event.key;
+        if (key === 'e') {
+            event.preventDefault();
+        }
+    });
+    
 </script>  
         
 
