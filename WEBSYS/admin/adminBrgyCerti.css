@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 25%; 
     background-color: #F7F8FA;
     padding-top: 50px;
@@ -39,6 +39,10 @@
     border-left: 4px solid transparent;
     margin-bottom: 10px;
     transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease, border-left-color 0.3s ease;
+}
+
+#sidebar .logout {
+    margin-top: 50px; 
 }
 
 #sidebar a.active,
@@ -131,16 +135,11 @@ select.form-control {
     font-size: 16px;
 }
 
-.error-message{
-    color: red;
-}
-
 .button-container {
     display: flex;
     justify-content: center;
     margin-top: 40px;
     text-align: center;
-    margin-top: 40px;
 }
 
 .custom-btn {
@@ -166,7 +165,7 @@ select.form-control {
 }
 
 .btn-custom{
-    width: 25%;
+    width: 30%;
     padding: 10px 20px;
     background-color: #999BA1;
     color: #FFFFFF;
@@ -175,8 +174,8 @@ select.form-control {
     cursor: pointer;
     font-size: 16px;
     display: block;
-    margin: 0 80px;
     text-decoration: none;
+    margin: 0 80px;
 }
 
 .btn-custom:hover,
@@ -186,6 +185,209 @@ select.form-control {
     border: none; 
     text-decoration: none;
 }
+
+.button-container-preview {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.button-container-preview .btn-cancel {
+    width: 70%;
+    padding: 10px 20px;
+    margin: 0px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button-container-preview .btn-cancel:active,
+.button-container-preview .btn-cancel:hover {
+    background-color: #B30000;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
+.button-container-preview .custom-btn {
+    width: 70%;
+    padding: 10px 20px;
+    margin: 0px;
+    background-color: #748C70;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button-container-preview .custom-btn:hover,
+.button-container-preview .custom-btn:focus {
+    background-color: #5F775B;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
+.button-container-preview .btn-custom {
+    width: 70%;
+    padding: 10px 20px;
+    margin: 0px;
+    background-color: #999BA1;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.button-container-preview .btn-custom:hover,
+.button-container-preview .btn-custom:focus {
+    background-color: #6E7074;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
+.error-message {
+    color: red;
+}
+
+.confirmationModal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirmation-modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
+#confirm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.confirmation-modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.confirmation-modal.active{
+    display: block;
+    opacity: 1;
+    transform: scale(1); 
+}
+
+.confirmation-modal-content{
+    background-color: white;
+    width: 450px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    transform: translate(-50%, -50%) scale(0.5);
+    animation: showPopup 0.3s ease forwards; 
+}
+
+@keyframes showConfirmation {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.confirmation-modal-content h2{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.confirmation-modal-content p {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.confirmation-modal-content button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.confirmation-modal button#cancel-btn {
+    background-color:#999BA1;
+    color: white;
+}
+
+.confirmation-modal-content button#cancel-btn:hover,
+.confirmation-modal-content button#cancel-btn:active{
+    background-color: #6E7074;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
+.confirmation-modal-content button#confirm-btn{
+    background-color: #748C70;
+    color: white;
+}
+
+.confirmation-modal-content button#confirm-btn:hover,
+.confirmation-modal-content button#confirm-btn:active{
+    background-color: #5F775B;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
+
+
 
 .popup {
     display: none;
@@ -254,7 +456,23 @@ select.form-control {
     color: white;
 }
 
+.popup-content button#cancelButton:hover,
+.popup-content button#cancelButton:active{
+    background-color: #6E7074;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
+}
+
 .popup-content button#logoutBtn{
-    background-color: #5e785e;
+    background-color: #748C70;
     color: white;
+}
+
+.popup-content button#logoutBtn:hover,
+.popup-content button#logoutBtn:active{
+    background-color: #5F775B;
+    color: #FFFFFF;
+    border: none; 
+    text-decoration: none;
 }
