@@ -190,8 +190,8 @@
                 </div>
                 </form>
                 <div class="button-container">
-                    <a href="./login1.html" class="btn-custom" id="back-btn">Cancel</a>
-                    <button class="custom-btn" id="next-btn" onclick="scrollToSection()">Next</button>
+                    <a href="./login1.html" class="btn-custom" id="cancel-btn">Cancel</a>
+                    <button class="custom-btn" id="next-btn" onclick="scrollToRegAcc()">Next</button>
                 </div>
             </div>
         </div>
@@ -267,11 +267,11 @@
                                 </div>
                             </div>
                             </div>
+                        </form>
                         <div class="button-container">
-                            <a href="#" class="btn-custom" id="back-btn">Back</a>
-                            <a href="#" class="custom-btn" id="register-btn">Register</a>
+                            <button class="btn-custom" id="back-btn" onclick="scrollToRegForm()">Back</button>
+                            <a href="./user/userDashboard.html" class="custom-btn" id="register-btn">Register</a>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -290,10 +290,16 @@
     </section>
 
 <script>
-function scrollToSection() {
+function scrollToRegAcc() {
     var section2 = document.getElementById('registerAcc');
     section2.scrollIntoView({ behavior: 'smooth' });
 }
+
+function scrollToRegForm() {
+    var section1 = document.getElementById('regForm');
+    section1.scrollIntoView({ behavior: 'smooth' });
+}
+
 // function showNext() {
 //             // Get the section element
 //             console.log("djshds"); 
@@ -304,17 +310,17 @@ function scrollToSection() {
 //         }
 
     // document.getElementById('next-btn').addEventListener("click", function() {
-    //         var section = document.getElementById("registerAcc");
-    //         if (section.style.display === "none") {
-    //             section.style.display = "block";
+    //     var section1 = document.getElementById("regForm"); 
+    //     var section2 = document.getElementById("registerAcc");
+    //         if (section2.style.display === "none") {
+    //             section1.style.display = "none"; 
+    //             section2.style.display = "block";
     //         } else {
-    //             section.style.display = "none";
+    //             section1.style.display = "block";
+    //             section2.style.display = "none";
     //         }
     //     });
 
-        // document.getElementById('next-btn').addEventListener('click', function (event) {
-        //     showSection2();
-        // });
 
     function showPopup() {
         document.querySelector('.popup').style.display = 'block';   
