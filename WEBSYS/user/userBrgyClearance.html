@@ -71,7 +71,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="age">Age:</label>
-                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age">
                         <small class="error-message" id="age-error"></small>
                     </div>
                 </div>
@@ -286,6 +286,15 @@
         hidePopup();
         window.location.href = '../login.html'; 
     }
+
+    //some characters are still accepted
+    document.getElementById("age").addEventListener("keypress", function(event) {
+        var key = event.key;
+        if (key === 'e' || key == '.') {
+            event.preventDefault();
+        }
+    });
+    
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
