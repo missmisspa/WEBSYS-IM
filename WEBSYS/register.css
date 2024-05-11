@@ -392,6 +392,7 @@ button {
 }
 
 #continue-btn {
+    text-decoration: none;
     background-color: #748C70;
     color: white;
 }

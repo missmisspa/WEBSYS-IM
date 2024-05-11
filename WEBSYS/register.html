@@ -270,7 +270,7 @@
                         </form>
                         <div class="button-container">
                             <button class="btn-custom" id="back-btn" onclick="scrollToRegForm()">Back</button>
-                            <a href="./user/userDashboard.html" class="custom-btn" id="register-btn">Register</a>
+                            <button class="custom-btn" id="register-btn" onclick="showPopup()">Register</button>
                         </div>
                 </div>
             </div>
@@ -283,7 +283,9 @@
             <div class="buttonContainer">
                 <div class="button">
                     <button class="button" id="back-btn" onclick="hidePopup()">Back</button>
-                    <button class="btn-back" id="continue-btn" onclick="hidePopup()">Register</button>                    
+                    <a href="./user/userDashboard.html">
+                        <button class="continue-btn" id="continue-btn">Register</button>
+                    </a>                    
                 </div>
             </div>
         </div>
