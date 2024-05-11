@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barangay Monitoring System - Dashboard</title>
+<title>Barangay Monitoring System - Complaints</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="userComplaintsForm.css">
@@ -20,10 +20,10 @@
             <a class="nav-link" href="userDashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userProfile.html"><i class="fas fa-user"></i> Profile</a>
+            <a class="nav-link active" href="userProfile.html"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="userComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+            <a class="nav-link" href="userComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -41,29 +41,80 @@
 </div>
 
 <div id="content">
-    <h2>Complaints</h2>
     <div id="container">
-        <!-- link php here -->
-        <form id="complaintsForm" method="post" action="#" class="form-container">
-            <div class="form-row">
-                <label class="form-label" for="complainant">Name of the Complainant:</label>
-                <input type="text" id="form-control" class="form-input" id="complainant" name="complainant" placeholder="Enter the name of the Complainant">
+        <h2>Barangay Complaints</h2>
+        <form id="registrationForm" method="post" action="#">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="complainant">Name of the Complainant:</label>
+                        <input type="text" class="form-control" id="complainant" name="complainant" placeholder="Enter the name of the Complainant">
+                        <small class="error-message" id="complainant-error"></small>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-row">
-                <label class="form-label" for="plaintiff">Name of the Plaintiff:</label>
-                <input type="text" id="form-control" class="form-input" id="plaintiff" name="plaintiff" placeholder="Enter the name of the Plaintiff" >
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="plaintiff">Name of the Plaintiff:</label>
+                        <input type="text" class="form-control" id="plaintiff" name="plaintiff" placeholder="Enter the name of the Plaintiff">
+                        <small class="error-message" id="plaintiff"></small>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-row">
-                <label class="form-label" for="issued-date">Issued Date:</label>
-                <input type="date" id="form-control" class="form-input" id="date" name="date">
-            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="date">Issued Date:</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                        <small class="error-message" id="date-error"></small>
+                    </div>
+                </div>
+            </div>                
+
         </form>
-        <div class="button-container">
-            <a href="./userComplaintsOverview.html" class="btn-custom" id="back-btn">Back</a>
-            <button class="custom-btn" id="next-btn">Next</button>
-        </div>        
+            <div class="button-container">
+                <a href="userComplaintsOverview.html" class="btn-custom" id="back-btn">Back</a>
+                <button class="custom-btn" id="next-btn">Next</button>
+            </div>
+            <div class="button-container-edit" style="display: none;">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn-custom" id="cancel-edit-btn">Cancel</button>
+                    </div>
+                <div class="col">
+                    <button class="custom-btn" id="save-btn">Save Changes</button>
+                </div>
+                </div>
+            </div>
+            <div class="button-container-preview" style="display: none;">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="userComplaintsOverview.html" class="btn btn-cancel" id="cancel-btn" style="text-decoration-line: none; color: white;">Cancel</a>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn-custom" id="edit-btn" >Edit</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="custom-btn" id="submit-btn" onclick="showConfirmation()" >Submit</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div id="read-only-form" style="display: none;">
+    <h2>Barangay Clearance</h2>
+</div>
+
+<div class="confirmation-modal" id="confirmation-modal">
+    <div class="confirmation-modal-content">
+        <h2>Confirm Action</h2>
+        <p>Are you sure you want to proceed?</p>
+        <div class="btn-container">
+            <button id="cancel-btn" onclick="hideConfirmation()">Cancel</button>
+            <button id="confirm-btn" onclick="confirmProceed()">Confirm</button>
+        </div>
     </div>
 </div>
 
@@ -75,28 +126,151 @@
     </div>
 </div>
 
-
 <script>
+    document.getElementById("next-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showReadOnlyForm();
+        }
+    });
+
+    document.getElementById("save-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showReadOnlyForm();
+        }
+    });
+
+    document.getElementById("edit-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showEditForm();
+
+        }
+    });
+
+    document.getElementById("cancel-edit-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showReadOnlyForm();
+        }
+    });
+    
+    
+    function validateForm() {
+        var complainant = document.getElementById("complainant").value;
+        var plaintiff = document.getElementById("plaintiff").value;
+        var date = document.getElementById("date").value;
+
+    
+        var errors = false;
+    
+        document.querySelectorAll(".error-message").forEach(function(element) {
+            element.textContent = "";
+        });
+    
+        if (complainant.trim() === "") {
+            document.getElementById("complainant-error").textContent = "Please enter the complainant's name";
+            errors = true;
+        }
+
+        if (plaintiff.trim() === "") {
+            document.getElementById("plaintiff-error").textContent = "Please enter the plaintiff's name";
+            errors = true;
+        }
+
+        if (date.trim() === "") {
+            document.getElementById("date-error").textContent = "Please select a date";
+            errors = true;
+        }
+
+        return !errors;
+    }
+    
+    function showReadOnlyForm() {
+        document.getElementById("registrationForm").style.display = "block";
+        document.querySelector(".button-container").style.display = "none"; 
+        document.querySelector(".button-container-preview").style.display = "block";
+        document.querySelector(".button-container-edit").style.display = "none";
+    
+        var complainant = document.getElementById("complainant").value;
+        var plaintiff = document.getElementById("plaintiff").value;
+        var date = document.getElementById("date").value;
+    
+        document.getElementById("complainant").disabled = true;
+        document.getElementById("plaintiff").disabled = true;
+        document.getElementById("date").disabled = true;
+    
+        document.getElementById("complainant").value = complainant;
+        document.getElementById("plaintiff").value = plaintiff;
+        document.getElementById("date").value = date;
+    }
+    
+    function showEditForm() {
+
+        document.getElementById("registrationForm").style.display = "block";
+        document.querySelector(".button-container").style.display = "none"; 
+        document.querySelector(".button-container-preview").style.display = "none";
+        document.querySelector(".button-container-edit").style.display = "block";
+    
+        var complainant = document.getElementById("complainant").value;
+        var plaintiff = document.getElementById("plaintiff").value;
+        var date = document.getElementById("date").value;
+    
+        document.getElementById("complainant").disabled = false;
+        document.getElementById("plaintiff").disabled = false;
+        document.getElementById("date").disabled = false;
+    
+        document.getElementById("complainant").value = complainant;
+        document.getElementById("plaintiff").value = plaintiff;
+        document.getElementById("date").value = date;
+    }
+    
+    function showConfirmation(){
+        document.getElementById('confirmation-modal').classList.add('active'); 
+    }
+
+    function hideConfirmation(){
+        document.getElementById('confirmation-modal').classList.remove('active');
+    }
+
+    function confirmProceed(){
+        document.getElementById('confirmation-modal').classList.remove('active');
+        window.location.href = 'userComplaintsOverview.html' 
+    }
+
+
     function showPopup() {
         document.getElementById('popup').classList.add('active');
     }
-
+    
     function hidePopup() {
         document.getElementById('popup').classList.remove('active');
     }
-
+    
     function confirmLogout() {
         showPopup();
     }
-
+    
     function logout() {
         hidePopup();
         window.location.href = '../login1.html'; 
     }
-</script>  
-        
 
-<!--form error checking -->   
+    //some characters are still accepted
+    document.getElementById("age").addEventListener("keypress", function(event) {
+        var key = event.key;
+        if (key === 'e' || key == '.') {
+            event.preventDefault();
+        }
+    });
+
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
