@@ -72,6 +72,11 @@
     text-align: center;
 }
 
+.read-only-form h2{
+    font-weight: 700;
+    text-align: center;
+}
+
 #container{
     margin-top: 40px;
 }
@@ -185,6 +190,15 @@ select.form-control {
     border: none; 
     text-decoration: none;
 }
+
+.button-container-edit{
+    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    text-align: center;
+}
+
 
 .button-container-preview {
     display: flex;
@@ -327,7 +341,6 @@ select.form-control {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 18px;
     transform: translate(-50%, -50%) scale(0.5);
     animation: showPopup 0.3s ease forwards; 
 }
@@ -342,11 +355,15 @@ select.form-control {
 }
 
 .confirmation-modal-content h2{
+    font-size: 22px;
+    font-weight: 600;
     margin-top: 40px;
     margin-bottom: 10px;
 }
 
 .confirmation-modal-content p {
+    font-size: 18px;
+    font-weight: 300;
     margin-bottom: 20px;
     margin-top: 10px;
 }
@@ -385,9 +402,6 @@ select.form-control {
     border: none; 
     text-decoration: none;
 }
-
-
-
 
 .popup {
     display: none;

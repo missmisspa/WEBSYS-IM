@@ -102,9 +102,20 @@
                     </div>
                 </div>
             </div>
+        </form>
             <div class="button-container">
                 <a href="userDashboard.html" class="btn-custom" id="back-btn">Back</a>
                 <button class="custom-btn" id="next-btn">Next</button>
+            </div>
+            <div class="button-container-edit" style="display: none;">
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn-custom" id="cancel-edit-btn">Cancel</button>
+                    </div>
+                <div class="col-6">
+                    <button class="custom-btn" id="save-btn">Save Changes</button>
+                </div>
+                </div>
             </div>
             <div class="button-container-preview" style="display: none;">
                 <div class="row">
@@ -119,13 +130,14 @@
                     </div>
                 </div>
             </div>
-        </form>
     </div>
 </div>
 
-<div id="read-only-form" style="display: none;"></div>
+<div id="read-only-form" style="display: none;">
+    <h2>Barangay Clearance</h2>
+</div>
 
-<div class="confirmation-modal">
+<div class="confirmation-modal" id="confirmation-modal">
     <div class="confirmation-modal-content">
         <h2>Confirm Action</h2>
         <p>Are you sure you want to proceed?</p>
@@ -153,13 +165,31 @@
         }
     });
 
+    document.getElementById("save-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showReadOnlyForm();
+        }
+    });
+
     document.getElementById("edit-btn").addEventListener("click", function(event) {
         event.preventDefault(); 
         var isValid = validateForm(); 
         if (isValid) {
             showEditForm();
+
         }
     });
+
+    document.getElementById("cancel-edit-btn").addEventListener("click", function(event) {
+        event.preventDefault(); 
+        var isValid = validateForm(); 
+        if (isValid) {
+            showReadOnlyForm();
+        }
+    });
+    
     
     function validateForm() {
         var name = document.getElementById("name").value;
@@ -206,6 +236,7 @@
         document.getElementById("registrationForm").style.display = "block";
         document.querySelector(".button-container").style.display = "none"; 
         document.querySelector(".button-container-preview").style.display = "block";
+        document.querySelector(".button-container-edit").style.display = "none";
     
         var name = document.getElementById("name").value;
         var purok = document.getElementById("purok").value;
@@ -230,7 +261,8 @@
 
         document.getElementById("registrationForm").style.display = "block";
         document.querySelector(".button-container").style.display = "none"; 
-        document.querySelector(".button-container-preview").style.display = "block";
+        document.querySelector(".button-container-preview").style.display = "none";
+        document.querySelector(".button-container-edit").style.display = "block";
     
         var name = document.getElementById("name").value;
         var purok = document.getElementById("purok").value;
@@ -256,17 +288,12 @@
     }
 
     function hideConfirmation(){
-        document.getElementById('confirmation-modal').classList.remove('active'); 
-    }
-
-    function confirmationConfirm(){
-        showConfirmation();
+        document.getElementById('confirmation-modal').classList.remove('active');
     }
 
     function confirmProceed(){
-        hideConfirmation(); 
-        //dlow pa dito
-        //window.location.href = '../userDashboard.html'
+        document.getElementById('confirmation-modal').classList.remove('active');
+        window.location.href = 'userDashboard.html' 
     }
 
 
@@ -294,7 +321,7 @@
             event.preventDefault();
         }
     });
-    
+
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
