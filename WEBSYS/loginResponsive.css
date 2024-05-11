@@ -5,7 +5,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-.registerAcc{
+.loginSection{
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -15,7 +15,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.contentRegAcc{
+.background{
     display: flex;
 }
 
@@ -51,18 +51,18 @@ body {
     text-align: center;
 }
 
-.registerAccContent{
+.loginSectionContent{
     background-color: #fff;
     flex: 1; 
 }
 
-.registerAccContent h2{
+.loginSectionContent h2{
     margin-top: 30px;
     font-weight: 700;
     text-align: center;
 }
 
-.registerAccContainer{
+.loginSectionContainer{
     margin-top: 20%;
     margin-left: 10%;
     margin-right: 10%;
