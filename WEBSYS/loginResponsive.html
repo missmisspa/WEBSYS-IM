@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="loginResponsive.css">
+
+    <style>
+        .error {
+            font-size: 12px;
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,12 +34,14 @@
             <div class="loginSectionContent">
                 <div class="loginSectionContainer">
                     <h2>Login</h2>
-                    <form id="regAccForm" method="post" action="#">
+                    <form id="regAccForm" method="post" action="#" onsubmit="return submitForm()">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        placeholder="Enter Username">
+                                    <span id="usernameError" class="error"></span>
                                 </div>
                             </div>
                         </div>
@@ -40,26 +50,26 @@
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <div class="input-with-icon">
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Enter Password">
                                         <i class="icon fas fa-eye-slash" id="togglePassword"></i>
                                     </div>
+                                    <span id="passwordError" class="error"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="forgot-password">
-                                <a href="#">Forgot Password</a>
+                                <a href="searchforgotPass.html">Forgot Password</a>
                             </div>
                         </div>
-                        </div>                                
                         <div class="button-container">
-                            <a href="#" class="custom-btn" id="register-btn">Login</a>
+                            <button type="submit" class="custom-btn" id="register-btn">Login</button>
                         </div>
                     </form>
-                        <div class="register-now">
-                            <p>Don't Have An Account?<a href="#"> Register Now</a></p>
-                        </div>
-                    </div>  
+                    <div class="register-now">
+                        <p>Don't Have An Account?<a href="register.html"> Register Now</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,7 +85,65 @@
             this.classList.toggle('fa-eye-slash');
             this.classList.toggle('fa-eye');
         });
-    </script>
     
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+    
+            var usernameRegex = /^[a-zA-Z0-9]{8,}$/;
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    
+            var usernameValid = usernameRegex.test(username);
+            var passwordValid = passwordRegex.test(password);
+    
+            var usernameEmpty = username.trim() === '';
+            var passwordEmpty = password.trim() === '';
+    
+            var errors = [];
+    
+            var usernameError = document.getElementById('usernameError');
+            var passwordError = document.getElementById('passwordError');
+    
+            if (usernameEmpty) {
+                errors.push('Username is required');
+                usernameError.innerText = 'Username is required';
+            } else if (!usernameValid) {
+                errors.push('Username is not valid.');
+                usernameError.innerText = 'Username is not valid.';
+            } else {
+                usernameError.innerText = '';
+            }
+    
+            if (passwordEmpty) {
+                errors.push('Password is required');
+                passwordError.innerText = 'Password is required';
+            } else if (!passwordValid) {
+                errors.push('Password is not valid.');
+                passwordError.innerText = 'Password is not valid.';
+            } else {
+                passwordError.innerText = '';
+            }
+    
+            if (errors.length > 0) {
+                return false;
+            }
+    
+            return true;
+        }
+    
+        function submitForm() {
+            if (!validateForm()) {
+                return false;
+            }
+            return true;
+        }
+    
+        document.getElementById('register-btn').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            if (validateForm()) {
+                window.location.href = 'user/userDashboard.html';
+            }
+        });
+    </script>    
 </body>
 </html>
