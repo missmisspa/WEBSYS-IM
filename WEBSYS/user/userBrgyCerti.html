@@ -144,17 +144,6 @@
     <h2>Barangay Certificate</h2>
 </div>
 
-<div class="confirmation-modal" id="confirmation-modal">
-    <div class="confirmation-modal-content">
-        <h2>Confirm Action</h2>
-        <p>Are you sure you want to proceed?</p>
-        <div class="btn-container">
-            <button id="cancel-btn" onclick="hideConfirmation()">Cancel</button>
-            <button id="confirm-btn" onclick="confirmProceed()">Confirm</button>
-        </div>
-    </div>
-</div>
-
 <div class="popup" id="popup">
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>
@@ -301,20 +290,6 @@
         document.getElementById("status").value = status;
         document.getElementById("purpose").value = purpose;
     }
-    
-    function showConfirmation(){
-        document.getElementById('confirmation-modal').classList.add('active'); 
-    }
-
-    function hideConfirmation(){
-        document.getElementById('confirmation-modal').classList.remove('active');
-    }
-
-    function confirmProceed(){
-        document.getElementById('confirmation-modal').classList.remove('active');
-        window.location.href = 'userDashboard.html' 
-    }
-
 
     function showPopup() {
         document.getElementById('popup').classList.add('active');
@@ -330,7 +305,7 @@
     
     function logout() {
         hidePopup();
-        window.location.href = '../login1.html'; 
+        window.location.href = '../loginResponsive.html';
     }
 
     //some characters are still accepted
