@@ -107,7 +107,7 @@ label[for="username"] {
 }
 
 .container-userType{
-    margin-left: 39%;
+    
     text-align: center;
 }
 
@@ -152,7 +152,6 @@ select {
 .button-container {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
     text-align: center;
     margin-left: 15%;
     margin-right: 15%;

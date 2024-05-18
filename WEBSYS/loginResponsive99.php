@@ -57,7 +57,7 @@
                         </div>
                     </form>
                         <div class="register-now">
-                            <p>Don't Have An Account?<a href="#"> Register Now</a></p>
+                            <p>Don't Have An Account?<a href="register.php"> Register Now</a></p>
                         </div>
                     </div>  
                 </div>
