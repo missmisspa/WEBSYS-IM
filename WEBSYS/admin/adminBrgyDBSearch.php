@@ -1,47 +1,12 @@
-<?php
-session_start();
-
-include("../connection.php");
-include("../function.php");
-
-$user_data = check_login($con);
-
-// SQL queries to fetch data
-$total_population_query = "SELECT COUNT(*) AS total FROM resident_info";
-$senior_citizen_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age >= 60";
-$adult_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age BETWEEN 18 AND 59";
-$youth_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age BETWEEN 13 AND 17";
-$children_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age < 13";
-$male_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_sex = 'Male'";
-$female_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_sex = 'Female'";
-
-// Fetch data from database
-$total_population_result = mysqli_query($con, $total_population_query);
-$senior_citizen_result = mysqli_query($con, $senior_citizen_query);
-$adult_result = mysqli_query($con, $adult_query);
-$youth_result = mysqli_query($con, $youth_query);
-$children_result = mysqli_query($con, $children_query);
-$male_result = mysqli_query($con, $male_query);
-$female_result = mysqli_query($con, $female_query);
-
-// Fetch associative arrays
-$total_population = mysqli_fetch_assoc($total_population_result)['total'];
-$senior_citizen = mysqli_fetch_assoc($senior_citizen_result)['total'];
-$adult = mysqli_fetch_assoc($adult_result)['total'];
-$youth = mysqli_fetch_assoc($youth_result)['total'];
-$children = mysqli_fetch_assoc($children_result)['total'];
-$male = mysqli_fetch_assoc($male_result)['total'];
-$female = mysqli_fetch_assoc($female_result)['total'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barangay Monitoring System - Dashboard</title>
+<title>Barangay Monitoring System - Database</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="adminBrgyDBOverview.css">
+<link rel="stylesheet" href="adminBrgyDBSearch.css">
 </head>
 <body>
 <div id="sidebar">
@@ -90,53 +55,61 @@ $female = mysqli_fetch_assoc($female_result)['total'];
                             ><i class="fas fa-sign-out-alt"></i> Logout</button>
         </li>
     </ul>
+    
+    
 </div>
-
 <div id="content">
-    <h2>Barangay Database</h2>
-    <div id="container">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col">
-                    <button class="custom-btn btn-color1"><span class="btn-text">Total Population</span>
-                        <p class="text-center mt-2"><?php echo $total_population; ?></p>
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="custom-btn btn-color2"><span class="btn-text">Senior Citizen</span>
-                        <p class="text-center mt-2"><?php echo $senior_citizen; ?></p>
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="custom-btn btn-color3"><span class="btn-text">Adult</span>
-                        <p class="text-center mt-2"><?php echo $adult; ?></p>
-                    </button>
-                </div>
+    <div id="content-top" class="row">
+        <div class="col-md-2">
+            <a href="./adminBrgyDBOverview.php" class="custom-btn" id="back-btn">Back</a>
+        </div>
+        <div class="col-md-10">
+            <h2>Barangay Database</h2>
+        </div>
+    </div>
+    <div id="search-filter" class="row">
+        <div class="col-6">
+            <div id="search-box">
+                <input type="text" class="form-control" placeholder="Search" id="search-input">
+                <span id="search-icon">
+                    <i class="fas fa-search"></i>
+                </span>
             </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <button class="custom-btn btn-color4"><span class="btn-text">Youth</span>
-                        <p class="text-center mt-2"><?php echo $youth; ?></p>
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="custom-btn btn-color5"><span class="btn-text">Children</span>
-                        <p class="text-center mt-2"><?php echo $children; ?></p>
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="custom-btn btn-color6"><span class="btn-text">Male</span>
-                        <p class="text-center mt-2"><?php echo $male; ?></p>
-                    </button>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col">
-                    <button class="custom-btn btn-color7"><span class="btn-text">Female</span>
-                        <p class="text-center mt-2"><?php echo $female; ?></p>
-                    </button>
-                </div>
-            </div>
+        </div>
+        <div class="col-6">
+            <select class="form-control" id="filter-dropdown">
+                <option value="">Filter By</option>
+                <option value="Resident">Resident</option>
+                <option value="Purok">Purok</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Senior-citizen">Senior Citizen</option>
+                <option value="Adult">Adult</option>
+                <option value="Youth">Youth</option>
+                <option value="Children">Children</option>
+            </select>
+        </div>
+    </div>
+    <div class="row table-container">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Birthday</th>
+                        <th>Sex</th>
+                        <th>Status</th>
+                        <th>Voter Type</th>
+                        <th>Resident Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="DatabaseTableBody">
+                    <!-- brgy data will be loaded here -->
+                </tbody>
+            </table>
         </div>
     </div>
     <div class="button-container">
