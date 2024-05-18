@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a class="nav-link active" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="adminBrgyDBOverview.html"><i class="fas fa-database"></i> Barangay Database</a>
+            <a class="nav-link" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
