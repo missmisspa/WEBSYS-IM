@@ -230,7 +230,7 @@
 
     function logout() {
         hidePopup();
-        window.location.href = '../login1.html'; 
+        window.location.href = '../loginResponsive.html';
     }
 </script>  
         
