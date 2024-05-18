@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             } else {
                 // Password incorrect for admin
                 $_SESSION['notification'] = "Incorrect password.";
+                $_SESSION['notification_type'] = "error";
             }
         } else {
             // Check in resident_info table
@@ -42,10 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 } else {
                     // Password incorrect for user
                     $_SESSION['notification'] = "Incorrect password.";
+                    $_SESSION['notification_type'] = "error";
                 }
             } else {
                 // Username not found in both tables
                 $_SESSION['notification'] = "Username not found.";
+                $_SESSION['notification_type'] = "error";
             }
         }
 
@@ -54,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         exit();
     } else {
         $_SESSION['notification'] = "Please enter both username and password.";
+        $_SESSION['notification_type'] = "error";
         // Redirect back to login page with notification
         header("Location: loginResponsive.php");
         exit();
@@ -76,11 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link rel="stylesheet" href="loginResponsive.css">
 
     <style>
-        .error {
-            font-size: 12px;
-            color: red;
-            margin-top: 5px;
-        }
         .notification {
             display: block;
             position: fixed;
@@ -93,6 +92,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             border-radius: 5px;
             z-index: 9999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .notification.success {
+            background-color: #4CAF50; /* Green background */
+        }
+        .notification.error {
+            background-color: #f44336; /* Red background */
         }
     </style>
 </head>
@@ -115,8 +120,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <?php
                         // Check if there is any notification message set
                         if (isset($_SESSION['notification'])) {
-                            echo "<div class='notification'>{$_SESSION['notification']}</div>";
+                            $notification_type = isset($_SESSION['notification_type']) ? $_SESSION['notification_type'] : 'error';
+                            echo "<div class='notification $notification_type'>{$_SESSION['notification']}</div>";
                             unset($_SESSION['notification']);
+                            unset($_SESSION['notification_type']);
                         }
                     ?>
                     <form id="regAccForm" method="post" action="#" onsubmit="return submitForm()">
@@ -145,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         </div>
                         <div class="row">
                             <div class="forgot-password">
-                                <a href="searchforgotPass.html">Forgot Password</a>
+                                <a href="searchforgotPass.php">Forgot Password</a>
                             </div>
                         </div>
                         <div class="button-container">
@@ -161,6 +168,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </section>
 
     <script>
+        var notification = document.querySelector('.notification');
+        if (notification) {
+            notification.style.display = 'block';
+
+            // Close the notification after 5 seconds
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+        
         const togglePassword = document.querySelector('#togglePassword');
         const passwordField = document.querySelector('#password');
     
@@ -170,6 +187,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             this.classList.toggle('fa-eye-slash');
             this.classList.toggle('fa-eye');
         });
+        
     
     </script>    
 </body>

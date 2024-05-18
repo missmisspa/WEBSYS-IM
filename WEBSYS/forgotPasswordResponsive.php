@@ -39,7 +39,7 @@
                     </div>
                 </form>                                 
                         <div class="button-container">
-                            <a href="loginResponsive.html" class="btn-custom" id="back-btn">Back</a>
+                            <a href="loginResponsive.php" class="btn-custom" id="back-btn">Back</a>
                             <button class="custom-btn" id="search-btn">Search</button>
                         </div>
                 </div>

@@ -487,7 +487,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // Close the notification after 5 seconds
         setTimeout(function() {
             notification.style.display = 'none';
-        }, 5000);
+        }, 3000);
     }
 
     document.addEventListener('DOMContentLoaded', function() {
