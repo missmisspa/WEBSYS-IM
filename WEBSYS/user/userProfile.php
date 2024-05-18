@@ -16,6 +16,38 @@ $user_data = check_login($con);
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="userProfile.css">
+<style>
+    .custom-button {
+        position: relative;
+        top: 20%;
+        left: 500px;
+        background-color: #748C70;
+        color: #FFFFFF;
+        padding: 10px 40px;
+        margin-top: 10px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .custom-button:hover {
+        background-color: #5F775B;
+        transform: scale(1.1);
+        text-decoration: none;
+        color: white;
+    }
+
+    .editProfile-btn {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        width: 100%;
+    }
+</style>
 </head>
 <body>
 <div id="sidebar">
@@ -178,22 +210,8 @@ $user_data = check_login($con);
                 
                 </form>
                 <div class="btnctn">
-                        <button style="position: relative; 
-                        top: 20%; left: 500px;background-color: #748C70;
-                            color: #FFFFFF; padding-left:40px; padding-right:40px; 
-                            padding-top: 10px; 
-                            padding-bottom:10px; 
-                            margin-top:10px; 
-                            border-radius:10px; 
-                            margin-bottom: 20px;
-                            border: none;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            text-decoration:none;
-                            
-                        "   onmouseover="this.style.backgroundColor='#5F775B'; this.style.transform='scale(1.1)';" 
-                            onmouseout="this.style.backgroundColor='#748C70'; this.style.transform='scale(1)';"> <a href="userEditProfile.php" id="editProfile-btn" style="text-decoration: none; color:white;">Edit Profile</a>
-                        </div>
+                    <a href="userEditProfile.php" class="custom-button editProfile-btn">Edit Profile</a>
+                </div>
                 
     </div>
     
