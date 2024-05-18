@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     if (
-        !empty($email) && !empty($fname) && !empty($mname) && !empty($lname) && !empty($purok) && !empty($brgy) &&
+        !empty($email) && !empty($fname) && !empty($lname) && !empty($purok) && !empty($brgy) &&
         !empty($city) && !empty($prov) && !empty($bdate) && !empty($sex) && !empty($password) && !empty($username) &&
         !empty($contact) && !empty($fruit) && !empty($cstatus) && !empty($animal) && !empty($citizen) && !empty($age)
     ) {
@@ -247,7 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="middle_name">Middle Name</label>
-                                <input type="text" class="form-control" id="middle_name" name="mname" placeholder="Enter Middle Name" required>
+                                <input type="text" class="form-control" id="middle_name" name="mname" placeholder="Enter Middle Name">
                             </div>
                         </div>
                         <div class="col-md-3">
