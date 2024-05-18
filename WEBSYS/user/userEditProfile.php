@@ -200,8 +200,8 @@
             </div>
             </div>
             <div class="button-container">
-                <a href="userProfile.html" class="btn-custom" id="editProfile-btn">Cancel</a>
-                <a href="userProfile.html" class="custom-btn" id="editProfile-btn">Save Changes</a>
+                <a href="userProfile.php" class="btn-custom" id="editProfile-btn">Cancel</a>
+                <a href="userProfile.phpp" class="custom-btn" id="editProfile-btn">Save Changes</a>
             </div>
         </form>
     </div>
