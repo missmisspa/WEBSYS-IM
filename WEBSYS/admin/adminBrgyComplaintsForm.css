@@ -81,7 +81,8 @@
 
 /*form*/
 label[for="complainant"],
-label[for="plaintiff"],
+label[for="respondent"],
+label[for="hearing"],
 label[for="date"] {
     font-size: 19px;
     font-weight: 550;

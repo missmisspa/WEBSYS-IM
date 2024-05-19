@@ -49,32 +49,37 @@
         <h2>Barangay Complaints</h2>
         <form id="registrationForm" method="post" action="#">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label for="complainant">Name of the Complainant:</label>
+                        <label for="complainant">Complainant:</label>
                         <input type="text" class="form-control" id="complainant" name="complainant" placeholder="Enter the name of the Complainant">
                         <small class="error-message" id="complainant-error"></small>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label for="plaintiff">Name of the Plaintiff:</label>
-                        <input type="text" class="form-control" id="plaintiff" name="plaintiff" placeholder="Enter the name of the Plaintiff">
-                        <small class="error-message" id="plaintiff"></small>
+                        <label for="respondent">Respondent:</label>
+                        <input type="text" class="form-control" id="respondent" name="respondent" placeholder="Enter the name of the respondent">
+                        <small class="error-message" id="respondent-error"></small>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="date">Schedule of Hearing:</label>
+                        <input type="datetime-local" class="form-control" id="hearing" name="hearing">
+                        <small class="error-message" id="hearing-error"></small>
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="form-group">
                         <label for="date">Issued Date:</label>
                         <input type="date" class="form-control" id="date" name="date">
                         <small class="error-message" id="date-error"></small>
                     </div>
                 </div>
-            </div>                
+            </div>               
 
         </form>
             <div class="button-container">
@@ -131,69 +136,72 @@
 </div>
 
 <script>
-    document.getElementById("next-btn").addEventListener("click", function(event) {
-        event.preventDefault(); 
-        var isValid = validateForm(); 
-        if (isValid) {
-            showReadOnlyForm();
-        }
-    });
-
-    document.getElementById("save-btn").addEventListener("click", function(event) {
-        event.preventDefault(); 
-        var isValid = validateForm(); 
-        if (isValid) {
-            showReadOnlyForm();
-        }
-    });
-
-    document.getElementById("edit-btn").addEventListener("click", function(event) {
-        event.preventDefault(); 
-        var isValid = validateForm(); 
-        if (isValid) {
-            showEditForm();
-
-        }
-    });
-
-    document.getElementById("cancel-edit-btn").addEventListener("click", function(event) {
-        event.preventDefault(); 
-        var isValid = validateForm(); 
-        if (isValid) {
-            showReadOnlyForm();
-        }
-    });
-    
-    
-    function validateForm() {
-        var complainant = document.getElementById("complainant").value;
-        var plaintiff = document.getElementById("plaintiff").value;
-        var date = document.getElementById("date").value;
-
-    
-        var errors = false;
-    
-        document.querySelectorAll(".error-message").forEach(function(element) {
-            element.textContent = "";
-        });
-    
-        if (complainant.trim() === "") {
-            document.getElementById("complainant-error").textContent = "Please enter the complainant's name";
-            errors = true;
-        }
-
-        if (plaintiff.trim() === "") {
-            document.getElementById("plaintiff-error").textContent = "Please enter the plaintiff's name";
-            errors = true;
-        }
-
-        if (date.trim() === "") {
-            document.getElementById("date-error").textContent = "Please select a date";
-            errors = true;
-        }
-
-        return !errors;
+document.getElementById("next-btn").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var isValid = validateForm(); 
+    if (isValid) {
+        showReadOnlyForm();
     }
+});
+
+document.getElementById("save-btn").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var isValid = validateForm(); 
+    if (isValid) {
+        showReadOnlyForm();
+    }
+});
+
+document.getElementById("edit-btn").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var isValid = validateForm(); 
+    if (isValid) {
+        showEditForm();
+    }
+});
+
+document.getElementById("cancel-edit-btn").addEventListener("click", function(event) {
+    event.preventDefault(); 
+    var isValid = validateForm(); 
+    if (isValid) {
+        showReadOnlyForm();
+    }
+});
+
+function validateForm() {
+    var complainant = document.getElementById("complainant").value;
+    var respondent = document.getElementById("respondent").value;
+    var date = document.getElementById("date").value;
+    var hearing = document.getElementById("hearing").value;
+
+    var errors = false;
+
+    document.querySelectorAll(".error-message").forEach(function(element) {
+        element.textContent = "";
+    });
+
+    if (complainant.trim() === "") {
+        document.getElementById("complainant-error").textContent = "Please enter the complainant's name.";
+        errors = true;
+    }
+
+    if (respondent.trim() === "") {
+        document.getElementById("respondent-error").textContent = "Please enter the respondent's name.";
+        errors = true;
+    }
+
+    if (date.trim() === "") {
+        document.getElementById("date-error").textContent = "Please select a date.";
+        errors = true;
+    }
+
+    if (hearing.trim() === "") {
+        document.getElementById("hearing-error").textContent = "Please select a date and time.";
+        errors = true;
+    }
+
+    return !errors;
+}
     
     function showReadOnlyForm() {
         document.getElementById("registrationForm").style.display = "block";
@@ -202,16 +210,19 @@
         document.querySelector(".button-container-edit").style.display = "none";
     
         var complainant = document.getElementById("complainant").value;
-        var plaintiff = document.getElementById("plaintiff").value;
+        var respondent = document.getElementById("respondent").value;
         var date = document.getElementById("date").value;
+        var hearing = document.getElementById("hearing").value;
     
         document.getElementById("complainant").disabled = true;
-        document.getElementById("plaintiff").disabled = true;
+        document.getElementById("respondent").disabled = true;
         document.getElementById("date").disabled = true;
+        document.getElementById("hearing").disabled = true;
     
         document.getElementById("complainant").value = complainant;
-        document.getElementById("plaintiff").value = plaintiff;
+        document.getElementById("respondent").value = respondent;
         document.getElementById("date").value = date;
+        document.getElementById("hearing").value = hearing;
     }
     
     function showEditForm() {
@@ -222,16 +233,19 @@
         document.querySelector(".button-container-edit").style.display = "block";
     
         var complainant = document.getElementById("complainant").value;
-        var plaintiff = document.getElementById("plaintiff").value;
+        var respondent = document.getElementById("respondent").value;
+        var date = document.getElementById("date").value;
         var date = document.getElementById("date").value;
     
         document.getElementById("complainant").disabled = false;
-        document.getElementById("plaintiff").disabled = false;
+        document.getElementById("respondent").disabled = false;
         document.getElementById("date").disabled = false;
+        document.getElementById("hearing").disabled = false;
     
         document.getElementById("complainant").value = complainant;
-        document.getElementById("plaintiff").value = plaintiff;
+        document.getElementById("respondent").value = respondent;
         document.getElementById("date").value = date;
+        document.getElementById("hearing").value = hearing;
     }
     
     function showConfirmation(){
