@@ -378,6 +378,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             <div class="form-group">
                                 <label for="contact_number">Contact Number</label>
                                 <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number" required>
+                                <p id="contact-number-error" class="text-danger" style="position: absolute; font-size: 13px;"></p>
                             </div>
                         </div>
                     </div>
@@ -487,7 +488,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // Close the notification after 5 seconds
         setTimeout(function() {
             notification.style.display = 'none';
-        }, 3000);
+        }, 5000);
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -551,12 +552,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 confirmPasswordError.textContent = '';
             }
 
+            // Contact number validation
+            const contactNumber = document.getElementById('contact_number').value;
+            const contactNumberError = document.getElementById('contact-number-error');
+            if (!/^\d{11}$/.test(contactNumber)) {
+                contactNumberError.textContent = 'Contact number must be 11 digits.';
+                isValid = false;
+            } else {
+                contactNumberError.textContent = '';
+            }
+
             if (!isValid) {
                 event.preventDefault();
             }
         }
 
         document.getElementById('regiForm').addEventListener('submit', validateForm);
+        
+        // Limit contact number input to 11 digits
+        document.getElementById('contact_number').addEventListener('input', function() {
+            let inputValue = this.value;
+            // Trim the input to 11 digits
+            inputValue = inputValue.slice(0, 11);
+            // Update the value in the input field
+            this.value = inputValue;
+        });
     });
 </script>
 </body>
