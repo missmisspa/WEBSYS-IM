@@ -2,9 +2,9 @@
 require('./fpdf186/fpdf.php');
 
 
-$case_no = '1'; // Fetched from database, count rows of complaint table
-$complainant = 'Mizpa Verstappen Binamira';
-$respondent = 'Cedrick Ballon';
+$case_no = '10'; // Fetched from database, count rows of complaint table
+$complainant = 'Mizpa Verstappen Binamira';// from form (nagrereklamo)
+$respondent = 'Cedrick Ballon'; // from form (nirereklamo)
 
 //schedule of hearing
 $day1 = '17';
@@ -71,7 +71,7 @@ $pdf->Cell($contentWidth, 5, 'Respondent', 0, 1,'L');
 $pdf->Ln(10);
 
 $pdf->SetX($leftMargin);
-$pdf->MultiCell($contentWidth, 5,'You are hereby notified to appear before me on the'.$day1.'day of '.$month1.','.$year1.', at ' .$hour. ' at Tamaoyan Barangay Hall for a hearing of  the  complaint of Mr/Mrs '.$respondent.'.', 0, 'J');
+$pdf->MultiCell($contentWidth, 5,'You are hereby notified to appear before me on the '.$day1.' day of '.$month1.', '.$year1.', at ' .$hour. ' at Tamaoyan Barangay Hall for a hearing of  the  complaint of Mr/Mrs '.$respondent.'.', 0, 'J');
 $pdf->Ln(20);
 
 $pdf->SetX($leftMargin);

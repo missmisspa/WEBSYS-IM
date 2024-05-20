@@ -1,23 +1,23 @@
 <?php
 require('./fpdf186/fpdf.php');
 
-$name = 'Mizpa Verstappen Binamira';
-$age = 21;
+$name = 'Mizpa Verstappen Binamira'; //merge
+$age = 21; 
 $civil_status = 'Divorced';
 $purok = '3'; // Fetched from database
 
 $sex = 'male';// fetched from database
-
 if ($sex == 'male')
     $sex = 'he';
 elseif ($sex == 'female')
     $sex = 'she'; // for he/she in citations
 
-
-$day = '15';
+//galing sa form Date
+$date = 'Y-m-d';
+$day = '15'; //issued date
 $month = 'March';
 $year = '2024';
-$purpose = 'School Enrollment'; // From form or database (alternative)
+$purpose = 'School Enrollment'; // From form
 
 $imagePath1 = './fpdf186/pics/BRGY LOGO.png';
 $imagePath2 = './fpdf186/pics/legazpi-LOGO.png';

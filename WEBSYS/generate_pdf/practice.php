@@ -8,7 +8,7 @@
     </head>
     <body>
                 <div class="container-fluid">
-                    <a href="./generate_pdf/generate_indigency.php " class="btn btn-primary">Generate brgy Indigency</a>
+                    <a href="generate_indigency.php " class="btn btn-primary">Generate brgy Indigency</a>
                     <a href="generate_certification.php" class="btn btn-primary">Generate brgy Certificate</a>
                     <a href="generate_complaint.php" class="btn btn-primary">Generate brgy Complaint</a>
                     <a href="generate_clearance.php" class="btn btn-primary">Generate brgy clearance</a>
