@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barangay Monitoring System - Dashboard</title>
-<link rel="stylesheet" href="https:
-<link rel="stylesheet" href="https:
-<link rel="stylesheet" href="userBrgyClearance.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="adminBrgyClearance.css">
 </head>
 <body>
 <div id="sidebar">
@@ -49,13 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link active" href="userDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link active" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userProfile.php"><i class="fas fa-user"></i> Profile</a>
+            <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+            <a class="nav-link" href="adminBrgyComplaintsForm.phpp"><i class="fas fa-exclamation-circle"></i> Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
             <div class="button-container">
-                <a href="userDashboard.php" class="btn-custom" id="back-btn">Back</a>
+                <a href="adminDashboard.php" class="btn-custom" id="back-btn">Back</a>
                 <button type="submit" class="custom-btn" id="next-btn">Submit</button>
             </div>
         </form>

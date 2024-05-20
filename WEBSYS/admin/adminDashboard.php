@@ -35,7 +35,7 @@ $user_data = check_login($con);
             <a class="nav-link" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+            <a class="nav-link" href="adminBrgyComplaintsOverview.pphp"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -68,23 +68,23 @@ $user_data = check_login($con);
 </div>
 
 <div id="content">
-    <!-- add php code here -->
+
     <h2>Welcome Back, <?php echo $user_data['staff_fname']; ?></h2>
     <p> Select from a range of essential documents, input necessary details, and with a simple click, generate professionally formatted reports, certificates, and records tailored to your needs.</p>
     <div id="btns">        
         <div class="row mt-4">
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyIndigency.html'"><span class="btn-text">Barangay Indigency</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyIndigency.php'"><span class="btn-text">Barangay Indigency</span>
                 <p class="text-center mt-2">Click here</p>
                 </button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyClearance.html'"><span class="btn-text">Barangay Clearance</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyClearance.php'"><span class="btn-text">Barangay Clearance</span>
                 <p class="text-center mt-2">Click here</p>
                 </button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyCerti.html'"><span class="btn-text">Barangay Certificate</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./adminBrgyCerti.php'"><span class="btn-text">Barangay Certificate</span>
                 <p class="text-center mt-2">Click here</p>
             </button>
             </div>
@@ -114,8 +114,8 @@ function confirmLogout() {
 }
 </script>  
 
-<script src="https:
-<script src="https:
-<script src="https:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

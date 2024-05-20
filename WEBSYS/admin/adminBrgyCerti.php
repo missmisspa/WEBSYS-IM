@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barangay Monitoring System - Dashboard</title>
-<link rel="stylesheet" href="https:
-<link rel="stylesheet" href="https:
-<link rel="stylesheet" href="userBrgyClearance.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="adminBrgyCerti.css">
 </head>
 <body>
 <div id="sidebar">
@@ -52,19 +52,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a class="nav-link active" href="userDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userProfile.php"><i class="fas fa-user"></i> Profile</a>
+            <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+            <a class="nav-link" href="adminBrgyComplaintsForm.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+            <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+            <a class="nav-link" href="adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
+            <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
         <li class="nav-item">
             <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()" 
@@ -87,10 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <div id="content">
-    <h2>Barangay Clearance</h2>
+    <h2>Barangay Certificate</h2>
     <div id="container">
-        <!-- link php here -->
-        <form id="registrationForm" method="post" action="../generate_pdf/generate_clearance.php" target="_blank">
+        <form id="registrationForm" method="post" action="../generate_pdf/generate_certification.php" target="_blank">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -154,16 +153,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <small class="error-message" id="status-error"></small>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="purpose">Purpose:</label>
+                        <input type="text" class="form-control" id="purpose" name="purpose" placeholder="Enter purpose" value="<?php echo isset($_SESSION['form_data']['purpose']) ? $_SESSION['form_data']['purpose'] : ''; ?>" required>
+                        <small class="error-message" id="purpose-error"></small>
+                    </div>
+                </div>
             </div>
             <div class="button-container">
-                <a href="userDashboard.php" class="btn-custom" id="back-btn">Back</a>
+                <a href="adminDashboard.php" class="btn-custom" id="back-btn">Back</a>
                 <button type="submit" class="custom-btn" id="next-btn">Submit</button>
             </div>
         </form>
-            
     </div>
 </div>
 
+<div id="read-only-form" style="display: none;">
+    <h2>Barangay Certificate</h2>
+</div>
 
 <div class="popup" id="popup">
     <div class="popup-content">
@@ -217,10 +225,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }, 500); 
     });
 </script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    </body>
-    </html>
-    
+
+</body>
+</html>
