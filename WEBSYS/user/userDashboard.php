@@ -32,7 +32,7 @@ $user_data = check_login($con);
             <a class="nav-link" href="userProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+            <a class="nav-link" href="userBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -81,7 +81,7 @@ $user_data = check_login($con);
                 </button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyCerti.html'"><span class="btn-text">Barangay Certificate</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyCerti.php'"><span class="btn-text">Barangay Certificate</span>
                 <p class="text-center mt-2">Click here</p>
             </button>
             </div>

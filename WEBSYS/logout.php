@@ -12,6 +12,7 @@ if (isset($_SESSION['staff_id'])) {
 }
 
 // Redirect to the login page
+session_destroy();
 header("Location: ./loginResponsive.php");
-exit;
+exit();
 ?>
