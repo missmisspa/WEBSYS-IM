@@ -21,19 +21,6 @@ $purpose = 'Eligible for conducting research works'; // From form or database (a
 $imagePath1 = './fpdf186/pics/BRGY LOGO.png';
 $imagePath2 = './fpdf186/pics/legazpi-LOGO.png';
 
-// Function to generate citations
-function generateCitations($name, $age, $civil_status, $purok, $sex, $day, $month, $year)
-{
-    $citations = array();
-    $citations[] = "Name: $name";
-    $citations[] = "Age: $age years old";
-    $citations[] = "Civil Status: $civil_status";
-    $citations[] = "Purok: $purok";
-    $citations[] = "Gender: $sex";
-    $citations[] = "Date of Issue: $day $month $year";
-    return $citations;
-}
-
 class PDF extends FPDF
 {
     protected $col = 0; // Current column
