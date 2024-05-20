@@ -27,7 +27,6 @@ function check_login($con){
         }
     }
 
-    // If session or user not found, redirect to login page
     header("Location: ../loginResponsive.php");
     exit;
 }

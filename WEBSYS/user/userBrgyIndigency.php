@@ -7,7 +7,6 @@ include("../function.php");
 $user_data = check_login($con);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
     $name = htmlspecialchars($_POST['name']);
     $purok = htmlspecialchars($_POST['purok']);
     $age = htmlspecialchars($_POST['age']);
@@ -15,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $status = htmlspecialchars($_POST['status']);
     $purpose = htmlspecialchars($_POST['purpose']);
 
-    
+
     if (!isset($_SESSION['form_data'])) {
         $_SESSION['form_data'] = [
             'name' => $name,
@@ -89,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div id="content">
     <h2>Barangay Certificate</h2>
     <div id="container">
-        <form id="registrationForm" method="post" action="../generate_pdf/generate_certification.php" target="_blank">
+        <form id="registrationForm" method="post" action="../generate_pdf/generate_indigency.php" target="_blank">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -196,23 +195,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     function confirmSubmission() {
         if (confirm("Are you sure all information is correct?")) {
-            
             document.getElementById("registrationForm").submit();
         } else {
-            
         }
     }
 
     document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        
         event.preventDefault();
-        
         confirmSubmission();
     });
 
-    
     document.getElementById('registrationForm').addEventListener('submit', function(event) {
-        
         setTimeout(function() {
             document.getElementById('name').value = '';
             document.getElementById('purok').selectedIndex = 0;
@@ -222,7 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             });
             document.getElementById('status').selectedIndex = 0;
             document.getElementById('purpose').value = '';
-        }, 500); 
+        }, 500);
     });
 </script>
 

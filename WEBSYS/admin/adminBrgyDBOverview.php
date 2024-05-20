@@ -6,7 +6,7 @@ include("../function.php");
 
 $user_data = check_login($con);
 
-// SQL queries to fetch data
+
 $total_population_query = "SELECT COUNT(*) AS total FROM resident_info";
 $senior_citizen_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age >= 60";
 $adult_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age BETWEEN 18 AND 59";
@@ -15,7 +15,7 @@ $children_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_age < 
 $male_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_sex = 'Male'";
 $female_query = "SELECT COUNT(*) AS total FROM resident_info WHERE resi_sex = 'Female'";
 
-// Fetch data from database
+
 $total_population_result = mysqli_query($con, $total_population_query);
 $senior_citizen_result = mysqli_query($con, $senior_citizen_query);
 $adult_result = mysqli_query($con, $adult_query);
@@ -24,7 +24,7 @@ $children_result = mysqli_query($con, $children_query);
 $male_result = mysqli_query($con, $male_query);
 $female_result = mysqli_query($con, $female_query);
 
-// Fetch associative arrays
+
 $total_population = mysqli_fetch_assoc($total_population_result)['total'];
 $senior_citizen = mysqli_fetch_assoc($senior_citizen_result)['total'];
 $adult = mysqli_fetch_assoc($adult_result)['total'];
@@ -39,8 +39,8 @@ $female = mysqli_fetch_assoc($female_result)['total'];
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barangay Monitoring System - Dashboard</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https:
+<link rel="stylesheet" href="https:
 <link rel="stylesheet" href="adminBrgyDBOverview.css">
 </head>
 <body>
@@ -166,8 +166,8 @@ $female = mysqli_fetch_assoc($female_result)['total'];
     }
 </script>  
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https:
+<script src="https:
+<script src="https:
 </body>
 </html>

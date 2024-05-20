@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <title>Barangay Monitoring System - Dashboard</title>
 <link rel="stylesheet" href="https:
 <link rel="stylesheet" href="https:
-<link rel="stylesheet" href="userBrgyCerti.css">
+<link rel="stylesheet" href="userBrgyClearance.css">
 </head>
 <body>
 <div id="sidebar">
@@ -87,9 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <div id="content">
-    <h2>Barangay Certificate</h2>
+    <h2>Barangay Clearance</h2>
     <div id="container">
-        <form id="registrationForm" method="post" action="../generate_pdf/generate_certification.php" target="_blank">
+        <!-- link php here -->
+        <form id="registrationForm" method="post" action="../generate_pdf/generate_clearance.php" target="_blank">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -153,25 +154,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <small class="error-message" id="status-error"></small>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="purpose">Purpose:</label>
-                        <input type="text" class="form-control" id="purpose" name="purpose" placeholder="Enter purpose" value="<?php echo isset($_SESSION['form_data']['purpose']) ? $_SESSION['form_data']['purpose'] : ''; ?>" required>
-                        <small class="error-message" id="purpose-error"></small>
-                    </div>
-                </div>
             </div>
             <div class="button-container">
                 <a href="userDashboard.php" class="btn-custom" id="back-btn">Back</a>
                 <button type="submit" class="custom-btn" id="next-btn">Submit</button>
             </div>
         </form>
+            
     </div>
 </div>
 
-<div id="read-only-form" style="display: none;">
-    <h2>Barangay Certificate</h2>
-</div>
 
 <div class="popup" id="popup">
     <div class="popup-content">
@@ -226,5 +218,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     });
 </script>
 
-</body>
-</html>
+    <script src="https:
+    <script src="https:
+    <script src="https:
+    </body>
+    </html>
+    

@@ -1,23 +1,24 @@
 <?php
 require('./fpdf186/fpdf.php');
 
-$name = 'Mizpa Verstappen Binamira'; //merge
-$age = 21; 
-$civil_status = 'Divorced';
-$purok = '3'; // Fetched from database
 
-$sex = 'male';// fetched from database
-if ($sex == 'male')
+$name = isset($_POST['name']) ? $_POST['name'] : 'Unknown';
+$age = isset($_POST['age']) ? $_POST['age'] : 'Unknown';
+$civil_status = isset($_POST['status']) ? $_POST['status'] : 'Unknown';
+$purok = isset($_POST['purok']) ? $_POST['purok'] : 'Unknown';
+$purpose = isset($_POST['purpose']) ? $_POST['purpose'] : 'Unknown';
+
+$sex = isset($_POST['sex']) ? $_POST['sex'] : 'Male'; // This can be retrieved from the form data
+
+if ($sex == 'Male')
     $sex = 'he';
-elseif ($sex == 'female')
+elseif ($sex == 'Female')
     $sex = 'she'; // for he/she in citations
 
 //galing sa form Date
-$date = 'Y-m-d';
-$day = '15'; //issued date
-$month = 'March';
-$year = '2024';
-$purpose = 'School Enrollment'; // From form
+$day = date('d');
+$month = date('F');
+$year = date('Y');
 
 $imagePath1 = './fpdf186/pics/BRGY LOGO.png';
 $imagePath2 = './fpdf186/pics/legazpi-LOGO.png';

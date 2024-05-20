@@ -13,8 +13,8 @@ $user_data = check_login($con);
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barangay Monitoring System - Dashboard</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https:
+<link rel="stylesheet" href="https:
 <link rel="stylesheet" href="userDashboardStyles.css">
 </head>
 <body>
@@ -71,12 +71,12 @@ $user_data = check_login($con);
     <div id="btns">        
         <div class="row mt-4">
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyIndigency.html'"><span class="btn-text">Barangay Indigency</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyIndigency.php'"><span class="btn-text">Barangay Indigency</span>
                 <p class="text-center mt-2">Click here</p>
                 </button>
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyClearance.html'"><span class="btn-text">Barangay Clearance</span>
+                <button type="button" class="btn btn-custom btn-block btn-large" onclick="location.href='./userBrgyClearance.php'"><span class="btn-text">Barangay Clearance</span>
                 <p class="text-center mt-2">Click here</p>
                 </button>
             </div>
@@ -111,8 +111,8 @@ function confirmLogout() {
 }
 </script>  
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https:
+<script src="https:
+<script src="https:
 </body>
 </html>

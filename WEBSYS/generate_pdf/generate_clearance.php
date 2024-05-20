@@ -1,22 +1,21 @@
 <?php
 require('./fpdf186/fpdf.php');
 
-$name = 'Mizpa Verstappen Binamira';
-$age = 21;
-$civil_status = 'Divorced';
-$purok = '3'; // Fetched from database
+$name = isset($_POST['name']) ? $_POST['name'] : 'Unknown';
+$age = isset($_POST['age']) ? $_POST['age'] : 'Unknown';
+$civil_status = isset($_POST['status']) ? $_POST['status'] : 'Unknown';
+$purok = isset($_POST['purok']) ? $_POST['purok'] : 'Unknown';
 
-$sex = 'male'; // fetched from database
-if ($sex == 'male') {
+$sex = isset($_POST['sex']) ? $_POST['sex'] : 'Male'; // This can be retrieved from the form data
+
+if ($sex == 'Male')
     $sex = 'he';
-} elseif ($sex == 'female') {
+elseif ($sex == 'Female')
     $sex = 'she'; // for he/she in citations
-}
 
-$day = '15';
-$month = 'March';
-$year = '2024';
-$purpose = 'Eligible for conducting research works'; // From form or database (alternative)
+$day = date('d');
+$month = date('F');
+$year = date('Y');
 
 $imagePath1 = './fpdf186/pics/BRGY LOGO.png';
 $imagePath2 = './fpdf186/pics/legazpi-LOGO.png';

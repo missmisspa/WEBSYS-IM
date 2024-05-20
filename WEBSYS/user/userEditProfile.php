@@ -7,7 +7,7 @@ include("../function.php");
 $user_data = check_login($con);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Collect data from the form
+    
     $first_name = $_POST['first_name'];
     $middle_name = $_POST['middle_name'];
     $last_name = $_POST['last_name'];
@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $contact_number = $_POST['contact_number'];
     $email = $_POST['email'];
 
-    // Update the database
-    $resi_id = $user_data['resident_id']; // Assuming you have resi_id in $user_data
+    
+    $resi_id = $user_data['resident_id']; 
     $query = "UPDATE resident_info SET 
                 resi_fname = '$first_name', 
                 resi_mname = '$middle_name', 
@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Barangay Monitoring System - Dashboard</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https:
+<link rel="stylesheet" href="https:
 <link rel="stylesheet" href="userEditProfile.css">
 </head>
 <body>
