@@ -81,9 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a class="nav-link active" href="userProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userComplaintsForm.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
         </li>
         <li class="nav-item">

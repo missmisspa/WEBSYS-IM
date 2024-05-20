@@ -1,12 +1,18 @@
+<?php
+    include("../connection.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Barangay Monitoring System - Database</title>
+<title>Barangay Monitoring System - Complaints</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="adminBrgyDBSearch.css">
+<link rel="stylesheet" href="adminBrgyComplaintsSearch.css">
 </head>
 <body>
 <div id="sidebar">
@@ -17,16 +23,16 @@
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
+            <a class="nav-link" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="adminBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+            <a class="nav-link active" href="adminBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -61,10 +67,10 @@
 <div id="content">
     <div id="content-top" class="row">
         <div class="col-md-2">
-            <a href="./adminBrgyDBOverview.php" class="custom-btn" id="back-btn">Back</a>
+            <a href="./adminBrgyComplaintsOverview.php" class="custom-btn" id="back-btn">Back</a>
         </div>
         <div class="col-md-10">
-            <h2>Barangay Database</h2>
+            <h2>Barangay Complaints</h2>
         </div>
     </div>
     <div id="search-filter" class="row">
@@ -82,22 +88,19 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>User ID</th>
-                        <th>Name</th>
-                        <th>Birthdate</th>
-                        <th>Birthday</th>
-                        <th>Sex</th>
-                        <th>Contact</th>
-                        <th>Email</th>
-                        <th>Purok</th>
+                        <th>Complaint ID</th>
+                        <th>Complainant</th>
+                        <th>Respondent</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody id="DatabaseTableBody">
-                <?php
+                    <?php
                     include("../connection.php");
 
                     
-                    $sql = "SELECT * FROM resident_info";
+                    $sql = "SELECT * FROM complaint_table";
                     $result = mysqli_query($con, $sql);
 
                     
@@ -105,21 +108,18 @@
                         
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo "<tr>";
-                            echo "<td>" . $row['resident_id'] . "</td>";
-                            echo "<td>" . $row['resi_fname'] . " " . $row['resi_mname'] . " " . $row['resi_lname'] ." ". $row['resi_suffix'] ."</td>";
-                            echo "<td>" . $row['resi_bdate'] . "</td>";
-                            echo "<td>" . $row['resi_sex'] . "</td>";
-                            echo "<td>" . $row['resi_cstatus'] . "</td>";
-                            echo "<td>" . $row['resi_contact'] . "</td>";
-                            echo "<td>" . $row['resi_email'] . "</td>";
-                            echo "<td>" . $row['resi_zone'] . "</td>";
+                            echo "<td>" . $row['complaint_id'] . "</td>";
+                            echo "<td>" . $row['complainant_name'] . "</td>";
+                            echo "<td>" . $row['respondent_name'] . "</td>";
+                            echo "<td>" . $row['complaint_date'] . "</td>";
+                            echo "<td><a href='../generate_pdf/generate_complaintsSearch.php?complaint_id=" . $row['complaint_id'] . "' target='_blank'>View Details</a></td>"; 
                             echo "</tr>";
                         }
                     } else {
                         echo "<tr><td colspan='5'>No complaints found</td></tr>";
                     }
 
-                    mysqli_close($con); 
+                    mysqli_close($con); // Close the database connection
                     ?>
                 </tbody>
             </table>
@@ -127,6 +127,7 @@
     </div>
 </div>
 
+    
 <div class="popup" id="popup">
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>
@@ -136,18 +137,18 @@
 </div>
 
 <script>
-    function showPopup() {
-        document.getElementById('popup').classList.add('active');
-    }
+function showPopup() {
+    document.getElementById('popup').classList.add('active');
+}
 
-    function hidePopup() {
-        document.getElementById('popup').classList.remove('active');
-    }
+function hidePopup() {
+    document.getElementById('popup').classList.remove('active');
+}
 
-    function confirmLogout() {
-        showPopup();
-    }
-    function search() {
+function confirmLogout() {
+    showPopup();
+}
+function search() {
     // Declare variables
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("search-input");
@@ -173,6 +174,7 @@
     }
 }
 </script>  
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

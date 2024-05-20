@@ -3,29 +3,37 @@ require('./fpdf186/fpdf.php');
 include("../connection.php"); // Include your database connection file
 
 // Fetch the most recent complaint data from the database
-$sql = "SELECT * FROM complaint_table ORDER BY complaint_id DESC LIMIT 1";
-$result = mysqli_query($con, $sql);
+if(isset($_GET['complaint_id']) && !empty($_GET['complaint_id'])) {
+    // Sanitize the input to prevent SQL injection
+    $complaint_id = mysqli_real_escape_string($con, $_GET['complaint_id']);
 
-if ($result && mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
+    // Fetch the complaint data from the database based on the complaint ID
+    $sql = "SELECT * FROM complaint_table WHERE complaint_id = '$complaint_id'";
+    $result = mysqli_query($con, $sql);
 
-    // Fetch data from the result
-    $case_no = $row['complaint_id']; // Assuming 'id' is the primary key
-    $complainant = $row['complainant_name'];
-    $respondent = $row['respondent_name'];
-    $hearing = new DateTime($row['complaint_sched']);
-    $date = new DateTime($row['complaint_date']);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
 
-    // Format date and time for the PDF
-    $day1 = $hearing->format('d');
-    $month1 = $hearing->format('F');
-    $year1 = $hearing->format('Y');
-    $hour = $hearing->format('h:i A');
+        // Fetch data from the result
+        $case_no = $row['complaint_id']; // Assuming 'id' is the primary key
+        $complainant = $row['complainant_name'];
+        $respondent = $row['respondent_name'];
+        $hearing = new DateTime($row['complaint_sched']);
+        $date = new DateTime($row['complaint_date']);
+
+        // Format date and time for the PDF
+        $day1 = $hearing->format('d');
+        $month1 = $hearing->format('F');
+        $year1 = $hearing->format('Y');
+        $hour = $hearing->format('h:i A');
+
+        $day = $date->format('d');
+        $month = $date->format('F');
+        $year = $date->format('Y');
+    } else{
+        echo "No data found for the specified complaint ID.";
+    }
     
-    $day = $date->format('d');
-    $month = $date->format('F');
-    $year = $date->format('Y');
-
     $imagePath1 = './fpdf186/pics/BRGY LOGO.png';
     $imagePath2 = './fpdf186/pics/legazpi-LOGO.png';
 

@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="adminBrgyComplaintsForm.php"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+            <a class="nav-link" href="adminBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Complaints</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
@@ -216,6 +216,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             document.getElementById('status').selectedIndex = 0;
             document.getElementById('purpose').value = '';
         }, 500);
+    });
+    document.getElementById("age").addEventListener("keypress", function(event) {
+        var key = event.key;
+        if (key === 'e' || key == '.') {
+            event.preventDefault();
+        }
     });
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

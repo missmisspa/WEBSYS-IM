@@ -52,27 +52,22 @@
     <div class="popup-content">
         <p>Are you sure you want to logout?</p>
         <button id="cancelButton" onclick="hidePopup()">Cancel</button>
-        <button id="logoutBtn" onclick="logout()">Logout</button>
+        <a href="../logout.php"><button id="logoutBtn" onclick="logout()">Logout</button></a>
     </div>
 </div>
 
 <script>
-    function showPopup() {
-        document.getElementById('popup').classList.add('active');
-    }
+function showPopup() {
+    document.getElementById('popup').classList.add('active');
+}
 
-    function hidePopup() {
-        document.getElementById('popup').classList.remove('active');
-    }
+function hidePopup() {
+    document.getElementById('popup').classList.remove('active');
+}
 
-    function confirmLogout() {
-        showPopup();
-    }
-
-    function logout() {
-        hidePopup();
-        window.location.href = '../loginResponsive.html';
-    }
+function confirmLogout() {
+    showPopup();
+}
 </script>  
 
 <!--form error checking -->   

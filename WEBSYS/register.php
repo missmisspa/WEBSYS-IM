@@ -39,15 +39,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         !empty($city) && !empty($prov) && !empty($bdate) && !empty($sex) && !empty($password) && !empty($username) &&
         !empty($contact) && !empty($fruit) && !empty($cstatus) && !empty($animal) && !empty($citizen) && !empty($age)
     ) {
-        // Check if username already exists in either resident_info or brgy_info table
+        
         if (valueExists($con, 'resident_info', 'resi_username', $username) || valueExists($con, 'brgy_info', 'staff_username', $username)) {
             $_SESSION['notification'] = "Username is already taken.";
             $_SESSION['notification_type'] = "error";
             header("Location: register.php");
             exit();
         }
+        if (valueExists($con, 'resident_info', 'resi_contact', $username) || valueExists($con, 'brgy_info', 'staff_contact', $username)) {
+            $_SESSION['notification'] = "Contact Number is already taken.";
+            $_SESSION['notification_type'] = "error";
+            header("Location: register.php");
+            exit();
+        }
 
-        // Check if email already exists in either resident_info or brgy_info table
+        
         if (valueExists($con, 'resident_info', 'resi_email', $email) || valueExists($con, 'brgy_info', 'staff_email', $email)) {
             $_SESSION['notification'] = "Email is already taken.";
             $_SESSION['notification_type'] = "error";

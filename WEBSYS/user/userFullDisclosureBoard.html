@@ -23,9 +23,6 @@
             <a class="nav-link" href="userProfile.php"><i class="fas fa-user"></i> Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="userComplaintsForm.html"><i class="fas fa-exclamation-circle"></i> Complaints</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link active" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
         </li>
         <li class="nav-item">
@@ -35,7 +32,21 @@
             <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link logout" href="#" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()" 
+            style="border: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            background-color: #748C70;
+                            color: #FFFFFF;
+                            border-radius:10px; 
+                            border:none;
+                            transition: all 0.3s ease;
+                            padding-left:30px;
+                            padding-right:30px;
+                            margin-left: 25px;"   
+                            onmouseover="this.style.backgroundColor='#5F775B'; this.style.transform='scale(1.1)';" 
+                            onmouseout="this.style.backgroundColor='#748C70'; this.style.transform='scale(1)';"
+                            ><i class="fas fa-sign-out-alt"></i> Logout</button>
         </li>
     </ul>
 </div>
@@ -63,32 +74,27 @@
         </div>
     </div>
         
-<div class="popup" id="popup">
-    <div class="popup-content">
-        <p>Are you sure you want to logout?</p>
-        <button id="cancelButton" onclick="hidePopup()">Cancel</button>
-        <button id="logoutBtn" onclick="logout()">Logout</button>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Are you sure you want to logout?</p>
+            <button id="cancelButton" onclick="hidePopup()">Cancel</button>
+            <a href="../logout.php"><button id="logoutBtn" onclick="logout()">Logout</button></a>
+        </div>
     </div>
-</div>
 
-<script>
-    function showPopup() {
-        document.getElementById('popup').classList.add('active');
-    }
+    <script>
+        function showPopup() {
+            document.getElementById('popup').classList.add('active');
+        }
 
-    function hidePopup() {
-        document.getElementById('popup').classList.remove('active');
-    }
+        function hidePopup() {
+            document.getElementById('popup').classList.remove('active');
+        }
 
-    function confirmLogout() {
-        showPopup();
-    }
-
-    function logout() {
-        hidePopup();
-        window.location.href = '../loginResponsive.html'; 
-    }
-</script>  
+        function confirmLogout() {
+            showPopup();
+        }
+    </script>  
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
