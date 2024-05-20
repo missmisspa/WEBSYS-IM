@@ -9,62 +9,62 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = $_POST['password'];
 
     if (!empty($username) && !empty($password)) {
-        
+        // Function to check if a username exists and retrieve the corresponding user
         function getUser($con, $table, $usernameColumn, $username) {
             $query = "SELECT * FROM $table WHERE $usernameColumn = '$username'";
             $result = mysqli_query($con, $query);
             return mysqli_fetch_assoc($result);
         }
 
-        
+        // Check in brgy_info table
         $adminUser = getUser($con, 'brgy_info', 'staff_username', $username);
 
         if ($adminUser) {
             if ($adminUser['staff_password'] === $password) {
-                
-                $_SESSION['staff_id'] = $adminUser['staff_id']; 
+                // Admin credentials correct, redirect to adminDashboard
+                $_SESSION['staff_id'] = $adminUser['staff_id']; // Set staff_id session variable
                 header("Location: admin/adminDashboard.php");
                 exit();
             } else {
-                
+                // Password incorrect for admin
                 $_SESSION['notification'] = "Incorrect password.";
                 $_SESSION['notification_type'] = "error";
             }
         } else {
-            
+            // Check in resident_info table
             $normalUser = getUser($con, 'resident_info', 'resi_username', $username);
 
             if ($normalUser) {
                 if ($normalUser['resi_password'] === $password) {
-                    
-                    $_SESSION['resident_id'] = $normalUser['resident_id']; 
+                    // User credentials correct, redirect to userDashboard
+                    $_SESSION['resident_id'] = $normalUser['resident_id']; // Set resi_id session variable
                     header("Location: user/userDashboard.php");
                     exit();
                 } else {
-                    
+                    // Password incorrect for user
                     $_SESSION['notification'] = "Incorrect password.";
                     $_SESSION['notification_type'] = "error";
                 }
             } else {
-                
+                // Username not found in both tables
                 $_SESSION['notification'] = "Username not found.";
                 $_SESSION['notification_type'] = "error";
             }
         }
 
-        
+        // If redirection hasn't happened yet, redirect back to login page with notification
         header("Location: loginResponsive.php");
         exit();
     } else {
         $_SESSION['notification'] = "Please enter both username and password.";
         $_SESSION['notification_type'] = "error";
-        
+        // Redirect back to login page with notification
         header("Location: loginResponsive.php");
         exit();
     }
 }
 
-
+// If there's no form submission or redirection required, continue rendering the login page
 ?>
 
 <!DOCTYPE html>
@@ -74,9 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link href="https:
-    <link rel="stylesheet" href="https:
-    <link rel="stylesheet" href="https:
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="loginResponsive.css">
 
     <style>
@@ -86,18 +86,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f44336;
-            color: white;
+            background-color: #f44336; /* Red background */
+            color: white; /* White text */
             padding: 10px 20px;
             border-radius: 5px;
             z-index: 9999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .notification.success {
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Green background */
         }
         .notification.error {
-            background-color: #f44336;
+            background-color: #f44336; /* Red background */
         }
     </style>
 </head>
@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <div class="loginSectionContainer">
                     <h2>Login</h2>
                     <?php
-                        
+                        // Check if there is any notification message set
                         if (isset($_SESSION['notification'])) {
                             $notification_type = isset($_SESSION['notification_type']) ? $_SESSION['notification_type'] : 'error';
                             echo "<div class='notification $notification_type'>{$_SESSION['notification']}</div>";
@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (notification) {
             notification.style.display = 'block';
 
-            
+            // Close the notification after 5 seconds
             setTimeout(function() {
                 notification.style.display = 'none';
             }, 3000);

@@ -6,20 +6,20 @@ include("function.php");
 $error_message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_SESSION['username']; 
+    $username = $_SESSION['username']; // Retrieve username from session
     $fruit = $_POST['fruit'];
     $animal = $_POST['animal'];
 
-    
+    // Check in resident_info table
     $resident_query = "SELECT * FROM resident_info WHERE resi_username = '$username' AND resi_fruit = '$fruit' AND resi_animal = '$animal'";
     $resident_result = mysqli_query($con, $resident_query);
 
-    
+    // Check in brgy_info table
     $brgy_query = "SELECT * FROM brgy_info WHERE staff_username = '$username' AND staff_fruit = '$fruit' AND staff_animal = '$animal'";
     $brgy_result = mysqli_query($con, $brgy_query);
 
     if (mysqli_num_rows($resident_result) > 0 || mysqli_num_rows($brgy_result) > 0) {
-        
+        // Redirect to recoverAcc.php if both answers are correct
         $_SESSION['username'] = $username;
         $_SESSION['fruit'] = $fruit;
         $_SESSION['animal'] = $animal;
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="forgotPass.css">
-    <link href="https:
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         html{
             font-family: 'Montserrat';
@@ -51,18 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f44336;
-            color: white;
+            background-color: #f44336; /* Red background */
+            color: white; /* White text */
             padding: 10px 20px;
             border-radius: 5px;
             z-index: 9999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .notification.success {
-            background-color: #4CAF50;
+            background-color: #4CAF50; /* Green background */
         }
         .notification.error {
-            background-color: #f44336;
+            background-color: #f44336; /* Red background */
         }
         
     </style>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="mainLogin">
         <?php
-                
+                // Check if there is any notification message set
                 if (isset($_SESSION['notification'])) {
                     $notification_type = isset($_SESSION['notification_type']) ? $_SESSION['notification_type'] : 'error';
                     echo "<div class='notification $notification_type'>{$_SESSION['notification']}</div>";
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (notification) {
             notification.style.display = 'block';
 
-            
+            // Close the notification after 5 seconds
             setTimeout(function() {
                 notification.style.display = 'none';
             }, 3000);
