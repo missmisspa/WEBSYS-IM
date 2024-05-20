@@ -64,20 +64,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 exit();
             }
 
-            // Check the current number of users for each position
+            
             $sql_count = "SELECT COUNT(*) as count FROM brgy_info WHERE staff_position = '$position'";
             $result = mysqli_query($con, $sql_count);
             $row = mysqli_fetch_assoc($result);
             $current_count = $row['count'];
 
-            // Determine the maximum number of users allowed for each position
-            $max_count = 7; // For Kagawad
+            
+            $max_count = 7; 
             if ($position == "Barangay Chairman" || $position == "Barangay Secretary" || $position == "Barangay Treasurer" || $position == "SK Chairman") {
-                $max_count = 1; // For Chairman, Secretary, and Treasurer
+                $max_count = 1;
             }
 
             if ($current_count < $max_count) {
-                // Insert into brgy_info table for barangay officials
+                
                 $query = "INSERT INTO brgy_info (staff_fname, staff_mname, staff_lname, staff_suffix, staff_zone, staff_brgy, staff_city, staff_province, staff_age, staff_bdate, staff_cstatus, staff_citizenship, staff_sex, staff_educ, staff_contact, staff_email, staff_position, staff_username, staff_password, staff_fruit, staff_animal) 
                       VALUES ('$fname', '$mname', '$lname', '$suffix', '$purok', '$brgy', '$city', '$prov', '$age', '$bdate', '$cstatus', '$citizen', '$sex', '$educ', '$contact', '$email', '$position', '$username', '$password', '$fruit', '$animal')";
 
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 
             }
         } else {
-            // Insert into resident_info table for residents
+            
             $query = "INSERT INTO resident_info (resi_fname, resi_mname, resi_lname, resi_suffix, resi_zone, resi_brgy, resi_city, resi_province, resi_age, resi_bdate, resi_cstatus, resi_citizenship, resi_sex, resi_educ, resi_contact, resi_email, resi_username, resi_password, resi_fruit, resi_animal) 
                       VALUES ('$fname', '$mname', '$lname', '$suffix', '$purok', '$brgy', '$city', '$prov', '$age', '$bdate', '$cstatus', '$citizen', '$sex', '$educ', '$contact', '$email', '$username', '$password', '$fruit', '$animal')";
 
@@ -161,18 +161,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f44336; /* Red background */
-            color: white; /* White text */
+            background-color: #f44336; 
+            color: white; 
             padding: 10px 20px;
             border-radius: 5px;
             z-index: 9999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .notification.success {
-            background-color: #4CAF50; /* Green background */
+            background-color: #4CAF50; 
         }
         .notification.error {
-            background-color: #f44336; /* Red background */
+            background-color: #f44336; 
         }
         .form-group {
             margin-bottom: 1rem;

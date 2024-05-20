@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = $_POST['password'];
 
     if (!empty($username) && !empty($password)) {
-        // Function to check if a username exists and retrieve the corresponding user
+        //  check if username exists and retrieve user
         function getUser($con, $table, $usernameColumn, $username) {
             $query = "SELECT * FROM $table WHERE $usernameColumn = '$username'";
             $result = mysqli_query($con, $query);
@@ -21,12 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if ($adminUser) {
             if ($adminUser['staff_password'] === $password) {
-                // Admin credentials correct, redirect to adminDashboard
-                $_SESSION['staff_id'] = $adminUser['staff_id']; // Set staff_id session variable
+                // redirect to admin dashboard if info correct
+                $_SESSION['staff_id'] = $adminUser['staff_id']; 
                 header("Location: admin/adminDashboard.php");
                 exit();
             } else {
-                // Password incorrect for admin
                 $_SESSION['notification'] = "Incorrect password.";
                 $_SESSION['notification_type'] = "error";
             }
@@ -36,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             if ($normalUser) {
                 if ($normalUser['resi_password'] === $password) {
-                    // User credentials correct, redirect to userDashboard
-                    $_SESSION['resident_id'] = $normalUser['resident_id']; // Set resi_id session variable
+                    // user dashboard redirect if info correct
+                    $_SESSION['resident_id'] = $normalUser['resident_id']; 
                     header("Location: user/userDashboard.php");
                     exit();
                 } else {
@@ -64,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 
-// If there's no form submission or redirection required, continue rendering the login page
+
 ?>
 
 <!DOCTYPE html>
@@ -86,18 +85,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f44336; /* Red background */
-            color: white; /* White text */
+            background-color: #f44336; 
+            color: white; 
             padding: 10px 20px;
             border-radius: 5px;
             z-index: 9999;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .notification.success {
-            background-color: #4CAF50; /* Green background */
+            background-color: #4CAF50; 
         }
         .notification.error {
-            background-color: #f44336; /* Red background */
+            background-color: #f44336;
         }
     </style>
 </head>
@@ -118,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <div class="loginSectionContainer">
                     <h2>Login</h2>
                     <?php
-                        // Check if there is any notification message set
+
                         if (isset($_SESSION['notification'])) {
                             $notification_type = isset($_SESSION['notification_type']) ? $_SESSION['notification_type'] : 'error';
                             echo "<div class='notification $notification_type'>{$_SESSION['notification']}</div>";
@@ -172,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (notification) {
             notification.style.display = 'block';
 
-            // Close the notification after 5 seconds
+
             setTimeout(function() {
                 notification.style.display = 'none';
             }, 3000);
