@@ -47,12 +47,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             header("Location: register.php");
             exit();
         }
-        if (valueExists($con, 'resident_info', 'resi_contact', $username) || valueExists($con, 'brgy_info', 'staff_contact', $username)) {
-            $_SESSION['notification'] = "Contact Number is already taken.";
-            $_SESSION['notification_type'] = "error";
-            header("Location: register.php");
-            exit();
-        }
+        // if (valueExists($con, 'resident_info', 'resi_contact', $username) || valueExists($con, 'brgy_info', 'staff_contact', $username)) {
+        //     $_SESSION['notification'] = "Contact Number is already taken.";
+        //     $_SESSION['notification_type'] = "error";
+        //     header("Location: register.php");
+        //     exit();
+        // }
 
         
         if (valueExists($con, 'resident_info', 'resi_email', $email) || valueExists($con, 'brgy_info', 'staff_email', $email)) {
