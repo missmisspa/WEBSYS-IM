@@ -15,13 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $bdate = $_POST['birthday'];
+    $bdate = $_POST['birthday']; 
     $contact = $_POST['contact_number'];
     $fruit = $_POST['fruit'];
     $cstatus = $_POST['cstatus'];
     $animal = $_POST['animal'];
     $citizen = $_POST['citizenship'];
     $age = $_POST['age'];
+    // $age = calculateAge($bdate);
     $sex = $_POST['sex'];
     $userType = $_POST['userType'];
     $position = isset($_POST['position']) ? $_POST['position'] : '';
@@ -304,15 +305,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="age">Age</label>
-                                <input type="number" class="form-control" id="age" name="age" placeholder="Enter Age" required>
+                                <label for="birthday">Birthday</label>
+                                <input type="date" class="form-control" id="birthday" name="birthday" onchange="calculateAge()" required>
+                                <p id="birthday-error" class="text-danger" style="position: absolute; font-size: 13px;"></p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="birthday">Birthday</label>
-                                <input type="date" class="form-control" id="birthday" name="birthday" required>
-                                <p id="birthday-error" class="text-danger" style="position: absolute; font-size: 13px;"></p>
+                                <label for="age">Age</label>
+                                <input type="number" class="form-control" id="age" name="age" readonly>
                             </div>
                         </div>
                     </div>
@@ -494,6 +495,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         setTimeout(function() {
             notification.style.display = 'none';
         }, 5000);
+    }
+
+    function calculateAge() {
+        var birthdate = document.getElementById('birthday').value;
+        var today = new Date();
+        var dob = new Date(birthdate);
+        var age = today.getFullYear() - dob.getFullYear();
+        var m = today.getMonth() - dob.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+            age--;
+        }
+        document.getElementById('age').value = age;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
