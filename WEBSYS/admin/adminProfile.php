@@ -90,7 +90,8 @@ $user_data = check_login($con);
         <h2 style="margin-top: -60px;">Profile</h2>
         <div id="container">
             <div class="profile-image">
-                <img src="placeholder.jpg" alt="Profile Image">
+                <img src="placeholder.jpg" alt="Profile Image" style=" border-radius: 50%;
+    border: 5px solid #748C70;">
             </div>
             <br><br>
             <form id="profileForm" method="post">
