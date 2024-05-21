@@ -62,6 +62,9 @@
                 </span>
             </div>
         </div>
+        <!-- <div class="col-6 text-right">
+            <button type="button" class="btn btn-danger" onclick="generatePDF()"><i class="fas fa-file-pdf"></i> Generate PDF</button>
+        </div> -->
     </div>
     <div class="row table-container">
         <div class="col-12">
@@ -158,6 +161,9 @@
         }
     }
 }
+// function generatePDF() {
+//     window.location = '../generate_pdf/generate_dbpdf.php';
+// }
 </script>  
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
