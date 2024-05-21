@@ -26,6 +26,7 @@ body {
 }
 
 #content h2{
+    margin-top: 20px;
     font-weight: 700;
     text-align: center;
 }
@@ -57,6 +58,11 @@ label[for="password"],
 label[for="confirm-password"],
 label[for="fruit"],
 label[for="animal"] {
+    font-size: 16px;
+    font-weight: 550;
+}
+
+label[for="email"] {
     font-size: 16px;
     font-weight: 550;
 }
