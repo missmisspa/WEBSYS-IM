@@ -44,53 +44,39 @@ $female = mysqli_fetch_assoc($female_result)['total'];
 <link rel="stylesheet" href="adminBrgyDBOverview.css">
 </head>
 <body>
-<div id="sidebar">
-    <div class="text-center mb-4">
-        <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
-        <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
-        <h4 class="text">Barangay Monitoring System</h4>
+    <div id="sidebar">
+        <div class="text-center mb-4">
+            <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
+            <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
+            <h4 class="text">Barangay Monitoring System</h4>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item">
+                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </li>
+        </ul>
     </div>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="adminBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
-        </li>
-        <li class="nav-item">
-            <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()" 
-            style="border: none;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            background-color: #748C70;
-                            color: #FFFFFF;
-                            border-radius:10px; 
-                            border:none;
-                            transition: all 0.3s ease;
-                            padding-left:30px;
-                            padding-right:30px;
-                            margin-left: 25px;"   
-                            onmouseover="this.style.backgroundColor='#5F775B'; this.style.transform='scale(1.1)';" 
-                            onmouseout="this.style.backgroundColor='#748C70'; this.style.transform='scale(1)';"
-                            ><i class="fas fa-sign-out-alt"></i> Logout</button>
-        </li>
-    </ul>
-</div>
 
 <div id="content">
     <h2>Barangay Database</h2>
