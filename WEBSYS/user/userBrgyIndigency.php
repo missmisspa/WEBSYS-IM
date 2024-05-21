@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <div id="content">
-    <h2>Barangay Certificate</h2>
+    <h2>Barangay Indigency</h2>
     <div id="container">
         <form id="registrationForm" method="post" action="../generate_pdf/generate_indigency.php" target="_blank">
             <div class="row">
