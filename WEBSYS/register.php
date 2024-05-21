@@ -259,7 +259,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="last_name">Last Name</label>
-                                <input type="text" class="form-control" id="last_name" name="lname" placeholder="Last Name" required>
+                                <input type="text" class="form-control" id="last_name" name="lname" placeholder="Enter Last Name" required>
                             </div>
                         </div>
                         <div class="col-md-3">
