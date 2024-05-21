@@ -383,7 +383,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="contact_number">Contact Number</label>
-                                <input type="text" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number" required>
+                                <input type="number" class="form-control" id="contact_number" name="contact_number" placeholder="Enter Contact Number" required>
                                 <p id="contact-number-error" class="text-danger" style="position: absolute; font-size: 13px;"></p>
                             </div>
                         </div>
