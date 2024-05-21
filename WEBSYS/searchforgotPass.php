@@ -7,19 +7,18 @@ include("function.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     
-    
+
     $resident_query = "SELECT * FROM resident_info WHERE resi_username = '$username'";
     $resident_result = mysqli_query($con, $resident_query);
     
-    
+
     $brgy_query = "SELECT * FROM brgy_info WHERE staff_username = '$username'";
     $brgy_result = mysqli_query($con, $brgy_query);
 
     if (mysqli_num_rows($resident_result) > 0 || mysqli_num_rows($brgy_result) > 0) {
-        
+
         $_SESSION['username'] = $username;
-        
-        
+
         header("Location: forgotPass.php");
         exit;
     } else {
@@ -36,8 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <link rel="stylesheet" href="searchforgotPass.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         html{
             font-family: 'Montserrat';
@@ -48,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f44336;
-            color: white;
+            background-color: #f44336; 
+            color: white; 
             padding: 10px 20px;
             border-radius: 5px;
             z-index: 9999;
