@@ -165,13 +165,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="age">Age</label>
-                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter Age" value="<?php echo htmlspecialchars($user_data['resi_age']); ?>">
+                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter Age" value="<?php echo htmlspecialchars($user_data['resi_age']); ?>" required>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="birthday">Birthday</label>
-                        <input type="date" class="form-control" id="birthday" name="birthday" value="<?php echo htmlspecialchars($user_data['resi_bdate']); ?>">
+                        <input type="date" class="form-control" id="birthday" name="birthday" value="<?php echo htmlspecialchars($user_data['resi_bdate']); ?>" required>
                     </div>
                 </div>
             </div>
