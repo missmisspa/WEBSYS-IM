@@ -65,23 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <li class="nav-item">
             <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
-        <li class="nav-item">
-            <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()" 
-            style="border: none;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            background-color: #748C70;
-                            color: #FFFFFF;
-                            border-radius:10px; 
-                            border:none;
-                            transition: all 0.3s ease;
-                            padding-left:30px;
-                            padding-right:30px;
-                            margin-left: 25px;"   
-                            onmouseover="this.style.backgroundColor='#5F775B'; this.style.transform='scale(1.1)';" 
-                            onmouseout="this.style.backgroundColor='#748C70'; this.style.transform='scale(1)';"
-                            ><i class="fas fa-sign-out-alt"></i> Logout</button>
-        </li>
+            <li class="nav-item">
+                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </li>
     </ul>
 </div>
 
