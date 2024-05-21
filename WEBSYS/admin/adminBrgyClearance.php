@@ -41,41 +41,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <link rel="stylesheet" href="adminBrgyClearance.css">
 </head>
 <body>
-    <div id="sidebar">
-        <div class="text-center mb-4">
-            <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
-            <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
-            <h4 class="text">Barangay Monitoring System</h4>
-        </div>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminBrgyDBOverview.php"><i class="fas fa-database"></i> Barangay Database</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminBrgyComplaintsOverview.html"><i class="fas fa-exclamation-circle"></i> Barangay Complaints</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
-            </li>
-            <li class="nav-item">
-                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </li>
-        </ul>
-        
-        
+<div id="sidebar">
+    <div class="text-center mb-4">
+        <img src="Legazpi-LOGO.png" alt="Logo 1" class="img-fluid mb-2">
+        <img src="BRGY LOGO.png" alt="Logo 2" class="img-fluid mb-2">
+        <h4 class="text">Barangay Monitoring System</h4>
     </div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link active" href="adminDashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="adminProfile.php"><i class="fas fa-user"></i> Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="adminBrgyComplaintsOverview.php"><i class="fas fa-exclamation-circle"></i> Complaints</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="userFullDisclosureBoard.html"><i class="fas fa-clipboard-list"></i> Full Disclosure Board</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="userOrgFlowchart.html"><i class="fas fa-sitemap"></i> Organizational Flowchart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="confirmLogout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+    </ul>
+</div>
 
 <div id="content">
     <h2>Barangay Clearance</h2>

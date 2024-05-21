@@ -28,16 +28,7 @@
     color: #748C70;
 }
 
-
-.nav-link.logout{
-    text-decoration: none;
-    border: none;
-    background: none;
-    width: 100%;
-}
-
-#sidebar a,
-#sidebar button {
+#sidebar a {
     padding: 12px 20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -50,9 +41,9 @@
     transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease, border-left-color 0.3s ease;
 }
 
+
 #sidebar a.active,
-#sidebar a:hover,
-#sidebar button:hover {
+#sidebar a:hover {
     border-radius: 0px 10px 10px 0px;
     background-color: #e5e9e7;
     font-weight: 600;
@@ -62,8 +53,7 @@
     padding-right: 24px;
 }
 
-#sidebar a i,
-#sidebar button i {
+#sidebar a i {
     margin-right: 10px;
 }
 

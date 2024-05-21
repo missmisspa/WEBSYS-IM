@@ -89,9 +89,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <li class="nav-item">
             <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
-            <li class="nav-item">
-                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="confirmLogout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+    </ul>
 </div>
 
 <div id="content">
@@ -144,13 +145,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="barangay">Barangay</label>
-                        <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay" value="<?php echo htmlspecialchars($user_data['resi_brgy']); ?>">
+                        <input type="text" class="form-control" id="barangay" name="barangay" placeholder="Enter Barangay" value="<?php echo htmlspecialchars($user_data['resi_brgy']); ?>" readonly>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo htmlspecialchars($user_data['resi_city']); ?>">
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo htmlspecialchars($user_data['resi_city']); ?>" readonly>
                     </div>
                 </div>
             </div>
@@ -158,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="province">Province</label>
-                        <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province" value="<?php echo htmlspecialchars($user_data['resi_province']); ?>">
+                        <input type="text" class="form-control" id="province" name="province" placeholder="Enter Province" value="<?php echo htmlspecialchars($user_data['resi_province']); ?>" readonly>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -248,6 +249,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </div>
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <p>Are you sure you want to logout?</p>
+        <button id="cancelButton" onclick="hidePopup()">Cancel</button>
+        <a href="../logout.php"><button id="logoutBtn" onclick="logout()">Logout</button></a>
+    </div>
+</div>
+
 
 <script>
 function confirmSave() {
@@ -264,6 +273,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         alert('<?php echo $error_message; ?>');
     <?php endif; ?>
 });
+
+function showPopup() {
+        document.getElementById('popup').classList.add('active');
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').classList.remove('active');
+    }
+
+    function confirmLogout() {
+        showPopup();
+    }
 </script>
 </body>
 </html>

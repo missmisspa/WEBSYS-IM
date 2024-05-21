@@ -40,9 +40,9 @@ $user_data = check_login($con);
         <li class="nav-item">
             <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
-            <li class="nav-item">
-                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="confirmLogout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
     </ul>
     
 </div>
@@ -92,6 +92,7 @@ function hidePopup() {
 function confirmLogout() {
     showPopup();
 }
+
 </script>  
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

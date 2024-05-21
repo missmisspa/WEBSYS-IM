@@ -63,9 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <li class="nav-item">
             <a class="nav-link" href="userAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
-            <li class="nav-item">
-                <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
-            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" onclick="confirmLogout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
     </ul>
 </div>
 
@@ -207,6 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             document.getElementById('purpose').value = '';
         }, 500); 
     });
+
 </script>
 
 </body>
