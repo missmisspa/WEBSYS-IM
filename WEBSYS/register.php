@@ -22,13 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $animal = $_POST['animal'];
     $citizen = $_POST['citizenship'];
     $age = $_POST['age'];
-    // $age = calculateAge($bdate);
     $sex = $_POST['sex'];
     $userType = $_POST['userType'];
     $position = isset($_POST['position']) ? $_POST['position'] : '';
     $educ = $_POST['educ'];
 
-    // Function to check if a value exists in a given table and column
     function valueExists($con, $table, $column, $value) {
         $query = "SELECT * FROM $table WHERE $column = '$value'";
         $result = mysqli_query($con, $query);
@@ -47,13 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             header("Location: register.php");
             exit();
         }
-        // if (valueExists($con, 'resident_info', 'resi_contact', $username) || valueExists($con, 'brgy_info', 'staff_contact', $username)) {
-        //     $_SESSION['notification'] = "Contact Number is already taken.";
-        //     $_SESSION['notification_type'] = "error";
-        //     header("Location: register.php");
-        //     exit();
-        // }
-
         
         if (valueExists($con, 'resident_info', 'resi_email', $email) || valueExists($con, 'brgy_info', 'staff_email', $email)) {
             $_SESSION['notification'] = "Email is already taken.";
@@ -127,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           </script>';
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -38,21 +38,7 @@
             <a class="nav-link" href="adminAbout.html"><i class="fas fa-info-circle"></i> About</a>
         </li>
         <li class="nav-item">
-            <button type="submit" name="logout" class="nav-link logout" onclick="confirmLogout()" 
-            style="border: none;
-                            cursor: pointer;
-                            transition: all 0.3s ease;
-                            background-color: #748C70;
-                            color: #FFFFFF;
-                            border-radius:10px; 
-                            border:none;
-                            transition: all 0.3s ease;
-                            padding-left:30px;
-                            padding-right:30px;
-                            margin-left: 25px;"   
-                            onmouseover="this.style.backgroundColor='#5F775B'; this.style.transform='scale(1.1)';" 
-                            onmouseout="this.style.backgroundColor='#748C70'; this.style.transform='scale(1)';"
-                            ><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <a class="nav-link" href="#" onclick="confirmLogout()" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </li>
     </ul>
 </div>
