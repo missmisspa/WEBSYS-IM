@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $result = mysqli_query($con, $query);
             return mysqli_fetch_assoc($result);
         }
-
         // Check in brgy_info table
         $adminUser = getUser($con, 'brgy_info', 'staff_username', $username);
 
@@ -30,27 +29,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['notification_type'] = "error";
             }
         } else {
-            // Check in resident_info table
             $normalUser = getUser($con, 'resident_info', 'resi_username', $username);
 
             if ($normalUser) {
                 if ($normalUser['resi_password'] === $password) {
-                    // user dashboard redirect if info correct
                     $_SESSION['resident_id'] = $normalUser['resident_id']; 
                     header("Location: user/userDashboard.php");
                     exit();
                 } else {
-                    // Password incorrect for user
                     $_SESSION['notification'] = "Incorrect password.";
                     $_SESSION['notification_type'] = "error";
                 }
             } else {
-                // Username not found in both tables
                 $_SESSION['notification'] = "Username not found.";
                 $_SESSION['notification_type'] = "error";
             }
         }
-
         // If redirection hasn't happened yet, redirect back to login page with notification
         header("Location: loginResponsive.php");
         exit();
@@ -62,8 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         exit();
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
